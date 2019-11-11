@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>NewsAnalizer</title>
+  <link rel="stylesheet" href="./vendor/preloader.css">
+  <link rel="stylesheet" href="./pages/main.a734938038147573362f.css">
+</head>
+<body class="root">
+
+  <section class="bg-picture">
+    <!--Блок Header-->
+    <header class="header header_color_main">
+      <a href="/index.html" class="header__link">
+        <p class="header__title header__title_color_white">NewsAnalyzer</p>
+      </a>
+      <div class="header__page-container">
+          <a class="header__page header__page_active header__page_color_white" href="/index.html">Главная</a>
+          <a class="header__page header__page_inactive" href="/about.html">О проекте</a>
+          <div class="header__stroke header__stroke_color_white"></div>
+          <div class="header__page_blank"></div>
+      </div>
+    </header>
+    <!--Header конец-->
+
+    <!--Блок Search-->
+    <section class="search">
+        <figure class="search__container">
+          <h1 class="search__title">Что в мире творится?</h1>
+          <h2 class="search__subtitle">Введите в поиске любую тему и узнайте, насколько популярной она была в новостях за прошедшую неделю.</h2>
+          <figcaption class="search__caption">Изображение экрана смартфона с приложением, которое показывает статистику</figcaption>
+          <form class="search__form" name="search">
+            <input type="text" name="topic" class="search__input" placeholder="Введите тему новости">
+          </form>
+          <button class="button search__button">Искать</button>
+      </figure>
+    </section>
+    <!--Search конец-->
+  </section>
+
+  <!--Блок preloader-->
+  <section class="preloader">
+    <p class="preloader__message">
+        Идет поиск новостей...
+    </p>
+    <img class="preloader__not-found" src="./images/not-found.svg" alt="Картинка с грустным смайликом">
+    <h3 class="preloader__title">
+        Ничего не найдено
+    </h3>
+    <p class="preloader__message">
+        К сожалению по вашему запросу ничего не найдено.
+    </p>
+  </section>
+  <!--Прелоадер конец-->
+
+  <!--Блок Результаты поиска. Когда результат есть-->
+  <section class="result">
+    <div class="result__page-container">
+        <h2 class="result__title">Результаты поиска</h2>
+          <a class="link-nav result__paper-page" href="/paper.html">
+            Посмотреть аналитику
+            <img class="result__arrow" src="./images/arrow.svg" alt="Стрелка вправо">
+          </a>
+
+        <!--</div>-->
+    </div>
+    <div class="results-list">
+      <!--Пример карточки-->
+      <div class="result-card">
+        <div class="result-card__image"></div>
+        <div class="result-card__description">
+          <p class="result-card__date">2 августа, 2019</p>
+          <h3 class="result-card__name">Национальное достояние – парки</h3>
+          <p class="result-card__annotation">В 2016 году Америка отмечала важный юбилей:
+            сто лет назад здесь начала складываться система национальных парков – охраняемых территорий,
+            где и сегодня каждый может приобщиться к природе.
+          </p>
+          <p class="result-card__source">Лента.ру</p>
+        </div>
+      </div>
+
+      <div class="result-card">
+          <div class="result-card__image"></div>
+          <div class="result-card__description">
+            <p class="result-card__date">2 августа, 2019</p>
+            <h3 class="result-card__name">Лесные огоньки: история одной фотографии</h3>
+            <p class="result-card__annotation">Фотограф отвлеклась от освещения суровой политической реальности Мексики,
+              чтобы запечатлеть ускользающую красоту одного из местных чудес природы.
+            </p>
+            <p class="result-card__source">Медуза</p>
+          </div>
+        </div>
+
+        <div class="result-card">
+            <div class="result-card__image"></div>
+            <div class="result-card__description">
+              <p class="result-card__date">2 августа, 2019</p>
+              <h3 class="result-card__name">«Первозданная тайга»: новый фотопроект Игоря Шпиленка</h3>
+              <p class="result-card__annotation">Знаменитый фотограф снимает первозданные леса России,
+                чтобы рассказать о необходимости их сохранения. В этот раз он отправился в Двинско-Пинежскую тайгу, где...
+              </p>
+              <p class="result-card__source">Риа</p>
+            </div>
+          </div>
+      <!--Конец примера-->
+    </div>
+    <button class="button result__button">Показать еще</button>
+  </section>
+  <!--Результаты поиска конец-->
+
+  <!--Блок Об авторе.-->
+  <section class="author-about">
+    <div class="author-about__container">
+      <div class="author-about__image"></div>
+      <div class="author-about__container-text">
+        <h2 class="h2-title author-about__title">Об авторе</h2>
+        <p class="p-text author-about__text">
+          Это блок с описаением автора проекта. Здесь следует указать, как вас зовут, чем вы занимаетесь, какими технологиями разработки владете.
+        </p>
+        <p class="p-text author-about__text">
+            Также можно рассказать о процессе обучения в Практикуме, чему вы тут научились, и чем можете помочь потенциальным заказчикам.
+        </p>
+      </div>
+    </div>
+  </section>
+  <!--Об авторе конец-->
+
+  <footer class="footer">
+    <p class="footer__copyright">&copy; 2019. Kenina Marina</p>
+    <div class="footer__container">
+      <a class="footer__link-text" href="/index.html">Главная</a>
+      <a class="footer__link-text" href="/about.html">О проекте</a>
+      <a class="footer__link-text" href="https://praktikum.yandex.ru/">Яндекс.Практикум</a>
+    </div>
+    <div class="footer__container">
+      <a class="footer__icon" href="https://github.com/korvenhasta">
+        <img class="footer__image" src="./images/github.svg" alt="Ссылка на профиль в Github">
+      </a>
+      <a class="footer__icon" href="https://www.facebook.com/marina.zykova.35">
+        <img class="footer__image" src="./images/facebook.svg" alt="Ссылка на профиль в Фейсбук">
+      </a>
+    </div>
+  </footer>
+  <script src="main.66f05de25e0eff5ac46d.js"></script>
+</body>
+</html>
