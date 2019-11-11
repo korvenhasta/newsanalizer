@@ -1,0 +1,24 @@
+@import url("./_first/analitics__bar_first.css");
+@import url("./_margin-top/analitics__bar_margin-top.css");
+@import url("./_second/analitics__bar_second.css");
+@import url("./_third/analitics__bar_third.css");
+@import url("./_forth/analitics__bar_forth.css");
+@import url("./_fifth/analitics__bar_fifth.css");
+@import url("./_sixth/analitics__bar_sixth.css");
+@import url("./_seventh/analitics__bar_seventh.css");
+
+.analitics__bar {
+  height: 24px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 24px;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  text-indent: 6px;
+  text-align: start;
+  color: #ffffff;
+  background: #2f71e5;
+  margin: 28px 0 28px 0;
+}
