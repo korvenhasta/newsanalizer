@@ -5,20 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>NewsAnalizer</title>
-  <link rel="stylesheet" href="./vendor/preloader.css">
-  <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css%>">
+  <link rel="stylesheet" href="../pages/style.css"> <!--href="<%=htmlWebpackPlugin.files.chunks.main.css %>"-->
 </head>
 <body class="root">
 
   <section class="bg-picture">
     <!--Блок Header-->
     <header class="header header_color_main">
-      <a href="/index.html" class="header__link">
+      <a href="#" class="header__link"> <!--TODO добавь ссылку на главную-->
         <p class="header__title header__title_color_white">NewsAnalyzer</p>
       </a>
       <div class="header__page-container">
-          <a class="header__page header__page_active header__page_color_white" href="/index.html">Главная</a>
-          <a class="header__page header__page_inactive" href="/about.html">О проекте</a>
+          <a class="header__page header__page_active header__page_color_white" href="#">Главная</a> <!--TODO добавь ссылку на главную-->
+          <a class="header__page header__page_inactive" href="#">О проекте</a> <!--TODO добавь ссылку на главную-->
           <div class="header__stroke header__stroke_color_white"></div>
           <div class="header__page_blank"></div>
       </div>
@@ -40,36 +39,22 @@
     <!--Search конец-->
   </section>
 
-  <!--Блок preloader-->
-  <section class="preloader">
-    <p class="preloader__message">
-        Идет поиск новостей...
-    </p>
-    <img class="preloader__not-found" src="<%=require('./images/not-found.svg')%>" alt="Картинка с грустным смайликом">
-    <h3 class="preloader__title">
-        Ничего не найдено
-    </h3>
-    <p class="preloader__message">
-        К сожалению по вашему запросу ничего не найдено.
-    </p>
-  </section>
-  <!--Прелоадер конец-->
-
   <!--Блок Результаты поиска. Когда результат есть-->
   <section class="result">
     <div class="result__page-container">
         <h2 class="result__title">Результаты поиска</h2>
-          <a class="link-nav result__paper-page" href="/paper.html">
+        <!--<div class="result__container-link"> -->
+          <a class="link-nav result__paper-page" href="#">
             Посмотреть аналитику
-            <img class="result__arrow" src="<%=require('./images/arrow.svg')%>" alt="Стрелка вправо">
-          </a>
+            <img class="result__arrow" src="../images/arrow.svg" alt="Стрелка вправо">
+          </a> <!--TODO добавь ссылку на paper-->
 
         <!--</div>-->
     </div>
     <div class="results-list">
       <!--Пример карточки-->
       <div class="result-card">
-        <div class="result-card__image"></div>
+        <div class="result-card__image" style="background-image: url(../images/image_08.png)"></div>
         <div class="result-card__description">
           <p class="result-card__date">2 августа, 2019</p>
           <h3 class="result-card__name">Национальное достояние – парки</h3>
@@ -82,7 +67,7 @@
       </div>
 
       <div class="result-card">
-          <div class="result-card__image"></div>
+          <div class="result-card__image" style="background-image: url(../images/image_04.png)"></div>
           <div class="result-card__description">
             <p class="result-card__date">2 августа, 2019</p>
             <h3 class="result-card__name">Лесные огоньки: история одной фотографии</h3>
@@ -94,7 +79,7 @@
         </div>
 
         <div class="result-card">
-            <div class="result-card__image"></div>
+            <div class="result-card__image" style="background-image: url(../images/image_07.png)"></div>
             <div class="result-card__description">
               <p class="result-card__date">2 августа, 2019</p>
               <h3 class="result-card__name">«Первозданная тайга»: новый фотопроект Игоря Шпиленка</h3>
@@ -130,16 +115,16 @@
   <footer class="footer">
     <p class="footer__copyright">&copy; 2019. Kenina Marina</p>
     <div class="footer__container">
-      <a class="footer__link-text" href="/index.html">Главная</a>
-      <a class="footer__link-text" href="/about.html">О проекте</a>
+      <a class="footer__link-text" href="./index.html">Главная</a>
+      <a class="footer__link-text" href="#">О проекте</a>
       <a class="footer__link-text" href="https://praktikum.yandex.ru/">Яндекс.Практикум</a>
     </div>
     <div class="footer__container">
       <a class="footer__icon" href="https://github.com/korvenhasta">
-        <img class="footer__image" src="<%=require('./images/github.svg')%>" alt="Ссылка на профиль в Github">
+        <img class="footer__image" src="../images/github.svg" alt="Ссылка на профиль в Github">
       </a>
       <a class="footer__icon" href="https://www.facebook.com/marina.zykova.35">
-        <img class="footer__image" src="<%=require('./images/facebook.svg')%>" alt="Ссылка на профиль в Фейсбук">
+        <img class="footer__image" src="../images/facebook.svg" alt="Ссылка на профиль в Фейсбук">
       </a>
     </div>
   </footer>
