@@ -1,0 +1,9 @@
+.history__link-nav {
+  height: 24px;
+}
+
+.history__link-nav:hover {
+  transition: color 1s linear 0.5s;
+  opacity: 0.7;
+  text-decoration: none;
+}

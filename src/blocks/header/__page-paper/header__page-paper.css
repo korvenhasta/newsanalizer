@@ -1,0 +1,20 @@
+.header__page-paper {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  text-decoration: none;
+  margin-right: 34px;
+  margin-bottom: 23px;
+  color: #b6bcbf;
+}
+
+.header__page-paper:hover {
+  color: #1a1b22;
+  text-decoration: none;
+}
+
+.header__page-paper:last-of-type {
+  margin-right: 0;
+}

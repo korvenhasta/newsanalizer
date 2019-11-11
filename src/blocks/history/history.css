@@ -1,0 +1,10 @@
+@import url("./__container/history__container.css");
+@import url("./__title-container/history__title-container.css");
+@import url("./__title/history__title.css");
+@import url("./__link-nav/history__link-nav.css");
+
+.history {
+  width: 100%;
+  margin: 0;
+  background: #f5f6f7;
+}

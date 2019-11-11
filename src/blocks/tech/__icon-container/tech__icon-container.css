@@ -1,0 +1,8 @@
+.tech__icon-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  margin: 13px 70px 0 0;
+}
