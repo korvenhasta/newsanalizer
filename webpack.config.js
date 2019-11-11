@@ -4,13 +4,13 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackMd5Hash = require('webpack-md5-hash');
 const webpack = require('webpack');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-//const isDev = process.env.NODE_ENV === 'development';
+const isDev = process.env.NODE_ENV === 'development';
 
 module.exports = {
   entry: {
-    main: './src/index.js',
-    about: './src/about.js',
-    paper: './src/paper.js'
+    main: './src/script/index.js',
+    about: './src/script/about.js',
+    paper: './src/script/paper.js'
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -28,10 +28,9 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          //(isDev ? 'style-loader' : MiniCssExtractPlugin.loader),
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-          'postcss-loader'
+          (isDev ? 'style-loader' : MiniCssExtractPlugin.loader),
+         'css-loader',
+         'postcss-loader'
         ]
       },
       {
@@ -42,20 +41,28 @@ module.exports = {
             loader: 'image-webpack-loader',
             options: {
               bypassOnDebug: true,
-              disable: true,
+              disable: true
             },
           },
         ],
       },
       {
         test: /\.(eot|ttf|woff|woff2)$/,
-        loader: 'file-loader?name=./vendor/[name].[ext]'
+        loader: 'file-loader?name=./vendor/fonts/[name].[ext]'
       }
     ]
   },
   plugins: [
     new MiniCssExtractPlugin({
         filename: './pages/[name].[contenthash].css'
+    }),
+    new OptimizeCssAssetsPlugin({
+      assetNameRegExp: /\.css$/g,
+      cssProcessor: require('cssnano'),
+      cssProcessorPluginOptions: {
+              preset: ['default'],
+      },
+      canPrint: true
     }),
     new HtmlWebpackPlugin({
       inject: false,
@@ -72,17 +79,9 @@ module.exports = {
       template: './src/paper.html',
       filename: 'paper.html'
     }),
-    new OptimizeCssAssetsPlugin({
-      assetNameRegExp: /\.css$/g,
-      cssProcessor: require('cssnano'),
-      cssProcessorPluginOptions: {
-              preset: ['default'],
-      },
-      canPrint: true
-    }),
-    new WebpackMd5Hash()
-    // new webpack.DefinePlugin({
-    //   'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
-    //  })
+    new WebpackMd5Hash(),
+    new webpack.DefinePlugin({
+      'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+      })
   ]
 };
