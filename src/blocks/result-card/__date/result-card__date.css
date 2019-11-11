@@ -1,0 +1,12 @@
+.result-card__date {
+  width: 90%;
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  color: #b6bcbf;
+  margin: 0 auto 12px auto;
+}

@@ -1,0 +1,12 @@
+.preloader__message {
+  width: 320px;
+  height: 48px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: center;
+  color: #b6bcbf;
+  margin: 0 auto;
+}

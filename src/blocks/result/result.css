@@ -1,0 +1,12 @@
+@import url("../result/__page-container/result__page-container.css");
+@import url("../result/__title/result__title.css");
+@import url("../result/__paper-page/result__paper-page.css");
+@import url("../result/__arrow/result__arrow.css");
+@import url("../result/__button/result__button.css");
+
+.result {
+  margin: 0 auto;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  background: #f5f6f7;
+}

@@ -1,0 +1,11 @@
+@import url("./_tech/p-text_tech.css");
+@import url("./_color/p-text_color.css");
+
+.p-text {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+  color: #1A1B22;
+}

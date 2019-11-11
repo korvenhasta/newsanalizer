@@ -1,0 +1,9 @@
+@import url("./__message/preloader__message.css");
+@import url("./__title/preloader__title.css");
+@import url("./__not-found/preloader__not-found.css");
+
+.preloader {
+  height: 374px;
+  margin: 0;
+  background: #f5f6f7;
+}

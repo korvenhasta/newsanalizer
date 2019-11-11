@@ -1,0 +1,9 @@
+.result__paper-page {
+  height: 24px;
+}
+
+.result__paper-page:hover {
+  transition: color 1s linear 0.5s;
+  opacity: 0.7;
+  text-decoration: none;
+}

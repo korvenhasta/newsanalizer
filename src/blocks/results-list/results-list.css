@@ -1,0 +1,8 @@
+.results-list {
+  width: 90%;
+  display: grid;
+  grid-template-columns: repeat(3, 3fr);
+  grid-gap: 16px 16px;
+  justify-content: center;
+  margin: 0 auto 64px auto;
+}
