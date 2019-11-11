@@ -1,7 +1,4 @@
 .search__subtitle {
-  position: absolute;
-  top: 240px;
-  left: 416px;
   font-family: "Roboto";
   font-style: normal;
   font-weight: normal;
@@ -9,6 +6,6 @@
   line-height: 24px;
   width: 545px;
   height: 48px;
-  margin: 0 auto 64px auto;
+  margin: 0 0 64px 0;
   color: white;
 }

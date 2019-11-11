@@ -3,6 +3,6 @@
   display: grid;
   grid-template-columns: repeat(3, 3fr);
   grid-gap: 16px 16px;
-  justify-content: center;
+  justify-items: left;
   margin: 0 auto 64px auto;
 }

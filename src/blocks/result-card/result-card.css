@@ -6,11 +6,11 @@
 @import url("./__source/result-card__source.css");
 
 .result-card {
-  position: relative;
   width: 400px;
   height: 576px;
   background-color: #ffffff;
   border-radius: 10px;
+  margin: 0 auto;
 }
 
 .result-card:hover {

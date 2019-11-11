@@ -31,10 +31,12 @@
           <h1 class="search__title">Что в мире творится?</h1>
           <h2 class="search__subtitle">Введите в поиске любую тему и узнайте, насколько популярной она была в новостях за прошедшую неделю.</h2>
           <figcaption class="search__caption">Изображение экрана смартфона с приложением, которое показывает статистику</figcaption>
-          <form class="search__form" name="search">
-            <input type="text" name="topic" class="search__input" placeholder="Введите тему новости">
-          </form>
-          <button class="button search__button">Искать</button>
+          <div class="search__button-container">
+            <form class="search__form" name="search">
+              <input type="text" name="topic" class="search__input" placeholder="Введите тему новости">
+            </form>
+            <button class="button search__button">Искать</button>
+          </div>>
       </figure>
     </section>
     <!--Search конец-->
@@ -42,7 +44,7 @@
 
   <!--Блок preloader-->
   <section class="preloader">
-    <p class="preloader__message">
+    <p class="preloader__message preloader__message_not-found">
         Идет поиск новостей...
     </p>
     <img class="preloader__not-found" src="<%=require('./images/not-found.svg')%>" alt="Картинка с грустным смайликом">

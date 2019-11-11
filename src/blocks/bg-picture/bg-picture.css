@@ -1,5 +1,6 @@
 .bg-picture {
-  height: 576px;
+  height: 100%;
+  max-height: 576px;
   background-image: url("../../images/georgia-de-lotz--UsJoNxLaNo-unsplash.png");
   background-size: cover;
   background-repeat: no-repeat;

@@ -1,7 +1,4 @@
 .search__title {
-  position: absolute;
-  top: 80px;
-  left: 416px;
   font-family: "Roboto Slab";
   font-style: normal;
   font-weight: normal;
@@ -10,5 +7,5 @@
   color: white;
   width: 608px;
   height: 128px;
-  margin: 0 auto 32px auto;
+  margin: 80px 0 32px 0;
 }

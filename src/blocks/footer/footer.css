@@ -8,5 +8,6 @@
   display: flex;
   justify-content: space-between;
   width: 90%;
+  height: 80px;
   margin: 0 auto;
 }
