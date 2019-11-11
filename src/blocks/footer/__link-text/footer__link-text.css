@@ -1,0 +1,21 @@
+.footer__link-text {
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: center;
+  color: #1A1B22;
+  text-decoration: none;
+  margin-right: 40px;
+}
+
+.footer__link-text:last-of-type{
+  margin-right: 0;
+}
+
+.footer__link-text:hover {
+  text-decoration: none;
+  transition: color 1s linear 0.5s;
+  opacity: 0.7;
+}

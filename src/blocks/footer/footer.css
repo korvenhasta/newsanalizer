@@ -1,0 +1,12 @@
+@import url("./__copyright/footer__copyright.css");
+@import url("./__container/footer__container.css");
+@import url("./__link-text/footer__link-text.css");
+@import url("./__icon/footer__icon.css");
+@import url("./__image/footer__image.css");
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin: 0 auto;
+}
