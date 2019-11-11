@@ -1,0 +1,5 @@
+.slider__user {
+  display: flex;
+  justify-content: flex-start;
+  margin: 0;
+}

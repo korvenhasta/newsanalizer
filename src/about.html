@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>NewsAnalizer</title>
+    <link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.core.min.css">
     <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.about.css%>">
 </head>
 <body class="root">
@@ -117,7 +118,83 @@
         <a class="link-nav history__link-nav" href="https://github.com/korvenhasta">
           Открыть в Github
           <img class="result__arrow" src="<%=require('./images/arrow.svg')%>" alt="Стрелка вправо">
-        </a> <!--TODO добавь ссылку на paper-->
+        </a>
+      </div>
+      <div class="glide slider">
+        <div class="glide__track" data-glide-el="track">
+          <ul class="glide__slides">
+
+            <li class="glide__slide">
+              <div class="slider__card">
+                <time class="slider__date" datetime="2019-08-14">14 августа, 2019</time>
+                <div class="slider__user">
+                  <img class="slider__user-avatar" src="./images/image-01.png" alt="Аватар пользователя">
+                  <div class="slider__user-info">
+                    <h3 class="slider__user-name">Антон Долинин</h3>
+                    <p class="slider__user-email">anton@yandex.ru</p>
+                  </div>
+                </div>
+                <p class="slider__user-comment">Emmet (formerly Zen Coding) is a web- developer’s toolkit that can greatly improve your HTML & CSS workflow.</p>
+              </div>
+            </li>
+
+            <li class="glide__slide">
+              <div class="slider__card">
+                  <time class="slider__date" datetime="2019-08-14">14 августа, 2019</time>
+                  <div class="slider__user">
+                    <img class="slider__user-avatar" src="./images/image-01.png" alt="Аватар пользователя">
+                    <div class="slider__user-info">
+                      <h3 class="slider__user-name">Антон Долинин</h3>
+                      <p class="slider__user-email">anton@yandex.ru</p>
+                    </div>
+                  </div>
+                  <p class="slider__user-comment">Emmet (formerly Zen Coding) is a web- developer’s toolkit that can greatly improve your HTML & CSS workflow.</p>
+                </div>
+            </li>
+
+            <li class="glide__slide">
+              <div class="slider__card">
+                  <time class="slider__date" datetime="2019-08-14">14 августа, 2019</time>
+                  <div class="slider__user">
+                    <img class="slider__user-avatar" src="./images/image-01.png" alt="Аватар пользователя">
+                    <div class="slider__user-info">
+                      <h3 class="slider__user-name">Антон Долинин</h3>
+                      <p class="slider__user-email">anton@yandex.ru</p>
+                    </div>
+                  </div>
+                  <p class="slider__user-comment">Emmet (formerly Zen Coding) is a web- developer’s toolkit that can greatly improve your HTML & CSS workflow.</p>
+                </div>
+            </li>
+
+            <li class="glide__slide">
+              <div class="slider__card">
+                  <time class="slider__date" datetime="2019-08-14">14 августа, 2019</time>
+                  <div class="slider__user">
+                    <img class="slider__user-avatar" src="./images/image-01.png" alt="Аватар пользователя">
+                    <div class="slider__user-info">
+                      <h3 class="slider__user-name">Антон Долинин</h3>
+                      <p class="slider__user-email">anton@yandex.ru</p>
+                    </div>
+                  </div>
+                  <p class="slider__user-comment">Emmet (formerly Zen Coding) is a web- developer’s toolkit that can greatly improve your HTML & CSS workflow.</p>
+                </div>
+              </li>
+
+              <li class="glide__slide">
+                <div class="slider__card">
+                    <time class="slider__date" datetime="2019-08-14">14 августа, 2019</time>
+                    <div class="slider__user">
+                      <img class="slider__user-avatar" src="./images/image-01.png" alt="Аватар пользователя">
+                      <div class="slider__user-info">
+                        <h3 class="slider__user-name">Антон Долинин</h3>
+                        <p class="slider__user-email">anton@yandex.ru</p>
+                      </div>
+                    </div>
+                    <p class="slider__user-comment">Emmet (formerly Zen Coding) is a web- developer’s toolkit that can greatly improve your HTML & CSS workflow.</p>
+                  </div>
+              </li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
@@ -141,6 +218,6 @@
   </footer>
   <!--Конец Футер-->
 
-  <script src="<%= htmlWebpackPlugin.files.chunks.about.entry %>"></script>
+  <script type="module" src="<%= htmlWebpackPlugin.files.chunks.about.entry %>"></script>
 </body>
 </html>
