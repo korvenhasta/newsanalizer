@@ -1,0 +1,15 @@
+@import url("./__page-container/header__page-container.css");
+@import url("./__link/header__link.css");
+@import url("./__title/header__title.css");
+@import url("./__page/header__page.css");
+@import url("./__stroke/header__stroke.css");
+@import url("./_color/header_color.css");
+@import url("./__page-paper/header__page-paper.css");
+
+.header {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin: 0 auto;
+}

@@ -1,0 +1,6 @@
+@import url("./_color/_white/header__stroke_color_white.css");
+@import url("./_color/_black/header__stroke_color_black.css");
+
+.header__stroke {
+  margin: 0;
+}
