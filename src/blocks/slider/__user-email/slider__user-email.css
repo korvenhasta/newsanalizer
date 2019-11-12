@@ -1,8 +1,10 @@
 .slider__user-email {
+  width: 100%;
   font-family: "Roboto";
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
   line-height: 22px;
   color: #1a1b22;
+  margin: 0 auto 2px 0;
 }

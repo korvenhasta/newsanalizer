@@ -1,8 +1,13 @@
 .slider__user-comment {
+  height: 122px;
   font-family: "Roboto";
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
   line-height: 22px;
   color: #1A1B22;
+  margin: 0 24px 24px 24px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
+

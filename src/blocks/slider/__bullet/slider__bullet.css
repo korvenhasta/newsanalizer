@@ -1,0 +1,8 @@
+.slider__bullet {
+  background: #d1d2d6;
+  border-radius: 50%;
+}
+
+.glide__bullet--active {
+  background-color: #1a1b22;
+}
