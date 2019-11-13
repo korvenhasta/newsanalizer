@@ -7,3 +7,11 @@
   height: 496px;
   margin: 0 auto;
 }
+
+@media screen and (max-width: 1439px) {
+  .search__container {
+    width: 448px;
+    height: 336px;
+    margin: 0 auto;
+  }
+}

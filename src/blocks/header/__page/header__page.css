@@ -23,3 +23,9 @@
 .header__page:last-of-type {
   margin-right: 0;
 }
+
+@media screen and (max-width: 1439px) {
+  .header__page {
+    margin-bottom: 18px;
+  }
+}

@@ -7,3 +7,15 @@
   color: #1a1b22;
   margin: 0 0 16px 0;
 }
+
+@media screen and (max-width: 1439px) {
+  .result-card__name {
+    width: 192px;
+    height: 72px;
+    font-size: 22px;
+    line-height: 24px;
+    margin: 0 0 10px 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

@@ -5,3 +5,9 @@
   align-items: center;
   margin: 0 auto 64px auto;
 }
+
+@media screen and (max-width: 1439px) {
+  .result__page-container {
+    margin: 0 auto 32px auto;
+  }
+}

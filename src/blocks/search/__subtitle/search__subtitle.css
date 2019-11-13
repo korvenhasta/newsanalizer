@@ -9,3 +9,11 @@
   margin: 0 0 64px 0;
   color: white;
 }
+
+@media screen and (max-width: 1439px) {
+  .search__subtitle {
+    width: 452px;
+    height: 72px;
+    margin: 0 0 24px 0;
+  }
+}

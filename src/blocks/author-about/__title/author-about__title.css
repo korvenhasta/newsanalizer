@@ -1,3 +1,11 @@
 .author-about__title {
 
 }
+
+@media screen and (max-width: 1439px) {
+  .author-about__title {
+    font-size: 30px;
+    line-height: 40px;
+    margin: 42px auto 0 0;
+  }
+}

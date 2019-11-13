@@ -1,4 +1,5 @@
 .result-card__annotation {
+  width: 352px;
   font-family: "Roboto";
   font-style: normal;
   font-weight: normal;
@@ -7,5 +8,10 @@
   color: #1a1b22;
   margin: 0;
   padding: 0;
+}
 
+@media screen and (max-width: 1439px) {
+  .result-card__annotation {
+    width: 192px;
+  }
 }

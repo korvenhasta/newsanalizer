@@ -9,3 +9,9 @@
   color: #b6bcbf;
   margin: 10px 0 24px 0;
 }
+
+@media screen and (max-width: 1439px) {
+  .result-card__source {
+    margin: 12px 0 16px 0;
+  }
+}

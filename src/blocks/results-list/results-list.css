@@ -6,3 +6,10 @@
   justify-items: left;
   margin: 0 auto 64px auto;
 }
+
+@media screen and (max-width: 1439px) {
+  .results-list {
+    grid-gap: 8px 8px;
+    margin: 0 auto 22px auto;
+  }
+}

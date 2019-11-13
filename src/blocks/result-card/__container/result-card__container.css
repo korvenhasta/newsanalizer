@@ -1,6 +1,14 @@
 .result-card__container {
+  width: 352px;
   height: 194px;
   margin: 0;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+@media screen and (max-width: 1439px) {
+  .result-card__container {
+    width: 192px;
+    height: 170px;
+  }
 }
