@@ -1,6 +1,7 @@
 @import url("./__image/result-card__image.css");
 @import url("./__description/result-card__description.css");
 @import url("./__date/result-card__date.css");
+@import url("./__container/result-card__container.css");
 @import url("./__name/result-card__name.css");
 @import url("./__annotation/result-card__annotation.css");
 @import url("./__source/result-card__source.css");

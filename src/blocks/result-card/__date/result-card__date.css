@@ -1,5 +1,4 @@
 .result-card__date {
-  width: 90%;
   font-family: "Source Sans Pro";
   font-style: normal;
   font-weight: normal;
@@ -8,5 +7,5 @@
   display: flex;
   align-items: center;
   color: #b6bcbf;
-  margin: 0 auto 12px auto;
+  margin: 0 0 12px 0;
 }

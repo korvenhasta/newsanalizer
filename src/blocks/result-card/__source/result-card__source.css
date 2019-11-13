@@ -1,5 +1,4 @@
 .result-card__source {
-  width: 90%;
   font-family: "Roboto Slab";
   font-style: normal;
   font-weight: bold;
@@ -8,5 +7,5 @@
   letter-spacing: 0.4px;
   text-transform: uppercase;
   color: #b6bcbf;
-  margin: 0;
+  margin: 10px 0 24px 0;
 }

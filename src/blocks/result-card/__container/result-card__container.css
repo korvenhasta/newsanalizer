@@ -1,0 +1,6 @@
+.result-card__container {
+  height: 194px;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

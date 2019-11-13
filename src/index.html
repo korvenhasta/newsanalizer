@@ -47,14 +47,14 @@
     <div class="preloader__container">
         <i class="preloader__circle"></i>
     </div>
-    <p class="preloader__message preloader__message_not-found">
+    <p class="preloader__message">
         Идет поиск новостей...
     </p>
     <img class="preloader__not-found" src="<%=require('./images/not-found.svg')%>" alt="Картинка с грустным смайликом">
     <h3 class="preloader__title">
         Ничего не найдено
     </h3>
-    <p class="preloader__message">
+    <p class="preloader__message  preloader__message_not-found">
         К сожалению по вашему запросу ничего не найдено.
     </p>
   </section>
@@ -77,11 +77,13 @@
         <div class="result-card__image"></div>
         <div class="result-card__description">
           <p class="result-card__date">2 августа, 2019</p>
-          <h3 class="result-card__name">Национальное достояние – парки</h3>
-          <p class="result-card__annotation">В 2016 году Америка отмечала важный юбилей:
-            сто лет назад здесь начала складываться система национальных парков – охраняемых территорий,
-            где и сегодня каждый может приобщиться к природе.
-          </p>
+          <div class="result-card__container">
+            <h3 class="result-card__name">Национальное достояние – парки</h3>
+            <p class="result-card__annotation">В 2016 году Америка отмечала важный юбилей:
+              сто лет назад здесь начала складываться система национальных парков – охраняемых территорий,
+              где и сегодня каждый может приобщиться к природе.
+            </p>
+          </div>
           <p class="result-card__source">Лента.ру</p>
         </div>
       </div>
@@ -90,10 +92,12 @@
           <div class="result-card__image"></div>
           <div class="result-card__description">
             <p class="result-card__date">2 августа, 2019</p>
-            <h3 class="result-card__name">Лесные огоньки: история одной фотографии</h3>
-            <p class="result-card__annotation">Фотограф отвлеклась от освещения суровой политической реальности Мексики,
-              чтобы запечатлеть ускользающую красоту одного из местных чудес природы.
-            </p>
+            <div class="result-card__container">
+              <h3 class="result-card__name">Лесные огоньки: история одной фотографии</h3>
+              <p class="result-card__annotation">Фотограф отвлеклась от освещения суровой политической реальности Мексики,
+                чтобы запечатлеть ускользающую красоту одного из местных чудес природы.
+              </p>
+            </div>
             <p class="result-card__source">Медуза</p>
           </div>
         </div>
@@ -102,10 +106,12 @@
             <div class="result-card__image"></div>
             <div class="result-card__description">
               <p class="result-card__date">2 августа, 2019</p>
-              <h3 class="result-card__name">«Первозданная тайга»: новый фотопроект Игоря Шпиленка</h3>
-              <p class="result-card__annotation">Знаменитый фотограф снимает первозданные леса России,
-                чтобы рассказать о необходимости их сохранения. В этот раз он отправился в Двинско-Пинежскую тайгу, где...
-              </p>
+              <div class="result-card__container">
+                <h3 class="result-card__name">«Первозданная тайга»: новый фотопроект Игоря Шпиленка</h3>
+                <p class="result-card__annotation">Знаменитый фотограф снимает первозданные леса России,
+                  чтобы рассказать о необходимости их сохранения. В этот раз он отправился в Двинско-Пинежскую тайгу, где необходимости их сохранения. В этот раз он отправился
+                </p>
+              </div>
               <p class="result-card__source">Риа</p>
             </div>
           </div>

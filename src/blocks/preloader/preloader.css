@@ -5,6 +5,9 @@
 @import url("./__not-found/preloader__not-found.css");
 
 .preloader {
+  display: none;
   margin: 0;
   background: #f5f6f7;
+  padding-top: 80px;
+  padding-bottom: 80px;
 }

@@ -1,4 +1,5 @@
 .preloader__title {
+  display: none;
   font-family: "Roboto Slab";
   font-style: normal;
   font-weight: normal;
