@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>NewsAnalizer</title>
   <link rel="stylesheet" href="./vendor/preloader.css">
-  <link rel="stylesheet" href="./pages/main.a734938038147573362f.css">
+  <link rel="stylesheet" href="./pages/main.07cc00076c1ae28ff680.css">
 </head>
 <body class="root">
 
@@ -31,10 +31,12 @@
           <h1 class="search__title">Что в мире творится?</h1>
           <h2 class="search__subtitle">Введите в поиске любую тему и узнайте, насколько популярной она была в новостях за прошедшую неделю.</h2>
           <figcaption class="search__caption">Изображение экрана смартфона с приложением, которое показывает статистику</figcaption>
-          <form class="search__form" name="search">
-            <input type="text" name="topic" class="search__input" placeholder="Введите тему новости">
-          </form>
-          <button class="button search__button">Искать</button>
+          <div class="search__button-container">
+            <form class="search__form" name="search">
+              <input type="text" name="topic" class="search__input" placeholder="Введите тему новости">
+            </form>
+            <button class="button search__button">Искать</button>
+          </div>>
       </figure>
     </section>
     <!--Search конец-->
@@ -42,6 +44,9 @@
 
   <!--Блок preloader-->
   <section class="preloader">
+    <div class="preloader__container">
+        <i class="preloader__circle"></i>
+    </div>
     <p class="preloader__message">
         Идет поиск новостей...
     </p>
@@ -49,7 +54,7 @@
     <h3 class="preloader__title">
         Ничего не найдено
     </h3>
-    <p class="preloader__message">
+    <p class="preloader__message  preloader__message_not-found">
         К сожалению по вашему запросу ничего не найдено.
     </p>
   </section>
@@ -72,11 +77,13 @@
         <div class="result-card__image"></div>
         <div class="result-card__description">
           <p class="result-card__date">2 августа, 2019</p>
-          <h3 class="result-card__name">Национальное достояние – парки</h3>
-          <p class="result-card__annotation">В 2016 году Америка отмечала важный юбилей:
-            сто лет назад здесь начала складываться система национальных парков – охраняемых территорий,
-            где и сегодня каждый может приобщиться к природе.
-          </p>
+          <div class="result-card__container">
+            <h3 class="result-card__name">Национальное достояние – парки</h3>
+            <p class="result-card__annotation">В 2016 году Америка отмечала важный юбилей:
+              сто лет назад здесь начала складываться система национальных парков – охраняемых территорий,
+              где и сегодня каждый может приобщиться к природе.
+            </p>
+          </div>
           <p class="result-card__source">Лента.ру</p>
         </div>
       </div>
@@ -85,10 +92,12 @@
           <div class="result-card__image"></div>
           <div class="result-card__description">
             <p class="result-card__date">2 августа, 2019</p>
-            <h3 class="result-card__name">Лесные огоньки: история одной фотографии</h3>
-            <p class="result-card__annotation">Фотограф отвлеклась от освещения суровой политической реальности Мексики,
-              чтобы запечатлеть ускользающую красоту одного из местных чудес природы.
-            </p>
+            <div class="result-card__container">
+              <h3 class="result-card__name">Лесные огоньки: история одной фотографии</h3>
+              <p class="result-card__annotation">Фотограф отвлеклась от освещения суровой политической реальности Мексики,
+                чтобы запечатлеть ускользающую красоту одного из местных чудес природы.
+              </p>
+            </div>
             <p class="result-card__source">Медуза</p>
           </div>
         </div>
@@ -97,10 +106,12 @@
             <div class="result-card__image"></div>
             <div class="result-card__description">
               <p class="result-card__date">2 августа, 2019</p>
-              <h3 class="result-card__name">«Первозданная тайга»: новый фотопроект Игоря Шпиленка</h3>
-              <p class="result-card__annotation">Знаменитый фотограф снимает первозданные леса России,
-                чтобы рассказать о необходимости их сохранения. В этот раз он отправился в Двинско-Пинежскую тайгу, где...
-              </p>
+              <div class="result-card__container">
+                <h3 class="result-card__name">«Первозданная тайга»: новый фотопроект Игоря Шпиленка</h3>
+                <p class="result-card__annotation">Знаменитый фотограф снимает первозданные леса России,
+                  чтобы рассказать о необходимости их сохранения. В этот раз он отправился в Двинско-Пинежскую тайгу, где необходимости их сохранения. В этот раз он отправился
+                </p>
+              </div>
               <p class="result-card__source">Риа</p>
             </div>
           </div>
@@ -143,6 +154,6 @@
       </a>
     </div>
   </footer>
-  <script src="main.66f05de25e0eff5ac46d.js"></script>
+  <script type="module" src="main.66f05de25e0eff5ac46d.js"></script>
 </body>
 </html>

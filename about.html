@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>NewsAnalizer</title>
-    <link rel="stylesheet" href="./pages/about.16f87dc101b37692c2fa.css">
+    <link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.core.min.css">
+    <link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.theme.min.css">
+    <link rel="stylesheet" href="./pages/about.20e9af51449f1eaf83fb.css">
 </head>
 <body class="root">
   <!--Блок Header-->
@@ -117,7 +119,69 @@
         <a class="link-nav history__link-nav" href="https://github.com/korvenhasta">
           Открыть в Github
           <img class="result__arrow" src="./images/arrow.svg" alt="Стрелка вправо">
-        </a> <!--TODO добавь ссылку на paper-->
+        </a>
+      </div>
+      <div class="glide slider">
+        <div class="glide__track" data-glide-el="track">
+          <ul class="glide__slides">
+            <li class="glide__slide">
+              <div class="slider__card">
+                <time class="slider__date" datetime="2019-08-14">14 августа, 2019</time>
+                <div class="slider__user">
+                  <img class="slider__user-avatar" src="./images/image-01.png" alt="Аватар пользователя">
+                  <div class="slider__user-info">
+                    <h3 class="slider__user-name">Антон Долинин</h3>
+                    <p class="slider__user-email">anton@yandex.ru</p>
+                  </div>
+                </div>
+                <p class="slider__user-comment">Emmet (formerly Zen Coding) is a web- developer’s toolkit that can greatly improve your HTML & CSS workflow.</p>
+              </div>
+            </li>
+
+            <li class="glide__slide">
+              <div class="slider__card">
+                  <time class="slider__date" datetime="2019-08-14">14 августа, 2019</time>
+                  <div class="slider__user">
+                    <img class="slider__user-avatar" src="./images/image-04.png" alt="Аватар пользователя">
+                    <div class="slider__user-info">
+                      <h3 class="slider__user-name">Мария Фёдорова</h3>
+                      <p class="slider__user-email">mariiifed@yandex.ru</p>
+                    </div>
+                  </div>
+                  <p class="slider__user-comment">You can install this plugin directly from NetBeans Plugin Portal: in NetBeans, open
+                     Tools > Plugins > Available plugins and find and install Emmet plugin.</p>
+                </div>
+            </li>
+
+            <li class="glide__slide">
+              <div class="slider__card">
+                  <time class="slider__date" datetime="2019-08-14">14 августа, 2019</time>
+                  <div class="slider__user">
+                    <img class="slider__user-avatar" src="./images/image-03.png" alt="Аватар пользователя">
+                    <div class="slider__user-info">
+                      <h3 class="slider__user-name">Инга Иванова</h3>
+                      <p class="slider__user-email">ingaiva@yandex.ru</p>
+                    </div>
+                  </div>
+                  <p class="slider__user-comment">With Emmet, you can type CSS-like expressions that can be dynamically parsed, and produce output depending on what you type in the abb...</p>
+                </div>
+            </li>
+          </ul>
+          <div class="glide__arrows" data-glide-el="controls">
+            <button class="glide__arrow glide__arrow--left slider__arrow slider__arrow_left" data-glide-dir="<">
+              <img class="slider__arrow-pic" src="./images/slider-control.svg" alt="Изображение стрелки на слайдере">
+            </button>
+            <button class="glide__arrow glide__arrow--right slider__arrow slider__arrow_right" data-glide-dir=">">
+              <img class="slider__arrow-pic" src="./images/slider-control.svg" alt="Изображение стрелки на слайдере">
+            </button>
+          </div>
+
+          <div class="glide__bullets slider__bullets" data-glide-el="controls[nav]">
+            <button class="glide__bullet slider__bullet" data-glide-dir="=0"></button>
+            <button class="glide__bullet slider__bullet" data-glide-dir="=1"></button>
+            <button class="glide__bullet slider__bullet" data-glide-dir="=2"></button>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -141,6 +205,6 @@
   </footer>
   <!--Конец Футер-->
 
-  <script src="about.c6b68b68b55cd3ac59fa.js"></script>
+  <script type="module" src="about.483326a628faa3aa79e8.js"></script>
 </body>
 </html>
