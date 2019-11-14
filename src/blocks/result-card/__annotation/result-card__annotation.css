@@ -1,5 +1,5 @@
 .result-card__annotation {
-  width: 352px;
+  width: 100%;
   font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: normal;
@@ -12,6 +12,15 @@
 
 @media screen and (max-width: 1439px) {
   .result-card__annotation {
-    width: 192px;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .result-card__annotation {
+    width: 256px;
+    height: 88px;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }

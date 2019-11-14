@@ -9,3 +9,9 @@
     height: 238px;
   }
 }
+
+@media screen and (max-width: 767px) {
+  .result-card__description {
+    height: 235px;
+  }
+}

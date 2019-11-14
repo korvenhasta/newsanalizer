@@ -11,3 +11,11 @@
     margin: 0 auto 32px auto;
   }
 }
+
+@media screen and (max-width: 767px) {
+  .result__page-container {
+    flex-direction: column;
+    margin: 0 auto 40px auto;
+    align-items: flex-start;
+  }
+}

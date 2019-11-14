@@ -21,3 +21,10 @@
     padding-bottom: 40px;
   }
 }
+
+@media screen and (max-width: 767px) {
+  .analitics {
+    padding-top: 24px;
+    padding-bottom: 12px;
+  }
+}

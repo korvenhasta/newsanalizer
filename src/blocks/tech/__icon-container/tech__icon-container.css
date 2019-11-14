@@ -12,3 +12,9 @@
     margin: 13px 64px 0 0;
   }
 }
+
+@media screen and (max-width: 767px) {
+  .tech__icon-container {
+    margin: 0 0 41px 0;
+  }
+}

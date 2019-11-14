@@ -12,6 +12,11 @@
   .search__container {
     width: 448px;
     height: 336px;
-    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .search__container {
+    width: 285px;
   }
 }

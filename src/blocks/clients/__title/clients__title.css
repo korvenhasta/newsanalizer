@@ -9,3 +9,11 @@
     margin: 0 0 16px 0;
   }
 }
+
+@media screen and (max-width: 767px) {
+  .clients__title {
+    font-size: 30px;
+    line-height: 40px;
+    margin: 0 0 16px 0;
+  }
+}

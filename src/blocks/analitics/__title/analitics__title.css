@@ -8,3 +8,10 @@
   color: #1A1B22;
   margin: 0 auto 48px auto;
 }
+
+@media screen and (max-width: 767px) {
+  .analitics__title {
+    font-size: 22px;
+    margin: 0 auto 16px auto;
+  }
+}

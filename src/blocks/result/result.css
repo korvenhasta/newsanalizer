@@ -17,3 +17,10 @@
     padding-bottom: 40px;
   }
 }
+
+@media screen and (max-width: 767px) {
+  .result {
+    padding-top: 32px;
+    padding-bottom: 44px;
+  }
+}

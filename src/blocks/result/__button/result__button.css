@@ -20,3 +20,11 @@
     height: 56px;
   }
 }
+
+@media screen and (max-width: 767px) {
+  .result__button {
+    width: 288px;
+    height: 56px;
+    margin: 13px auto 0 auto;
+  }
+}

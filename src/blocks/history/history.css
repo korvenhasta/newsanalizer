@@ -16,3 +16,10 @@
     padding-bottom: 64px;
   }
 }
+
+@media screen and (max-width: 767px) {
+  .history {
+    padding-top: 32px;
+    padding-bottom: 136px;
+  }
+}

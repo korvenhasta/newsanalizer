@@ -32,7 +32,10 @@ new Glide('.glide', {
       perView: 1,
       startAt: 0,
       focusAt: 0,
-      peek: 0,
+      peek: {
+        before: 0,
+        after: 32
+      },
       gap: 8
     }
   }

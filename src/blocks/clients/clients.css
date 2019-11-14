@@ -12,3 +12,9 @@
     margin: 29px auto 36px auto;
   }
 }
+
+@media screen and (max-width: 767px) {
+  .clients {
+    margin: 16px auto 16px auto;
+  }
+}

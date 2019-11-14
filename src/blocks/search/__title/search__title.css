@@ -14,9 +14,18 @@
   .search__title {
     font-size: 36px;
     line-height: 40px;
-    color: white;
     width: 385px;
     height: 80px;
     margin: 40px 0 16px 0;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .search__title {
+    font-size: 36px;
+    line-height: 40px;
+    width: 285px;
+    height: 80px;
+    margin: 30px 0 56px 0;
   }
 }

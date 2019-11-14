@@ -3,3 +3,9 @@
   height: 3px;
   background: #ffffff;
 }
+
+@media screen and (max-width: 767px) {
+  .header__stroke_color_white {
+    width: 61px;
+  }
+}

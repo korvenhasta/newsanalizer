@@ -11,3 +11,9 @@
   color: #1a1b22;
   margin: 28px 0 28px 0;
 }
+
+@media screen and (max-width: 767px) {
+  .analitics__date {
+    margin: 0 auto 24px 0;
+  }
+}

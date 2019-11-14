@@ -22,3 +22,9 @@
   background: #2f71e5;
   margin: 28px 0 28px 0;
 }
+
+@media screen and (max-width: 767px) {
+  .analitics__bar {
+    margin: 0 auto 24px 0;
+  }
+}

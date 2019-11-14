@@ -16,3 +16,10 @@
     margin: 40px auto 0 auto;
   }
 }
+
+@media screen and (max-width: 767px) {
+  .author-about {
+    flex-direction: column;
+    margin: 20px auto 44px auto;
+  }
+}

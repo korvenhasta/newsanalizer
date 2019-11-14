@@ -3,3 +3,9 @@
   justify-content: flex-start;
   margin: 0 auto 16px 24px;
 }
+
+@media screen and (max-width: 767px) {
+  .slider__user {
+    margin: 0 auto 16px 16px;
+  }
+}

@@ -11,3 +11,10 @@
   text-overflow: ellipsis;
 }
 
+@media screen and (max-width: 767px) {
+  .slider__user-comment {
+    height: 88px;
+    margin: 0 16px 26px 16px;
+  }
+}
+

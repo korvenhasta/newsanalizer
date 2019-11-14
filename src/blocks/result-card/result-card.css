@@ -23,3 +23,10 @@
     height: 420px;
   }
 }
+
+@media screen and (max-width: 767px) {
+  .result-card {
+    width: 288px;
+    height: 446px;
+  }
+}

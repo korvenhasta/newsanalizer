@@ -7,3 +7,9 @@
   color: #1a1b22;
   margin: 0;
 }
+
+@media screen and (max-width: 767px) {
+  .slider__user-name {
+    font-size: 20px;
+  }
+}
