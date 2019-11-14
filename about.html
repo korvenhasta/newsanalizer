@@ -10,7 +10,7 @@
   <title>NewsAnalizer</title>
   <link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.core.min.css">
   <link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.theme.min.css">
-  <link rel="stylesheet" href="./pages/about.875af8dc17f3b73e3f2a.css">
+  <link rel="stylesheet" href="./pages/about.660545d863bf3d986d55.css">
   <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
 </head>
 
@@ -18,10 +18,10 @@
   <!--Блок Header-->
   <header class="header header_color_other-pages">
     <div class="header__container">
-      <a href="/index.html" class="header__link header__title header__title_color_black">NewsAnalyzer</a>
+      <a href="./index.html" class="header__link header__title header__title_color_black">NewsAnalyzer</a>
       <div class="header__page-container">
-        <a class="header__page header__page_inactive" href="/index.html">Главная</a>
-        <a class="header__page header__page_active header__page_color_black" href="/about.html">О проекте</a>
+        <a class="header__page header__page_inactive" href="./index.html">Главная</a>
+        <a class="header__page header__page_active header__page_color_black" href="./about.html">О&nbsp;проекте</a>
         <div class="header__page_blank"></div>
         <div class="header__stroke header__stroke_color_black"></div>
       </div>
@@ -101,7 +101,7 @@
   <!--tech конец-->
 
   <!--Блок Об авторе.-->
-  <section class="author-about">
+  <section class="author-about author-about_about-page">
       <img class="author-about__image" src="./images/image-03.png" alt="Аватар автора сайта">
       <div class="author-about__container-text">
         <h2 class="h2-title author-about__title">Об авторе</h2>
@@ -174,6 +174,38 @@
                   parsed, and produce output depending on what you type in the abb...</p>
               </div>
             </li>
+            <li class="glide__slide">
+                <div class="slider__card">
+                  <time class="slider__date" datetime="2019-08-14">14 августа, 2019</time>
+                  <div class="slider__user">
+                    <img class="slider__user-avatar" src="./images/image-03.png"
+                      alt="Аватар пользователя">
+                    <div class="slider__user-info">
+                      <h3 class="slider__user-name">Инга Иванова</h3>
+                      <p class="slider__user-email">ingaiva@yandex.ru</p>
+                    </div>
+                  </div>
+                  <p class="slider__user-comment">With Emmet, you can type CSS-like expressions that can be dynamically
+                    parsed, and produce output depending on what you type in the abb...</p>
+                </div>
+              </li>
+
+              <li class="glide__slide">
+                  <div class="slider__card">
+                    <time class="slider__date" datetime="2019-08-14">14 августа, 2019</time>
+                    <div class="slider__user">
+                      <img class="slider__user-avatar" src="./images/image-03.png"
+                        alt="Аватар пользователя">
+                      <div class="slider__user-info">
+                        <h3 class="slider__user-name">Инга Иванова</h3>
+                        <p class="slider__user-email">ingaiva@yandex.ru</p>
+                      </div>
+                    </div>
+                    <p class="slider__user-comment">With Emmet, you can type CSS-like expressions that can be dynamically
+                      parsed, and produce output depending on what you type in the abb...</p>
+                  </div>
+                </li>
+
           </ul>
 
           <div class="glide__arrows" data-glide-el="controls">
@@ -191,6 +223,8 @@
             <button class="glide__bullet slider__bullet" data-glide-dir="=0"></button>
             <button class="glide__bullet slider__bullet" data-glide-dir="=1"></button>
             <button class="glide__bullet slider__bullet" data-glide-dir="=2"></button>
+            <button class="glide__bullet slider__bullet slider__bullet_hidden" data-glide-dir="=3"></button>
+            <button class="glide__bullet slider__bullet slider__bullet_hidden" data-glide-dir="=4"></button>
           </div>
 
         </div>
@@ -199,30 +233,32 @@
 
   <!--Блок Футер-->
   <footer class="footer">
-      <p class="footer__copyright">&copy; 2019. Kenina Marina</p>
-      <ul class="footer__container">
-        <li>
-          <a class="footer__link-text" href="/index.html">Главная</a>
-        </li>
-        <li>
-          <a class="footer__link-text" href="/about.html">О проекте</a>
-        </li>
-        <li>
-          <a class="footer__link-text" href="https://praktikum.yandex.ru/" target="_blank">Яндекс.Практикум</a>
-        </li>
-      </ul>
-      <div class="footer__container">
-        <a class="footer__icon" href="https://github.com/korvenhasta" target="_blank">
-          <img class="footer__image" src="./images/github.svg" alt="Ссылка на профиль в Github">
-        </a>
-        <a class="footer__icon" href="https://www.facebook.com/marina.zykova.35" target="_blank">
-          <img class="footer__image" src="./images/facebook.svg" alt="Ссылка на профиль в Фейсбук">
-        </a>
+      <div class="footer__list-container">
+        <p class="footer__copyright">&copy; 2019. Kenina Marina</p>
+        <ul class="footer__container">
+          <li>
+            <a class="footer__link-text" href="./index.html">Главная</a>
+          </li>
+          <li>
+            <a class="footer__link-text" href="./about.html">О проекте</a>
+          </li>
+          <li>
+            <a class="footer__link-text" href="https://praktikum.yandex.ru/" target="_blank">Яндекс.Практикум</a>
+          </li>
+        </ul>
+        <div class="footer__container">
+          <a class="footer__icon" href="https://github.com/korvenhasta" target="_blank">
+            <img class="footer__image" src="./images/github.svg" alt="Ссылка на профиль в Github">
+          </a>
+          <a class="footer__icon" href="https://www.facebook.com/marina.zykova.35" target="_blank">
+            <img class="footer__image" src="./images/facebook.svg" alt="Ссылка на профиль в Фейсбук">
+          </a>
+        </div>
       </div>
     </footer>
   <!--Конец Футер-->
 
-  <script type="module" src="about.483326a628faa3aa79e8.js"></script>
+  <script type="module" src="about.95e1e21e00572f7929c3.js"></script>
 </body>
 
 </html>
