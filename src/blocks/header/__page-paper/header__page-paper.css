@@ -1,5 +1,5 @@
 .header__page-paper {
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
@@ -17,4 +17,10 @@
 
 .header__page-paper:last-of-type {
   margin-right: 0;
+}
+
+@media screen and (max-width: 1439px) {
+  .header__page-paper {
+    margin-bottom: 15px;
+  }
 }

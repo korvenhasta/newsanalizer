@@ -3,7 +3,7 @@ const presets = [
   "@babel/env",
   {
     targets: {
-      edge: "17",
+      edge: "15",
       firefox: "60",
       chrome: "64",
       safari: "11.1",

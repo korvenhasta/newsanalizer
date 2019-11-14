@@ -1,0 +1,10 @@
+.summary__title {
+  margin: 80px 2px 24px 0;
+}
+
+@media screen and (max-width: 1439px) {
+  .summary__title {
+    margin: 64px 2px 24px 0;
+  }
+}
+

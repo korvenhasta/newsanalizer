@@ -1,5 +1,5 @@
 .footer__link-text {
-  font-family: "Source Sans Pro";
+  font-family: "Source Sans Pro", sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
@@ -8,10 +8,6 @@
   color: #1A1B22;
   text-decoration: none;
   margin-right: 40px;
-}
-
-.footer__link-text:last-of-type{
-  margin-right: 0;
 }
 
 .footer__link-text:hover {

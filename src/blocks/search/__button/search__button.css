@@ -16,6 +16,11 @@
   cursor: pointer;
 }
 
+.search__button:focus{
+  background: #2a65cc;
+  cursor: pointer;
+}
+
 @media screen and (max-width: 1439px) {
   .search__button {
     width: 160px;

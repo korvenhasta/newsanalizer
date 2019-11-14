@@ -1,41 +1,47 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>NewsAnalizer</title>
-    <link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.core.min.css">
-    <link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.theme.min.css">
-    <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.about.css%>">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="Cервис для анализа происходящих в мире событий">
+  <meta name="author" content="Марина Кенина">
+  <title>NewsAnalizer</title>
+  <link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.core.min.css">
+  <link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.theme.min.css">
+  <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.about.css%>">
+  <link rel="shortcut icon" href="<%=require('./images/favicon.ico')%>" type="image/x-icon">
 </head>
+
 <body class="root">
   <!--Блок Header-->
   <header class="header header_color_other-pages">
-    <a href="/index.html" class="header__link">
-      <p class="header__title header__title_color_black">NewsAnalyzer</p>
-    </a>
-    <div class="header__page-container">
+    <div class="header__container">
+      <a href="/index.html" class="header__link header__title header__title_color_black">NewsAnalyzer</a>
+      <div class="header__page-container">
         <a class="header__page header__page_inactive" href="/index.html">Главная</a>
         <a class="header__page header__page_active header__page_color_black" href="/about.html">О проекте</a>
         <div class="header__page_blank"></div>
         <div class="header__stroke header__stroke_color_black"></div>
-
+      </div>
     </div>
   </header>
   <!--Header конец-->
 
   <!--Блок clients-->
   <section class="clients">
-    <div class="clients__container">
+    <article class="clients__container">
       <h2 class="h2-title clients__title">Клиентам</h2>
       <p class="p-text clients__text">
-        Этот сайт — дипломный проект студента Яндкс.Практикума. Его цель — показать, чему научился студент, и какими технологиями владеет.
+        Этот сайт — дипломный проект студента Яндекс.Практикума. Его цель — показать, чему научился студент, и какими
+        технологиями владеет.
       </p>
       <p class="p-text clients__text">
         Вёртска сайта выполнена по методологии БЭМ.
         Это делает сайт гибким и масштабируемым.
-        Кроме того, добавлять новые страницы и функциальность проще и быстрее, чем в проектах, выполненных по другим методологиям.
+        Кроме того, добавлять новые страницы и функциальность проще и быстрее, чем в проектах, выполненных по другим
+        методологиям.
         Также сайт проще и дешевле поддерживать.
       </p>
       <p class="p-text clients__text">
@@ -50,9 +56,10 @@
         А значит потенциальная аудитория возрастает.
       </p>
       <p class="p-text clients__text">
-        Проект был проверен экспертами Яндекс.Практикума. И если вашему бизесу нужен сайт, мы рекомендуем обратиться к этому студенту.
+        Проект был проверен экспертами Яндекс.Практикума. И если вашему бизесу нужен сайт, мы рекомендуем обратиться к
+        этому студенту.
       </p>
-    </div>
+    </article>
   </section>
   <!--clients конец-->
 
@@ -62,34 +69,32 @@
       <h2 class="h2-title tech__title">Используемые технологии</h2>
       <div class="tech__icons-container">
         <div class="tech__icon-container">
-          <p class="p-text p-text_tech">
+          <h3 class="p-text p-text_tech">
             HTML
-          </p>
-          <!--<div class="tech__icon-bg tech__icon-bg_html">-->
+          </h3>
           <img class="tech__icon-img" src="<%=require('./images/html.svg')%>" alt="Иконка для HTML">
         </div>
 
         <div class="tech__icon-container">
-          <p class="p-text p-text_tech">
+          <h3 class="p-text p-text_tech">
             CSS
-          </p>
+          </h3>
           <img class="tech__icon-img" src="<%=require('./images/css.svg')%>" alt="Иконка для CSS">
         </div>
 
         <div class="tech__icon-container">
-          <p class="p-text p-text_tech">
+          <h3 class="p-text p-text_tech">
             Java Script
-          </p>
+          </h3>
           <img class="tech__icon-img" src="<%=require('./images/js.svg')%>" alt="Иконка для Java Script">
         </div>
 
         <div class="tech__icon-container">
-          <p class="p-text p-text_tech">
+          <h3 class="p-text p-text_tech">
             Webpack
-          </p>
+          </h3>
           <img class="tech__icon-img" src="<%=require('./images/webpack.svg')%>" alt="Иконка для Webpack">
         </div>
-
       </div>
     </div>
   </section>
@@ -97,26 +102,23 @@
 
   <!--Блок Об авторе.-->
   <section class="author-about">
-    <div class="author-about__container">
-      <div class="author-about__image"></div>
+      <img class="author-about__image" src="<%=require('./images/image-03.png')%>" alt="Аватар автора сайта">
       <div class="author-about__container-text">
         <h2 class="h2-title author-about__title">Об авторе</h2>
         <p class="p-text author-about__text">
-            Это блок с описаением автора проекта.
-            Здесь следует указать, как вас зовут, чем вы занимаетесь, какими технологиями разработки владете.<br>
-            Также можно рассказать о процессе обучения в Практикуме, чему вы тут научились, и чем можете помочь потенциальным заказчикам.
-            Если хотите, оставьте свои контакты: email и телефон. Так заказчики смогут с вами связаться.
+          Это блок с описаением автора проекта. Здесь следует указать, как вас зовут, чем вы занимаетесь, какими
+          технологиями разработки владете.
+          Также можно рассказать о процессе обучения в Практикуме, чему вы тут научились, и чем можете помочь
+          потенциальным заказчикам.
         </p>
       </div>
-    </div>
   </section>
   <!--Об авторе конец-->
 
   <section class="history">
-    <div class="history__container">
       <div class="history__title-container">
         <h2 class="h2-title history__title">История коммитов из GitHub</h2>
-        <a class="link-nav history__link-nav" href="https://github.com/korvenhasta">
+        <a class="link-nav history__link-nav" href="https://github.com/korvenhasta/newsanalizer" target="_blank">
           Открыть в Github
           <img class="result__arrow" src="<%=require('./images/arrow.svg')%>" alt="Стрелка вправо">
         </a>
@@ -128,51 +130,60 @@
               <div class="slider__card">
                 <time class="slider__date" datetime="2019-08-14">14 августа, 2019</time>
                 <div class="slider__user">
-                  <img class="slider__user-avatar" src="<%=require('./images/image-01.png')%>" alt="Аватар пользователя">
+                  <img class="slider__user-avatar" src="<%=require('./images/image-01.png')%>"
+                    alt="Аватар пользователя">
                   <div class="slider__user-info">
                     <h3 class="slider__user-name">Антон Долинин</h3>
                     <p class="slider__user-email">anton@yandex.ru</p>
                   </div>
                 </div>
-                <p class="slider__user-comment">Emmet (formerly Zen Coding) is a web- developer’s toolkit that can greatly improve your HTML & CSS workflow.</p>
+                <p class="slider__user-comment">Emmet (formerly Zen Coding) is a web- developer’s toolkit that can
+                  greatly improve your HTML & CSS workflow.</p>
               </div>
             </li>
 
             <li class="glide__slide">
               <div class="slider__card">
-                  <time class="slider__date" datetime="2019-08-14">14 августа, 2019</time>
-                  <div class="slider__user">
-                    <img class="slider__user-avatar" src="<%=require('./images/image-04.png')%>" alt="Аватар пользователя">
-                    <div class="slider__user-info">
-                      <h3 class="slider__user-name">Мария Фёдорова</h3>
-                      <p class="slider__user-email">mariiifed@yandex.ru</p>
-                    </div>
+                <time class="slider__date" datetime="2019-08-14">14 августа, 2019</time>
+                <div class="slider__user">
+                  <img class="slider__user-avatar" src="<%=require('./images/image-04.png')%>"
+                    alt="Аватар пользователя">
+                  <div class="slider__user-info">
+                    <h3 class="slider__user-name">Мария Фёдорова</h3>
+                    <p class="slider__user-email">mariiifed@yandex.ru</p>
                   </div>
-                  <p class="slider__user-comment">You can install this plugin directly from NetBeans Plugin Portal: in NetBeans, open
-                     Tools > Plugins > Available plugins and find and install Emmet plugin.</p>
                 </div>
+                <p class="slider__user-comment">You can install this plugin directly from NetBeans Plugin Portal: in
+                  NetBeans, open
+                  Tools > Plugins > Available plugins and find and install Emmet plugin.</p>
+              </div>
             </li>
 
             <li class="glide__slide">
               <div class="slider__card">
-                  <time class="slider__date" datetime="2019-08-14">14 августа, 2019</time>
-                  <div class="slider__user">
-                    <img class="slider__user-avatar" src="<%=require('./images/image-03.png')%>" alt="Аватар пользователя">
-                    <div class="slider__user-info">
-                      <h3 class="slider__user-name">Инга Иванова</h3>
-                      <p class="slider__user-email">ingaiva@yandex.ru</p>
-                    </div>
+                <time class="slider__date" datetime="2019-08-14">14 августа, 2019</time>
+                <div class="slider__user">
+                  <img class="slider__user-avatar" src="<%=require('./images/image-03.png')%>"
+                    alt="Аватар пользователя">
+                  <div class="slider__user-info">
+                    <h3 class="slider__user-name">Инга Иванова</h3>
+                    <p class="slider__user-email">ingaiva@yandex.ru</p>
                   </div>
-                  <p class="slider__user-comment">With Emmet, you can type CSS-like expressions that can be dynamically parsed, and produce output depending on what you type in the abb...</p>
                 </div>
+                <p class="slider__user-comment">With Emmet, you can type CSS-like expressions that can be dynamically
+                  parsed, and produce output depending on what you type in the abb...</p>
+              </div>
             </li>
           </ul>
+
           <div class="glide__arrows" data-glide-el="controls">
             <button class="glide__arrow glide__arrow--left slider__arrow slider__arrow_left" data-glide-dir="<">
-              <img class="slider__arrow-pic" src="<%=require('./images/slider-control.svg')%>" alt="Изображение стрелки на слайдере">
+              <img class="slider__arrow-pic" src="<%=require('./images/slider-control.svg')%>"
+                alt="Изображение стрелки на слайдере">
             </button>
             <button class="glide__arrow glide__arrow--right slider__arrow slider__arrow_right" data-glide-dir=">">
-              <img class="slider__arrow-pic" src="<%=require('./images/slider-control.svg')%>" alt="Изображение стрелки на слайдере">
+              <img class="slider__arrow-pic" src="<%=require('./images/slider-control.svg')%>"
+                alt="Изображение стрелки на слайдере">
             </button>
           </div>
 
@@ -181,30 +192,37 @@
             <button class="glide__bullet slider__bullet" data-glide-dir="=1"></button>
             <button class="glide__bullet slider__bullet" data-glide-dir="=2"></button>
           </div>
+
         </div>
       </div>
-    </div>
   </section>
 
   <!--Блок Футер-->
   <footer class="footer">
-    <p class="footer__copyright">&copy; 2019. Kenina Marina</p>
-    <div class="footer__container">
-      <a class="footer__link-text" href="/index.html">Главная</a>
-      <a class="footer__link-text" href="/about.html">О проекте</a>
-      <a class="footer__link-text" href="https://praktikum.yandex.ru/">Яндекс.Практикум</a>
-    </div>
-    <div class="footer__container">
-      <a class="footer__icon" href="https://github.com/korvenhasta">
-        <img class="footer__image" src="<%=require('./images/github.svg')%>" alt="Ссылка на профиль в Github">
-      </a>
-      <a class="footer__icon" href="https://www.facebook.com/marina.zykova.35">
-        <img class="footer__image" src="<%=require('./images/facebook.svg')%>" alt="Ссылка на профиль в Фейсбук">
-      </a>
-    </div>
-  </footer>
+      <p class="footer__copyright">&copy; 2019. Kenina Marina</p>
+      <ul class="footer__container">
+        <li>
+          <a class="footer__link-text" href="/index.html">Главная</a>
+        </li>
+        <li>
+          <a class="footer__link-text" href="/about.html">О проекте</a>
+        </li>
+        <li>
+          <a class="footer__link-text" href="https://praktikum.yandex.ru/" target="_blank">Яндекс.Практикум</a>
+        </li>
+      </ul>
+      <div class="footer__container">
+        <a class="footer__icon" href="https://github.com/korvenhasta" target="_blank">
+          <img class="footer__image" src="<%=require('./images/github.svg')%>" alt="Ссылка на профиль в Github">
+        </a>
+        <a class="footer__icon" href="https://www.facebook.com/marina.zykova.35" target="_blank">
+          <img class="footer__image" src="<%=require('./images/facebook.svg')%>" alt="Ссылка на профиль в Фейсбук">
+        </a>
+      </div>
+    </footer>
   <!--Конец Футер-->
 
   <script type="module" src="<%= htmlWebpackPlugin.files.chunks.about.entry %>"></script>
 </body>
+
 </html>
