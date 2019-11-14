@@ -14,3 +14,10 @@
 .slider {
 
 }
+
+@media screen and (max-width: 1439px) {
+  .slider {
+    width: 90%;
+    margin: 0 0 0 38px;
+  }
+}

@@ -9,3 +9,10 @@
   padding-bottom: 136px;
   background: #f5f6f7;
 }
+
+@media screen and (max-width: 1439px) {
+  .history {
+    padding-top: 40px;
+    padding-bottom: 64px;
+  }
+}

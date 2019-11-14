@@ -1,0 +1,9 @@
+.author-about_about-page {
+
+}
+
+@media screen and (max-width: 1439px) {
+  .author-about_about-page {
+    margin-bottom: 66px !important;
+  }
+}

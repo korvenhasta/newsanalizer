@@ -6,3 +6,9 @@
   background: #FFFFFF;
   border-radius: 16px;
 }
+
+@media screen and (max-width: 1439px) {
+  .slider__card{
+    height: 242px;
+  }
+}

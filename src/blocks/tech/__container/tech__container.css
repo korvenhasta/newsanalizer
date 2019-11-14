@@ -5,3 +5,9 @@
   align-items: flex-start;
   margin: auto;
 }
+
+@media screen and (max-width: 1439px) {
+  .tech__container {
+    flex-direction: column;
+  }
+}
