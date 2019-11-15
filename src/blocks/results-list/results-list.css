@@ -1,14 +1,14 @@
 .results-list {
   width: 90%;
   display: grid;
-  grid-template-columns: repeat(3, 3fr);
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   grid-gap: 16px 16px;
-  justify-items: left;
   margin: 0 auto 64px auto;
 }
 
 @media screen and (max-width: 1439px) {
   .results-list {
+    grid-template-columns: repeat(auto-fill, minmax(224px, 1fr));
     grid-gap: 8px 8px;
     margin: 0 auto 22px auto;
   }

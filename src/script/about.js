@@ -1,3 +1,5 @@
+import "../vendor/glide.core.css";
+import "../vendor/glide.theme.css";
 import "../pages/about.css";
 import Glide, { Breakpoints } from '../../node_modules/@glidejs/glide/dist/glide'
 

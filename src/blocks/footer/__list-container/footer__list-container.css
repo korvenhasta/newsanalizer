@@ -1,14 +1,20 @@
 .footer__list-container {
-  width: 100%;
+  width: 65%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 0;
 }
 
+@media screen and (max-width: 1439px) {
+  .footer__list-container {
+    width: 70%;
+  }
+}
+
 @media screen and (max-width: 767px) {
   .footer__list-container {
-    flex-direction: column-reverse;
-    flex-wrap: wrap;
+    width: 100%;
+    align-items: flex-start;
   }
 }

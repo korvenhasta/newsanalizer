@@ -8,8 +8,6 @@
   <meta name="description" content="Cервис для анализа происходящих в мире событий">
   <meta name="author" content="Марина Кенина">
   <title>NewsAnalizer</title>
-  <link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.core.min.css">
-  <link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.theme.min.css">
   <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.about.css%>">
   <link rel="shortcut icon" href="<%=require('./images/favicon.ico')%>" type="image/x-icon">
 </head>
@@ -229,13 +227,14 @@
 
         </div>
       </div>
+      <a class="slider__button" href="https://github.com/korvenhasta/newsanalizer" target="_blank">Открыть в GitHub</a>
   </section>
 
   <!--Блок Футер-->
   <footer class="footer">
+      <p class="footer__copyright">&copy; 2019. Kenina Marina</p>
       <div class="footer__list-container">
-        <p class="footer__copyright">&copy; 2019. Kenina Marina</p>
-        <ul class="footer__container">
+        <ul class="footer__list">
           <li>
             <a class="footer__link-text" href="./index.html">Главная</a>
           </li>
