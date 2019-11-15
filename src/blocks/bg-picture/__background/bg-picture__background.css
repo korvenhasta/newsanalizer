@@ -1,0 +1,21 @@
+.bg-picture__background {
+  position: absolute;
+  height: 576px;
+  object-fit: cover;
+  width: 100%;
+  left: 0;
+  right: 0;
+  z-index: -1;
+}
+
+@media screen and (max-width: 1439px) {
+  .bg-picture__background {
+    height: 400px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .bg-picture__background {
+    height: 536px;
+  }
+}

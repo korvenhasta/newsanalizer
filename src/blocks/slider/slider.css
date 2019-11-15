@@ -13,17 +13,16 @@
 @import url("./__button/slider__button.css");
 
 .slider {
-
 }
 
 @media screen and (max-width: 1439px) {
   .slider {
-    margin: 0 0 0 40px;
+    padding: 0 0 0 40px;
   }
 }
 
 @media screen and (max-width: 767px) {
   .slider {
-    margin: 0 0 0 16px;
+    padding: 0 0 0 16px;
   }
 }

@@ -15,6 +15,11 @@
 <body class="root">
 
   <div class="bg-picture">
+    <picture>
+        <source media="(max-width: 767px)" srcset="<%=require('./images/georgia-320.jpg')%>">
+        <source media="(max-width: 1439px)" srcset="<%=require('./images/georgia-768.jpg')%>">
+      <img class="bg-picture__background" src="<%=require('./images/georgia-1440.jpg')%>" alt="Фотография экрана телефона с приложением об аналитике">
+    </picture>
     <!--Блок Header-->
     <header class="header header_color_main">
       <div class="header__container">
@@ -154,7 +159,11 @@
 
   <!--Блок Об авторе.-->
   <section class="author-about">
-      <img class="author-about__image" src="<%=require('./images/image-03.png')%>" alt="Аватар автора сайта">
+      <picture>
+          <source media="(max-width: 767px)" srcset="<%=require('./images/avatar-320.png')%>">
+          <source media="(max-width: 1439px)" srcset="<%=require('./images/avatar-768.png')%>">
+          <img class="author-about__image" src="<%=require('./images/avatar-1440.png')%>" alt="Аватар автора сайта">
+      </picture>
       <div class="author-about__container-text">
         <h2 class="h2-title author-about__title">Об авторе</h2>
         <p class="p-text author-about__text">
