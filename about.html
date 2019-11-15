@@ -8,7 +8,7 @@
   <meta name="description" content="Cервис для анализа происходящих в мире событий">
   <meta name="author" content="Марина Кенина">
   <title>NewsAnalizer</title>
-  <link rel="stylesheet" href="./pages/about.93e2a0c5287ecd067f5d.css">
+  <link rel="stylesheet" href="./pages/about.85a4ece390bd3ff9d7c4.css">
   <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
 </head>
 
@@ -100,7 +100,11 @@
 
   <!--Блок Об авторе.-->
   <section class="author-about author-about_about-page">
-      <img class="author-about__image" src="./images/image-03.png" alt="Аватар автора сайта">
+      <picture>
+          <source media="(max-width: 767px)" srcset="./images/avatar-320.png">
+          <source media="(max-width: 1439px)" srcset="./images/avatar-768.png">
+          <img class="author-about__image" src="./images/avatar-1440.png" alt="Аватар автора сайта">
+      </picture>
       <div class="author-about__container-text">
         <h2 class="h2-title author-about__title">Об авторе</h2>
         <p class="p-text author-about__text">
