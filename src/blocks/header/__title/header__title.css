@@ -17,16 +17,9 @@
   text-decoration: none;
 }
 
-@media screen and (max-width: 1439px) {
-  .header__title {
-    margin: 22px 0 18px 0;
-  }
-}
-
 @media screen and (max-width: 767px) {
   .header__title {
     font-size: 16px;
     line-height: 24px;
-    margin: 16px 0 16px 0;
   }
 }

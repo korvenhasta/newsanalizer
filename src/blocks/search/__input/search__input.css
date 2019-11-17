@@ -15,6 +15,10 @@
   text-indent: 24px;
 }
 
+.search__input:focus {
+  outline: none;
+}
+
 @media screen and (max-width: 1439px) {
   .search__input {
     width: 448px;

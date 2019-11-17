@@ -6,12 +6,20 @@
   border-radius: 80px;
   color: #1a1b22;
   margin: 0 auto;
+  border-color: transparent;
+  border: none;
 }
 
 .result__button:hover {
   cursor: pointer;
   transition: color 1s linear 0.5s;
   opacity: 0.9;
+}
+
+.result__button:focus,
+.result__button:active{
+  background: #e8e8e8;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 1439px) {

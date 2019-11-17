@@ -7,6 +7,10 @@
   border-radius: 16px;
 }
 
+.slider__card:hover {
+  cursor: pointer;
+}
+
 @media screen and (max-width: 1439px) {
   .slider__card{
     height: 242px;

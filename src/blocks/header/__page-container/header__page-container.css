@@ -6,8 +6,3 @@
   padding-right: 5%;
 }
 
-@media screen and (max-width: 767px) {
-  .header__page-container {
-    width: 155px;
-  }
-}

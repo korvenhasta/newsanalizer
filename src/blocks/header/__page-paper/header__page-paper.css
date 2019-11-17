@@ -1,12 +1,13 @@
 .header__page-paper {
+  display: flex;
+  align-items: center;
+  height: 100%;
   font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
-  line-height: 24px;
   text-decoration: none;
   margin-right: 34px;
-  margin-bottom: 23px;
   color: #b6bcbf;
 }
 
@@ -19,17 +20,10 @@
   margin-right: 0;
 }
 
-@media screen and (max-width: 1439px) {
-  .header__page-paper {
-    margin-bottom: 15px;
-  }
-}
-
 @media screen and (max-width: 767px) {
   .header__page-paper {
     font-size: 16px;
     line-height: 24px;
     margin-right: 17px;
-    margin-bottom: 16px;
   }
 }
