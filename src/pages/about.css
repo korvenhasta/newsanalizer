@@ -2,8 +2,10 @@
 @import url("../vendor/fonts.css");
 @import url("../blocks/root/root.css");
 @import url("../blocks/section-title/section-title.css");
-@import url("../blocks/section-title/_size/_medium/section-title_size_medium.css");
-@import url("../blocks/p-text/p-text.css");
+@import url("../blocks/section-title/_size_medium/section-title_size_medium.css");
+@import url("../blocks/content-text/content-text.css");
+@import url("../blocks/content-text/_size_medium/content-text_size_medium.css");
+@import url("../blocks/content-text/_size_small/content-text_size_small.css");
 @import url("../blocks/link-nav/link-nav.css");
 @import url("../blocks/result/__arrow/result__arrow.css");
 @import url("../blocks/header/header.css");

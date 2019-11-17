@@ -2,6 +2,7 @@
 @import url("./__title/tech__title.css");
 @import url("./__icons-container/tech__icons-container.css");
 @import url("./__icon-container/tech__icon-container.css");
+@import url("./__icon-title/tech__icon-title.css");
 @import url("./__icon-img/tech__icon-img.css");
 
 .tech {
