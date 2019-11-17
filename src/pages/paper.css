@@ -1,14 +1,15 @@
 @import url("../vendor/normalize.css");
 @import url("../vendor/fonts.css");
 @import url("../blocks/root/root.css");
+@import url("../blocks/section-title/section-title.css");
+@import url("../blocks/section-title/_size/_medium/section-title_size_medium.css");
 @import url("../blocks/p-text/p-text.css");
-@import url("../blocks/h2-title/h2-title.css");
 @import url("../blocks/header/header.css");
 @import url("../blocks/summary/summary.css");
 @import url("../blocks/analitics/analitics.css");
 @import url("../blocks/footer/footer.css");
 
-/*
+
 div {
   border: 1px solid red;
 }
@@ -39,4 +40,3 @@ section {
 time {
   border: 1px solid red;
 }
-*/

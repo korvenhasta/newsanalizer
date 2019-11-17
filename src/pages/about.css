@@ -1,7 +1,7 @@
 @import url("../vendor/normalize.css");
 @import url("../vendor/fonts.css");
 @import url("../blocks/root/root.css");
-@import url("../blocks/h2-title/h2-title.css");
+@import url("../blocks/section-title/section-title.css");
 @import url("../blocks/p-text/p-text.css");
 @import url("../blocks/link-nav/link-nav.css");
 @import url("../blocks/result/__arrow/result__arrow.css");
@@ -13,7 +13,7 @@
 @import url("../blocks/history/history.css");
 @import url("../blocks/slider/slider.css");
 
-/*
+
 div {
   border: 1px solid red;
 }
@@ -41,4 +41,4 @@ a {
 section {
   border: 1px solid red;
 }
-*/
+
