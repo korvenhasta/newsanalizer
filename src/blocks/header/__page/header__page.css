@@ -4,6 +4,9 @@
 @import url("./_color/header__page_color.css");
 
 .header__page {
+  display: flex;
+  align-items: center;
+  height: 100%;
   font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 500;
@@ -11,7 +14,6 @@
   line-height: 24px;
   text-decoration: none;
   margin-right: 34px;
-  margin-bottom: 23px;
 }
 
 .header__page:hover {
@@ -26,7 +28,6 @@
 
 @media screen and (max-width: 1439px) {
   .header__page {
-    margin-bottom: 15px;
   }
 }
 
@@ -35,6 +36,5 @@
     font-size: 16px;
     line-height: 24px;
     margin-right: 11px;
-    margin-bottom: 13px;
   }
 }

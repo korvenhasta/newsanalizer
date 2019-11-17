@@ -16,7 +16,8 @@
   cursor: pointer;
 }
 
-.search__button:focus{
+.search__button:focus,
+.search__button:active{
   background: #2a65cc;
   cursor: pointer;
 }

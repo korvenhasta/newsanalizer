@@ -1,14 +1,25 @@
 @import url("./__page-container/header__page-container.css");
 @import url("./__title/header__title.css");
 @import url("./__page/header__page.css");
-@import url("./__stroke/header__stroke.css");
 @import url("./__page-paper/header__page-paper.css");
 @import url("./_color/header_color_main.css");
 @import url("./_color/header_color_other-pages.css");
 
 .header {
   width: 100%;
+  min-height: 80px;
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+}
+
+@media screen and (max-width: 1439px) {
+  .header {
+    min-height: 64px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .header {
+    min-height: 56px;
+  }
 }
