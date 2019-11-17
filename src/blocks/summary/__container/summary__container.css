@@ -1,15 +1,15 @@
-@import url("./_margin/summary__container_margin.css");
-
 .summary__container {
   width: 712px;
   display: flex;
   justify-content: flex-start;
   margin: 0;
+  padding-top: 40px;
 }
 
 @media screen and (max-width: 1439px) {
   .summary__container {
     width: 688px;
+    padding-top: 32px;
   }
 }
 

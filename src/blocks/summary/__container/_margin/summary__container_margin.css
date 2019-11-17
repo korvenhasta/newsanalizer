@@ -1,9 +1,0 @@
-.summary__container_margin {
-  padding-top: 40px;
-}
-
-@media screen and (max-width: 1439px) {
-  .summary__container_margin {
-    padding-top: 32px;
-  }
-}

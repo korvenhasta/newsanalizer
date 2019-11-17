@@ -7,16 +7,16 @@
 @import url("../blocks/content-text/_size_medium/content-text_size_medium.css");
 @import url("../blocks/content-text/_size_small/content-text_size_small.css");
 @import url("../blocks/link-nav/link-nav.css");
-@import url("../blocks/result/__arrow/result__arrow.css");
 @import url("../blocks/header/header.css");
 @import url("../blocks/clients/clients.css");
 @import url("../blocks/tech/tech.css");
 @import url("../blocks/author-about/author-about.css");
-@import url("../blocks/footer/footer.css");
 @import url("../blocks/history/history.css");
 @import url("../blocks/slider/slider.css");
+@import url("../blocks/button/button.css");
+@import url("../blocks/footer/footer.css");
 
-
+/*
 div {
   border: 1px solid red;
 }
@@ -45,3 +45,4 @@ section {
   border: 1px solid red;
 }
 
+*/

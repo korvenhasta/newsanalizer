@@ -16,20 +16,18 @@
 
   <div class="bg-picture">
     <picture>
-        <source media="(max-width: 767px)" srcset="<%=require('./images/georgia-320.jpg')%>">
-        <source media="(max-width: 1439px)" srcset="<%=require('./images/georgia-768.jpg')%>">
+      <source media="(max-width: 767px)" srcset="<%=require('./images/georgia-320.jpg')%>">
+      <source media="(max-width: 1439px)" srcset="<%=require('./images/georgia-768.jpg')%>">
       <img class="bg-picture__background" src="<%=require('./images/georgia-1440.jpg')%>" alt="Фотография экрана телефона с приложением об аналитике">
     </picture>
     <!--Блок Header-->
     <header class="header header_color_main">
-      <div class="header__container">
-        <a href="./index.html" class="header__link header__title header__title_color_white">NewsAnalyzer</a>
-        <div class="header__page-container">
-          <a class="header__page header__page_active header__page_color_white" href="./index.html">Главная</a>
-          <a class="header__page header__page_inactive" href="./about.html">О&nbsp;проекте</a>
-          <div class="header__stroke header__stroke_color_white"></div>
-          <div class="header__page_blank"></div>
-        </div>
+      <a href="./index.html" class="header__title header__title_color_white">NewsAnalyzer</a>
+      <div class="header__page-container">
+        <a class="header__page header__page_active header__page_color_white" href="./index.html">Главная</a>
+        <a class="header__page header__page_inactive" href="./about.html">О&nbsp;проекте</a>
+        <div class="header__stroke header__stroke_color_white"></div>
+        <div class="header__page_blank"></div>
       </div>
     </header>
     <!--Header конец-->
@@ -73,7 +71,7 @@
       <h2 class="section-title result__title">Результаты поиска</h2>
       <a class="link-nav result__paper-page" href="./paper.html">
         Посмотреть аналитику
-        <img class="result__arrow" src="<%=require('./images/arrow.svg')%>" alt="Стрелка вправо">
+        <img class="link-nav__arrow" src="<%=require('./images/arrow.svg')%>" alt="Стрелка вправо">
       </a>
     </div>
 
@@ -180,8 +178,8 @@
 
   <!--Блок Футер-->
   <footer class="footer">
-      <p class="footer__copyright">&copy; 2019. Kenina Marina</p>
-      <div class="footer__list-container">
+    <p class="footer__copyright">&copy; 2019. Kenina Marina</p>
+    <div class="footer__list-container">
       <ul class="footer__list">
         <li>
           <a class="footer__link-text" href="./index.html">Главная</a>
