@@ -16,7 +16,11 @@
 }
 
 .search__input:focus {
+  box-shadow:
+  0 0 1px #b6bcbf,
+  0 0 2px #b6bcbf;
   outline: none;
+
 }
 
 @media screen and (max-width: 1439px) {

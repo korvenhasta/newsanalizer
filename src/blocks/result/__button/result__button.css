@@ -12,14 +12,17 @@
 
 .result__button:hover {
   cursor: pointer;
-  transition: color 1s linear 0.5s;
-  opacity: 0.9;
+  background: #e8e8e8;
 }
 
 .result__button:focus,
 .result__button:active{
-  background: #e8e8e8;
+  box-shadow:
+  0 0 1px #ffffff,
+  0 0 2px #b6bcbf;
+  background: #b6bcbf;
   cursor: pointer;
+  outline: none;
 }
 
 @media screen and (max-width: 1439px) {

@@ -7,7 +7,3 @@
   align-items: center;
   text-align: center;
 }
-
-.button:focus {
-  outline: none;
-}
