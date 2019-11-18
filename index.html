@@ -8,7 +8,7 @@
   <meta name="description" content="Cервис для анализа происходящих в мире событий">
   <meta name="author" content="Марина Кенина">
   <title>NewsAnalizer</title>
-  <link rel="stylesheet" href="./pages/main.4c645be20ab68ac14649.css">
+  <link rel="stylesheet" href="./pages/main.5853442aebbc9a820637.css">
   <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
 </head>
 
@@ -23,10 +23,16 @@
     <!--Блок Header-->
     <header class="header header_color_main">
       <a href="./index.html" class="header__title header__title_color_white">NewsAnalyzer</a>
-      <div class="header__page-container">
-        <a class="header__page header__page_active header__page_color_white" href="./index.html">Главная</a>
-        <a class="header__page header__page_inactive" href="./about.html">О&nbsp;проекте</a>
-      </div>
+      <nav class="header__page-container">
+        <ul class="header__menu-list">
+          <li class="header__list-item">
+              <a class="header__page header__page_active header__page_color_white" href="./index.html">Главная</a>
+          </li>
+          <li class="header__list-item">
+              <a class="header__page header__page_inactive" href="./about.html">О&nbsp;проекте</a>
+          </li>
+        </ul>
+      </nav>
     </header>
     <!--Header конец-->
 
@@ -75,7 +81,7 @@
 
     <div class="results-list">
       <!--Пример карточки-->
-      <article class="result-card">
+      <article class="result-card" tabindex="0">
         <img class="result-card__image" src="./images/image_08.png" alt="Национальное достояние – парки">
         <div class="result-card__description">
           <time class="result-card__date" datetime="2019-08-02">2 августа, 2019</time>
@@ -90,7 +96,7 @@
         </div>
       </article>
 
-      <article class="result-card">
+      <article class="result-card" tabindex="0">
         <img class="result-card__image" src="./images/image_04.png" alt="Лесные огоньки: история одной фотографии">
         <div class="result-card__description">
           <time class="result-card__date" datetime="2019-08-02">2 августа, 2019</time>
@@ -104,7 +110,7 @@
         </div>
       </article>
 
-      <article class="result-card">
+      <article class="result-card" tabindex="0">
         <img class="result-card__image" src="./images/image_07.png" alt="«Первозданная тайга»: новый фотопроект Игоря Шпиленка">
         <div class="result-card__description">
           <time class="result-card__date" datetime="2019-08-02">2 августа, 2019</time>
@@ -119,7 +125,7 @@
         </div>
       </article>
 
-      <article class="result-card">
+      <article class="result-card" tabindex="0">
           <img class="result-card__image" src="./images/image_04.png" alt="Лесные огоньки: история одной фотографии">
           <div class="result-card__description">
             <time class="result-card__date" datetime="2019-08-02">2 августа, 2019</time>
@@ -133,7 +139,7 @@
           </div>
         </article>
 
-        <article class="result-card">
+        <article class="result-card" tabindex="0">
           <img class="result-card__image" src="./images/image_07.png" alt="«Первозданная тайга»: новый фотопроект Игоря Шпиленка">
           <div class="result-card__description">
             <time class="result-card__date" datetime="2019-08-02">2 августа, 2019</time>
@@ -155,22 +161,22 @@
 
   <!--Блок Об авторе.-->
   <section class="author-about">
-      <picture>
-          <source media="(max-width: 767px)" srcset="./images/avatar-320.png">
-          <source media="(max-width: 1439px)" srcset="./images/avatar-768.png">
-          <img class="author-about__image" src="./images/avatar-1440.png" alt="Аватар автора сайта">
-      </picture>
-      <div class="author-about__container-text">
-        <h2 class="section-title author-about__title">Об авторе</h2>
-        <p class="content-text author-about__text">
-          Это блок с описаением автора проекта. Здесь следует указать, как вас зовут, чем вы занимаетесь, какими
-          технологиями разработки владете.
-        </p>
-        <p class="content-text author-about__text">
-          Также можно рассказать о процессе обучения в Практикуме, чему вы тут научились, и чем можете помочь
-          потенциальным заказчикам.
-        </p>
-      </div>
+    <picture>
+        <source media="(max-width: 767px)" srcset="./images/avatar-320.png">
+        <source media="(max-width: 1439px)" srcset="./images/avatar-768.png">
+        <img class="author-about__image" src="./images/avatar-1440.png" alt="Аватар автора сайта">
+    </picture>
+    <div class="author-about__container-text">
+      <h2 class="section-title author-about__title">Об авторе</h2>
+      <p class="content-text author-about__text">
+        Это блок с описаением автора проекта. Здесь следует указать, как вас зовут, чем вы занимаетесь, какими
+        технологиями разработки владете.
+      </p>
+      <p class="content-text author-about__text">
+        Также можно рассказать о процессе обучения в Практикуме, чему вы тут научились, и чем можете помочь
+        потенциальным заказчикам.
+      </p>
+    </div>
   </section>
   <!--Об авторе конец-->
 
