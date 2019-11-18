@@ -4,6 +4,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-right: 5%;
   margin: 0;
+  padding: 0;
 }

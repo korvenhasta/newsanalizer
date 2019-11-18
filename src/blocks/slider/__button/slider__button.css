@@ -4,8 +4,7 @@
 
 .slider__button:hover {
   cursor: pointer;
-  transition: color 1s linear 0.5s;
-  opacity: 0.9;
+  background: #e8e8e8;
 }
 
 .slider__button:focus,
@@ -13,7 +12,7 @@
   box-shadow:
   0 0 1px #ffffff,
   0 0 2px #b6bcbf;
-  background: #e8e8e8;
+  background: #e1e1e1;
   cursor: pointer;
   outline: none;
 }

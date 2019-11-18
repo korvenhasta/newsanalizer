@@ -19,8 +19,8 @@
 .result__button:active{
   box-shadow:
   0 0 1px #ffffff,
-  0 0 2px #b6bcbf;
-  background: #b6bcbf;
+  0 0 2px #e1e1e1;
+  background: #e1e1e1;
   cursor: pointer;
   outline: none;
 }
