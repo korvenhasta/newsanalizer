@@ -8,7 +8,7 @@
 
 .result-card {
   width: 100%;
-  height: 576px;
+  height: 100%;
   background-color: #ffffff;
   border-radius: 10px;
 }
@@ -17,7 +17,7 @@
   cursor: pointer;
 }
 
-@media screen and (max-width: 1439px) {
+/* @media screen and (max-width: 1439px) {
   .result-card {
     height: 420px;
   }
@@ -27,4 +27,4 @@
   .result-card {
     height: 446px;
   }
-}
+} */

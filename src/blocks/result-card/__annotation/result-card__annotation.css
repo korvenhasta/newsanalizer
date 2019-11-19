@@ -4,16 +4,9 @@
   padding: 0;
 }
 
-@media screen and (max-width: 1439px) {
-  .result-card__annotation {
-    width: 100%;
-  }
-}
-
 @media screen and (max-width: 767px) {
   .result-card__annotation {
-    width: 256px;
-    height: 88px;
+    width: 100%;
     overflow: hidden;
     text-overflow: ellipsis;
   }

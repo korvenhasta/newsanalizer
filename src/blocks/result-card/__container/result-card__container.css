@@ -1,5 +1,5 @@
 .result-card__container {
-  width: 352px;
+  width: 100%;
   height: 194px;
   margin: 0;
   overflow: hidden;
@@ -16,6 +16,5 @@
 @media screen and (max-width: 767px) {
   .result-card__container {
     width: 100%;
-    height: 144px;
   }
 }
