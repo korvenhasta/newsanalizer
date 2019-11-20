@@ -16,15 +16,3 @@
 .result-card:hover {
   cursor: pointer;
 }
-
-/* @media screen and (max-width: 1439px) {
-  .result-card {
-    height: 420px;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .result-card {
-    height: 446px;
-  }
-} */
