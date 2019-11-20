@@ -1,0 +1,24 @@
+@import url("./__image/author-about__image.css");
+@import url("./__container-text/author-about__container-text.css");
+@import url("./__title/author-about__title.css");
+@import url("./__text/author-about__text.css");
+
+.author-about {
+  display: flex;
+  justify-content: flex-start;
+  width: 90%;
+  margin: 80px auto;
+}
+
+@media screen and (max-width: 1439px) {
+  .author-about {
+    margin: 40px auto 0 auto;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .author-about {
+    flex-direction: column;
+    margin: 20px auto 0 auto;
+  }
+}

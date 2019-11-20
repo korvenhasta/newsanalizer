@@ -1,0 +1,14 @@
+.analitics__table-title {
+  width: 100%;
+  height: 40px;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: #b6bcbf;
+  border-bottom: 1px solid #1a1b22;
+  margin: 0;
+}

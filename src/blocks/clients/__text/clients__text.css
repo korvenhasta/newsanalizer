@@ -1,0 +1,7 @@
+.clients__text {
+  margin: 0 0 18px 0;
+}
+
+.clients__text:last-of-type {
+  margin: 0;
+}

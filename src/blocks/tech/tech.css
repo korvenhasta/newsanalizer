@@ -1,0 +1,27 @@
+@import url("./__title/tech__title.css");
+@import url("./__icons-container/tech__icons-container.css");
+@import url("./__icon-container/tech__icon-container.css");
+@import url("./__icon-title/tech__icon-title.css");
+@import url("./__icon-img/tech__icon-img.css");
+
+.tech {
+  height: 334px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background: #f5f6f7;
+}
+
+@media screen and (max-width: 1439px) {
+  .tech {
+    flex-direction: column;
+    height: 341px;
+    padding-bottom: 49px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .tech {
+    height: 528px;
+  }
+}

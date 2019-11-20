@@ -1,0 +1,19 @@
+.clients__title {
+  margin: 0 0 24px 0;
+}
+
+@media screen and (max-width: 1439px) {
+  .clients__title {
+    font-size: 30px;
+    line-height: 34px;
+    margin: 0 0 16px 0;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .clients__title {
+    font-size: 30px;
+    line-height: 40px;
+    margin: 0 0 16px 0;
+  }
+}

@@ -1,0 +1,9 @@
+.analitics__bar_margin-top {
+  margin: 8px auto 27px 0 !important;
+}
+
+@media screen and (max-width: 767px) {
+  .analitics__bar_margin-top {
+    margin: 18px auto 24px 0 !important;
+  }
+}

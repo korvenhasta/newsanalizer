@@ -1,0 +1,25 @@
+@import url("./_color/header__title_color.css");
+
+.header__title {
+  display: flex;
+  align-items: center;
+  font-family: "Roboto Slab", sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 24px;
+  padding-left: 5%;
+  text-decoration: none;
+}
+
+.header__title:hover {
+  transition: color 1s linear 0.5s;
+  opacity: 0.7;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 767px) {
+  .header__title {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}

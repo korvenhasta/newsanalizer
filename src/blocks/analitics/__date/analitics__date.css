@@ -1,0 +1,19 @@
+@import url("./_margin-top/analitics__date_margin-top.css");
+@import url("./_size/analitics__date_size.css");
+
+.analitics__date {
+  display: block;
+  height: 24px;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  color: #1a1b22;
+  margin: 28px 0 28px 0;
+}
+
+@media screen and (max-width: 767px) {
+  .analitics__date {
+    margin: 0 auto 24px 0;
+  }
+}

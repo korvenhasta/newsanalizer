@@ -1,0 +1,20 @@
+.summary__container {
+  width: 712px;
+  display: flex;
+  justify-content: flex-start;
+  margin: 0;
+  padding-top: 40px;
+}
+
+@media screen and (max-width: 1439px) {
+  .summary__container {
+    width: 688px;
+    padding-top: 32px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .summary__container {
+    display: none;
+  }
+}

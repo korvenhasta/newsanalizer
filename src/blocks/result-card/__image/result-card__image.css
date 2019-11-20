@@ -1,0 +1,21 @@
+.result-card__image {
+  width: 100%;
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding-bottom: 20px;
+}
+
+@media screen and (max-width: 1439px) {
+  .result-card__image {
+    height: 150px;
+    padding-bottom: 16px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .result-card__image {
+    height: 196px;
+    padding-bottom: 12px;
+  }
+}

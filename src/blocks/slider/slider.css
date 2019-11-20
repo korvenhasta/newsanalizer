@@ -1,0 +1,28 @@
+@import url("./__card/slider__card.css");
+@import url("./__date/slider__date.css");
+@import url("./__user/slider__user.css");
+@import url("./__user-avatar/slider__user-avatar.css");
+@import url("./__user-info/slider__user-info.css");
+@import url("./__user-name/slider__user-name.css");
+@import url("./__user-email/slider__user-email.css");
+@import url("./__user-comment/slider__user-comment.css");
+@import url("./__arrow/slider__arrow.css");
+@import url("./__arrow-pic/slider__arrow-pic.css");
+@import url("./__bullets/slider__bullets.css");
+@import url("./__bullet/slider__bullet.css");
+@import url("./__button/slider__button.css");
+
+.slider {
+}
+
+@media screen and (max-width: 1439px) {
+  .slider {
+    padding: 0 0 0 40px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .slider {
+    padding: 0 0 0 16px;
+  }
+}

@@ -1,0 +1,15 @@
+.slider__date {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 22px;
+  color: #b6bcbf;
+  margin: 24px auto 16px 24px;
+}
+
+@media screen and (max-width: 767px) {
+  .slider__date {
+    margin: 16px auto 8px 16px;
+  }
+}

@@ -1,0 +1,20 @@
+.slider__bullets {
+  top: 352px;
+  bottom: 0;
+}
+
+@media screen and (max-width: 1439px) {
+  .slider__bullets {
+    top: 290px;
+    left: 45%;
+    bottom: 0;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .slider__bullets {
+    top: 300px;
+    left: 46%;
+    bottom: 0;
+  }
+}

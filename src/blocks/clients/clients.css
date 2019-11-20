@@ -1,0 +1,20 @@
+@import url("./__container/clients__container.css");
+@import url("./__title/clients__title.css");
+@import url("./__text/clients__text.css");
+
+.clients {
+  width: 90%;
+  margin: 80px auto 94px auto;
+}
+
+@media screen and (max-width: 1439px) {
+  .clients {
+    margin: 29px auto 36px auto;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .clients {
+    margin: 16px auto 16px auto;
+  }
+}

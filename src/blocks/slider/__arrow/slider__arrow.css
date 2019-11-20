@@ -1,0 +1,17 @@
+@import url("./_left/slider__arrow_left.css");
+@import url("./_right/slider__arrow_right.css");
+
+.slider__arrow {
+  width: 88px;
+  height: 288px;
+  border: none;
+  box-shadow: none;
+  background: linear-gradient(-90deg, rgba(245, 246, 247, 0) 0%, #F5F6F7 100%);
+  padding: 0;
+}
+
+@media screen and (max-width: 1439px) {
+  .slider__arrow {
+  display: none;
+  }
+}

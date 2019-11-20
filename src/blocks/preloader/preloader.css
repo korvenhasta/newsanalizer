@@ -1,0 +1,20 @@
+@import url("./__container/preloader__container.css");
+@import url("./__circle/preloader__circle.css");
+@import url("./__message/preloader__message.css");
+@import url("./__title/preloader__title.css");
+@import url("./__not-found/preloader__not-found.css");
+
+.preloader {
+  display: none;
+  margin: 0;
+  background: #f5f6f7;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+@media screen and (max-width: 1439px) {
+  .preloader {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}

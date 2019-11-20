@@ -1,0 +1,10 @@
+.summary__link {
+  text-decoration: none;
+  margin: auto 6px auto 0;
+}
+
+.summary__link:hover {
+  transition: color 1s linear 0.5s;
+  opacity: 0.7;
+  text-decoration: none;
+}

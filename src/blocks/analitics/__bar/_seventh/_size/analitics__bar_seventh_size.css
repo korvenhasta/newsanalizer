@@ -1,0 +1,9 @@
+.analitics__bar_seventh_size {
+  margin: 27px auto 0 0 !important;
+}
+
+@media screen and (max-width: 767px) {
+  .analitics__bar_seventh_size {
+    margin: 0 auto 24px 0 !important;
+  }
+}

@@ -1,0 +1,45 @@
+@import url("../vendor/normalize.css");
+@import url("../vendor/fonts.css");
+@import url("../blocks/root/root.css");
+@import url("../blocks/section-title/section-title.css");
+@import url("../blocks/section-title/_size_medium/section-title_size_medium.css");
+@import url("../blocks/content-text/content-text.css");
+@import url("../blocks/content-text/_size_medium/content-text_size_medium.css");
+@import url("../blocks/content-text/_color_grey/content-text_color_grey.css");
+@import url("../blocks/header/header.css");
+@import url("../blocks/summary/summary.css");
+@import url("../blocks/analitics/analitics.css");
+@import url("../blocks/footer/footer.css");
+
+/*
+div {
+  border: 1px solid red;
+}
+p {
+  border: 1px solid red;
+}
+h1 {
+  border: 1px solid red;
+}
+h2 {
+  border: 1px solid red;
+}
+h3 {
+  border: 1px solid red;
+}
+h4 {
+  border: 1px solid red;
+}
+img {
+  border: 1px solid red;
+}
+a {
+  border: 1px solid red;
+}
+section {
+  border: 1px solid red;
+}
+time {
+  border: 1px solid red;
+}
+*/

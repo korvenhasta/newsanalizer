@@ -1,0 +1,24 @@
+.tech__icon-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  margin: 13px 70px 0 0;
+}
+
+.tech__icon-container:last-of-type {
+  margin-right: 0;
+}
+
+@media screen and (max-width: 1439px) {
+  .tech__icon-container {
+    margin: 13px 64px 0 0;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .tech__icon-container {
+    margin: 0 0 41px 0;
+  }
+}

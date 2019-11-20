@@ -1,0 +1,29 @@
+.header__page-paper {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  text-decoration: none;
+  margin-right: 34px;
+  color: #b6bcbf;
+}
+
+.header__page-paper:hover {
+  color: #1a1b22;
+  text-decoration: none;
+}
+
+.header__page-paper:last-of-type {
+  margin-right: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .header__page-paper {
+    font-size: 16px;
+    line-height: 24px;
+    margin-right: 17px;
+  }
+}

@@ -1,0 +1,10 @@
+@import url("./__container/summary__container.css");
+@import url("./__title/summary__title.css");
+@import url("./__list/summary__list.css");
+@import url("./__text/summary__text.css");
+@import url("./__link/summary__link.css");
+
+.summary {
+  width: 90%;
+  margin: 0 auto;
+}

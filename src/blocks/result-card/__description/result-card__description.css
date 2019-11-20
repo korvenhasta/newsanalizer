@@ -1,0 +1,17 @@
+.result-card__description {
+  width: 90%;
+  height: 284px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 1439px) {
+  .result-card__description {
+    height: 238px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .result-card__description {
+    height: 235px;
+  }
+}

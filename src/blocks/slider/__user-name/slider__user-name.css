@@ -1,0 +1,9 @@
+.slider__user-name {
+  margin: 0;
+}
+
+@media screen and (max-width: 1439px) {
+  .slider__user-name {
+    font-size: 20px;
+  }
+}

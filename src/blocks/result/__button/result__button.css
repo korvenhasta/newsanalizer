@@ -1,0 +1,41 @@
+.result__button {
+  display: block;
+  width: 288px;
+  height: 64px;
+  background: #ffffff;
+  border-radius: 80px;
+  color: #1a1b22;
+  margin: 0 auto;
+  border-color: transparent;
+  border: none;
+}
+
+.result__button:hover {
+  cursor: pointer;
+  background: #e8e8e8;
+}
+
+.result__button:focus,
+.result__button:active{
+  box-shadow:
+  0 0 1px #ffffff,
+  0 0 2px #e1e1e1;
+  background: #e1e1e1;
+  cursor: pointer;
+  outline: none;
+}
+
+@media screen and (max-width: 1439px) {
+  .result__button {
+    width: 240px;
+    height: 56px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .result__button {
+    width: 288px;
+    height: 56px;
+    margin: 13px auto 0 auto;
+  }
+}

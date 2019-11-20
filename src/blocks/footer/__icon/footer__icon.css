@@ -1,0 +1,17 @@
+.footer__icon {
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  margin: 0 28px 0 0;
+  text-decoration: none;
+}
+
+.footer__icon:last-of-type{
+  margin-right: 0;
+}
+
+.footer__icon:hover {
+  text-decoration: none;
+  transition: color 1s linear 0.5s;
+  opacity: 0.7;
+}

@@ -1,0 +1,23 @@
+.result-card__source {
+  font-family: "Roboto Slab", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: #b6bcbf;
+  margin: 10px 0 24px 0;
+}
+
+@media screen and (max-width: 1439px) {
+  .result-card__source {
+    margin: 12px 0 16px 0;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .result-card__source {
+    margin: 5px 0 20px 0;
+  }
+}

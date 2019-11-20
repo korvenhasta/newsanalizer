@@ -1,0 +1,14 @@
+@import url("./_bottom/analitics__measure_bottom.css");
+
+.analitics__measure {
+  height: 20px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+@media screen and (max-width: 767px) {
+  .analitics__measure {
+    display: none;
+  }
+}

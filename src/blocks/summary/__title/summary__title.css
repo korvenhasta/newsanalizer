@@ -1,0 +1,17 @@
+.summary__title {
+  margin: 80px 2px 24px 0;
+}
+
+@media screen and (max-width: 1439px) {
+  .summary__title {
+    margin: 64px 2px 24px 0;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .summary__title {
+    font-size: 30px;
+    line-height: 34px;
+    margin: 16px 0 16px 0;
+  }
+}
