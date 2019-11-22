@@ -19,11 +19,12 @@ class GithubApi {
   /* Метод. Получим коммит с сервера */
   getCommit(callback) {
     fetch(
-        `${this.url}/${this.cohort}/users/me`,
-        { headers: this.headers }
+        `https://api.github.com/repos/korvenhasta/newsanalizer/commits`
     )
     .then(this.parseResult)
     .then(callback)
     .catch(this.handleError);
   }
 }
+
+export default GithubApi;

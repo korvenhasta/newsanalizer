@@ -23,9 +23,9 @@ class Card {
 
   const textContainer = createElement('div', 'result-card__container');
 
-  const cardTitle = createElement('h3', 'result-card__name');
+  const cardTitle = createElement('h3', 'section-title section-title_size_medium result-card__name');
 
-  const cardText = createElement('p', 'result-card__annotation');
+  const cardText = createElement('p', 'content-text content-text_size_medium result-card__annotation');
 
   const cardSource = createElement('p', 'result-card__source');
 
