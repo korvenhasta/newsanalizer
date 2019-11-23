@@ -2,6 +2,8 @@ import "../vendor/glide.core.css";
 import "../vendor/glide.theme.css";
 import "../pages/about.css";
 import Glide, { Breakpoints } from '../../node_modules/@glidejs/glide/dist/glide'
+import GithubApi from './ghapi.js';
+import Commit from './commit.js';
 
 new Glide('.glide', {
   type: 'carousel',
@@ -44,3 +46,17 @@ new Glide('.glide', {
 }).mount()
 
 //const serverUrl = NODE_ENV === 'development' ? 'http://praktikum.tk/cohort3' : 'https://praktikum.tk/cohort3'
+
+function starter() {
+  return {ghApi: new GithubApi()}
+}
+
+function getCommitsFromServer() {
+  ghApi.getCommit(commits => commits.forEach(
+    commit => new Commit(commit.name, commit.email, commit.date, commit.message, commit.avatarUrl)
+  )
+  );
+}
+
+let {ghApi} = starter();
+getCommitsFromServer();

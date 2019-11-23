@@ -6,11 +6,16 @@ class Card {
   /* Метод. Создаем DOM-элемент карточки */
   create() {
     function createElement(elType, classes) {
-      const elContainer = document.createElement(elType);
-      elContainer.classList.add(classes);
-
+      if (Array.isArray(classes) === true) {
+        classes.forEach(element => {
+          elContainer.classList.add(element);
+        });
+      }
+      else {
+        elContainer.classList.add(classes);
+      }
       return elContainer;
-  }
+    }
 
   const cardContainer = createElement('article', 'result-card');
 
@@ -23,9 +28,9 @@ class Card {
 
   const textContainer = createElement('div', 'result-card__container');
 
-  const cardTitle = createElement('h3', 'section-title section-title_size_medium result-card__name');
+  const cardTitle = createElement('h3', ['section-title', 'section-title_size_medium', 'result-card__name']);
 
-  const cardText = createElement('p', 'content-text content-text_size_medium result-card__annotation');
+  const cardText = createElement('p', ['content-text', 'content-text_size_medium', 'result-card__annotation']);
 
   const cardSource = createElement('p', 'result-card__source');
 
