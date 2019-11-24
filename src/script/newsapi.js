@@ -1,6 +1,8 @@
 class NewsApi {
-  constructor () {
-
+  constructor (apiKey, pageSize = 100) {
+    this.apiKey = apiKey;
+    this.pageSize = pageSize;
+    this.sortBy = 'publishedAt';
   }
 
   /* Метод. Вернем json объект или ошибку */
@@ -17,9 +19,11 @@ class NewsApi {
   }
 
   /* Метод. Получим коммит с сервера */
-  getNews(callback) {
+  getNews(topic, callback) {
+    const today = new Date();
+    let from = today.setDate(today.getDate() - 7);
     fetch(
-        `https://newsapi.org/v2/everything?q=nature&from=2019-11-17&to=2019-11-23&sortBy=publishedAt&apiKey=2c4b1b51dd004658ae3055a2eb42a668`
+        `https://newsapi.org/v2/everything?q=${topic}&from=${from}&to=${today.toISOString().slice(0,10)}&language=ru&sortBy=${this.sortBy}&pageSize=${this.pageSize}&apiKey=${this.apiKey}`
     )
     .then(this.parseResult)
     .then(callback)

@@ -5,6 +5,8 @@ import Card from './card.js'
 //const serverUrl = NODE_ENV === 'development' ? 'http://praktikum.tk/cohort3' : 'https://praktikum.tk/cohort3'
 
 const resultsList = document.querySelector('.results-list');
+const submitButton = document.querySelector('.search__button');
+
 
 function starter() {
   return {
@@ -23,6 +25,7 @@ function getNewsFromServer() {
       }
     });
 }
+
 
 let {newsApi} = starter();
 getNewsFromServer();
