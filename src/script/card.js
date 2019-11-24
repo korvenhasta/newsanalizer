@@ -1,11 +1,20 @@
+import dateFormat from './dateFormat.js'
+
 class Card {
   constructor(image, date, title, text, source) {
-
+    let card = this;
+    this.image = image;
+    this.date = date;
+    this.title = title;
+    this.text = text;
+    this.source = source;
+    this.element = this.createCard();
   }
 
   /* Метод. Создаем DOM-элемент карточки */
-  create() {
+  createCard() {
     function createElement(elType, classes) {
+      const elContainer = document.createElement(elType);
       if (Array.isArray(classes) === true) {
         classes.forEach(element => {
           elContainer.classList.add(element);
@@ -20,19 +29,24 @@ class Card {
   const cardContainer = createElement('article', 'result-card');
 
   const imageContainer = createElement('img', 'result-card__image');
-  imageContainer.setAttribute('src', `background-image: url(${cardImage})`);
+  imageContainer.setAttribute('src', this.image);
+  imageContainer.setAttribute('alt', this.title);
 
   const descriptionContainer = createElement('div', 'result-card__description');
 
   const date = createElement('time', 'result-card__date');
+  date.textContent = dateFormat(this.date);
 
   const textContainer = createElement('div', 'result-card__container');
 
   const cardTitle = createElement('h3', ['section-title', 'section-title_size_medium', 'result-card__name']);
+  cardTitle.textContent = this.title;
 
   const cardText = createElement('p', ['content-text', 'content-text_size_medium', 'result-card__annotation']);
+  cardText.textContent = this.text;
 
   const cardSource = createElement('p', 'result-card__source');
+  cardSource.textContent = this.source;
 
   cardContainer.appendChild(imageContainer);
   cardContainer.appendChild(descriptionContainer);
@@ -44,6 +58,8 @@ class Card {
   textContainer.appendChild(cardTitle);
   textContainer.appendChild(cardText);
 
-  return {cardContainer}
+  return cardContainer;
   }
 }
+
+export default Card;
