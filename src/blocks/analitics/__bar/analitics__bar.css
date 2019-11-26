@@ -8,6 +8,8 @@
 @import url("./_seventh/analitics__bar_seventh.css");
 
 .analitics__bar {
+  display: block;
+  min-width: 18px;
   height: 24px;
   font-family: "Roboto", sans-serif;
   font-style: normal;
@@ -20,7 +22,7 @@
   text-align: start;
   color: #ffffff;
   background: #2f71e5;
-  margin: 28px 0 28px 0;
+  margin: 28px auto 28px 0;
 }
 
 @media screen and (max-width: 767px) {

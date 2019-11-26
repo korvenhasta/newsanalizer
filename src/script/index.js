@@ -6,16 +6,21 @@ import Card from './card.js'
 
 const resultsList = document.querySelector('.results-list');
 const submitButton = document.querySelector('.search__button');
+const topic = 'наука';
+const searchButton = document.querySelector('.search__button');
+
+const searchForm = document.querySelector('.search__form');
+// document.forms.topic.addEventListener('input', );
 
 
 function starter() {
   return {
-    newsApi: new NewsApi()
+    newsApi: new NewsApi('2c4b1b51dd004658ae3055a2eb42a668')
   }
 }
 
 function getNewsFromServer() {
-  newsApi.getNews(news =>
+  newsApi.getNews(topic, news =>
     {
       console.log(news);
       for (let i=2; i<=4; i++) {

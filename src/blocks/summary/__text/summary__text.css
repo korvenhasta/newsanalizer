@@ -1,3 +1,6 @@
+@import url('./_total/summary__text_total.css');
+@import url('./_headings/summary__text_headings.css');
+
 .summary__text {
   font-weight: bold !important;
 }

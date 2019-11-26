@@ -21,13 +21,32 @@ class NewsApi {
   /* Метод. Получим коммит с сервера */
   getNews(topic, callback) {
     const today = new Date();
-    let from = today.setDate(today.getDate() - 7);
+    const weekAgo = new Date(today.setDate(today.getDate() - 7));
+    const from = weekAgo.toISOString().slice(0,10);
+    const to = new Date().toISOString().slice(0,10);
     fetch(
-        `https://newsapi.org/v2/everything?q=${topic}&from=${from}&to=${today.toISOString().slice(0,10)}&language=ru&sortBy=${this.sortBy}&pageSize=${this.pageSize}&apiKey=${this.apiKey}`
+        `https://newsapi.org/v2/everything?q=${topic}&from=${from}&to=${to}&language=ru&sortBy=${this.sortBy}&pageSize=${this.pageSize}&apiKey=${this.apiKey}`
     )
     .then(this.parseResult)
     .then(callback)
     .catch(this.handleError);
+  }
+
+  /* Метод. Отправим на сервер тему, по которой будем искать новости */
+  sendTopicToServer(callback, searchTopic) {
+    fetch(
+      `https://newsapi.org/v2/everything?q=${searchTopic}&from=${from}&to=${to}&language=ru&sortBy=${this.sortBy}&pageSize=${this.pageSize}&apiKey=${this.apiKey}`,
+        {
+            method: 'PATCH',
+            headers: this.headers,
+            body: JSON.stringify({
+                topic: searchTopic
+            })
+        }
+    )
+    .then(this.parseResult)
+    .then(callback)
+    .catch(this.handleError)
   }
 }
 
