@@ -1,11 +1,6 @@
 import "../pages/paper.css";
-import NewsApi from './newsapi.js'
 
-//const serverUrl = NODE_ENV === 'development' ? 'http://praktikum.tk/cohort3' : 'https://praktikum.tk/cohort3'
-
-
-const newsApi = new NewsApi('2c4b1b51dd004658ae3055a2eb42a668');
-const topic = 'Путин';
+const topic = window.localStorage.getItem('topic');
 
 const summaryTitle = document.querySelector('.summary__title_span');
 summaryTitle.textContent = topic;
@@ -63,11 +58,13 @@ function countHeadings(topic, str2) {
 
 
 /* Метод. Разберем новость, полученную от API */
-newsApi.getNews(topic, news => {
+//newsApi.getNews(topic, news => {
+  let news = JSON.parse(window.localStorage.getItem('news'));
+  let totalResults = window.localStorage.getItem('totalResults');
   console.log(news);
-  summaryTextTotal.textContent = news.totalResults;
+  summaryTextTotal.textContent = totalResults;
 
-  let articlesByDay = news.articles.reduce((prevVal, element) => {
+  let articlesByDay = news.reduce((prevVal, element) => {
     let resHeadings = countHeadings(topic, element.title);
     let resDescription = countHeadings(topic, element.description);
     let dayOfWeek = new Date(element.publishedAt).getDay();
@@ -113,6 +110,6 @@ newsApi.getNews(topic, news => {
   }
 
 
-});
+//});
 
 starter();
