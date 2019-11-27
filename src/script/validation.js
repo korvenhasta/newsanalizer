@@ -1,16 +1,16 @@
 class Validation {
-  constructor() {
+  constructor(message) {
 
   }
 
   /* Метод. Делаем сообщение об ошибке видимым для валидации */
   activateElementError(element) {
-    element.classList.add('popup__container_invalid');
+    element.classList.add('search__error-message');
   }
 
   /* Метод. Обнуляем ошибки для валидации */
   resetElementError(element) {
-    element.classList.remove('popup__container_invalid');
+    element.classList.remove('search__error-message');
     element.textContent = '';
   }
 
@@ -19,19 +19,7 @@ class Validation {
     const errorElement = element.nextSibling.nextSibling;
 
     if (element.validity.valueMissing) {
-        errorElement.textContent = errorMessageSet.validationRequired;
-        this.activateElementError(errorElement);
-        return false;
-    }
-
-    if (element.validity.patternMismatch) {
-        errorElement.textContent = errorMessageSet.validationLink;
-        this.activateElementError(errorElement);
-        return false;
-    }
-
-    if (element.validity.tooShort) {
-        errorElement.textContent = errorMessageSet.validationLength;
+        errorElement.textContent = 'Нужно ввести ключевое слово';
         this.activateElementError(errorElement);
         return false;
     }

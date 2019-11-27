@@ -46,6 +46,9 @@ function weekFormat(date) {
 
 /* Метод. Посчитаем ключевое слово в заголовках и описании новости */
 function countHeadings(topic, str2) {
+  if (str2 === null) {
+    return 0;
+  }
   topic = topic.toLowerCase();
   str2 = str2.toLowerCase();
   let counter = 0;
@@ -57,6 +60,7 @@ function countHeadings(topic, str2) {
   }
   return counter;
 }
+
 
 /* Метод. Разберем новость, полученную от API */
 newsApi.getNews(topic, news => {
@@ -90,10 +94,10 @@ newsApi.getNews(topic, news => {
   const analiticsBarContainer = document.querySelector('.analitics__container');
   const analiticsBar = analiticsBarContainer.querySelectorAll('.analitics__bar');
 
-  const today = new Date();
+  const today = Date.now();
 
   for (let i=0; i<7; i++) {
-    const currentDay = new Date(today.setDate(today.getDate() - 7 + i)).getDay();
+    const currentDay = new Date((today - (i - 6) * 24 * 60 * 60 * 1000)).getDay();
     let dayArticles = articlesByDay[currentDay];
 
     if (dayArticles === undefined) {

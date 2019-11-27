@@ -1,0 +1,9 @@
+.search__error-message {
+  font-family: "Roboto", sans-serif;
+  color: #FF0000;
+  font-size: 16px;
+  line-height: 22px;
+  margin: 0 auto;
+  padding-top: 10px;
+  opacity: 0;
+}

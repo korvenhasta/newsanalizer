@@ -1,3 +1,5 @@
+@import url('./_visible/preloader__title_visible.css');
+
 .preloader__title {
   display: none;
   text-align: center;

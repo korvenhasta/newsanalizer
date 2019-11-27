@@ -51,35 +51,35 @@
     <!--Search конец-->
   </div>
 
-  <!--Блок preloader-->
-  <section class="preloader">
-    <div class="preloader__container">
-      <i class="preloader__circle"></i>
-    </div>
-    <p class="content-text preloader__message">
-      Идет поиск новостей...
-    </p>
-    <img class="preloader__not-found" src="<%=require('./images/not-found.svg')%>" alt="Картинка с грустным смайликом">
-    <h3 class="section-title section-title_size_medium preloader__title">
-      Ничего не найдено
-    </h3>
-    <p class="content-text preloader__message preloader__message_not-found">
-      К сожалению по вашему запросу ничего не найдено.
-    </p>
-  </section>
-  <!--Прелоадер конец-->
-
   <!--Блок Результаты поиска. Когда результат есть-->
-  <section class="result">
+  <section class="result result_visible">
     <div class="result__page-container">
-      <h2 class="section-title result__title">Результаты поиска</h2>
-      <a class="link-nav result__paper-page" href="./paper.html">
+      <h2 class="section-title result__title result__title_visible">Результаты поиска</h2>
+      <a class="link-nav result__paper-page result__paper-page_hidden" href="./paper.html">
         Посмотреть аналитику
         <img class="link-nav__arrow" src="<%=require('./images/arrow.svg')%>" alt="Стрелка вправо">
       </a>
     </div>
 
-    <div class="results-list">
+      <!--Блок preloader-->
+    <div class="preloader preloader_hidden">
+      <div class="preloader__container preloader__container_visible">
+        <i class="preloader__circle"></i>
+      </div>
+      <p class="content-text preloader__message preloader__message_visible">
+        Идет поиск новостей...
+      </p>
+      <img class="preloader__not-found preloader__not-found_visible" src="<%=require('./images/not-found.svg')%>" alt="Картинка с грустным смайликом">
+      <h3 class="section-title section-title_size_medium preloader__title preloader__title_visible">
+        Ничего не найдено
+      </h3>
+      <p class="content-text preloader__message preloader__message_not-found preloader__message_visible">
+        К сожалению по вашему запросу ничего не найдено.
+      </p>
+    </div>
+    <!--Прелоадер конец-->
+
+    <div class="results-list results-list_hidden">
       <!--Пример карточки-->
 
       <!-- <article class="result-card" tabindex="0">
@@ -99,7 +99,7 @@
 
       <!--Конец примера-->
     </div>
-    <button class="button result__button">Показать еще</button>
+    <button class="button result__button result__button_hidden">Показать еще</button>
   </section>
   <!--Результаты поиска конец-->
 

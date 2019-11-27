@@ -1,3 +1,5 @@
+@import url('./_hidden/result__button_hidden.css');
+
 .result__button {
   display: block;
   width: 288px;

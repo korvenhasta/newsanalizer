@@ -2,7 +2,7 @@ class NewsApi {
   constructor (apiKey, pageSize = 100) {
     this.apiKey = apiKey;
     this.pageSize = pageSize;
-    this.sortBy = 'publishedAt';
+    this.sortBy = 'popularity';
   }
 
   /* Метод. Вернем json объект или ошибку */
@@ -32,22 +32,6 @@ class NewsApi {
     .catch(this.handleError);
   }
 
-  /* Метод. Отправим на сервер тему, по которой будем искать новости */
-  sendTopicToServer(callback, searchTopic) {
-    fetch(
-      `https://newsapi.org/v2/everything?q=${searchTopic}&from=${from}&to=${to}&language=ru&sortBy=${this.sortBy}&pageSize=${this.pageSize}&apiKey=${this.apiKey}`,
-        {
-            method: 'PATCH',
-            headers: this.headers,
-            body: JSON.stringify({
-                topic: searchTopic
-            })
-        }
-    )
-    .then(this.parseResult)
-    .then(callback)
-    .catch(this.handleError)
-  }
 }
 
 export default NewsApi;

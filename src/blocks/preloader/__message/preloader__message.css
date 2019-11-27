@@ -1,4 +1,5 @@
 @import url("./_not-found/preloader__message_not-found.css");
+@import url("./_visible/preloader__message_visible.css");
 
 .preloader__message {
   width: 320px;
