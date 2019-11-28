@@ -20,73 +20,14 @@ function countHeadings(topic, str2) {
   return counter;
 }
 
-
-/* Метод. Разберем новость, полученную от API */
-// newsApi.getNews(topic, news => {
-//   console.log(news);
-//   summaryTextTotal.textContent = news.totalResults;
-
-//   let articlesByDay = news.articles.reduce((prevVal, element) => {
-//     let resHeadings = countHeadings(topic, element.title);
-//     let resDescription = countHeadings(topic, element.description);
-//     let dayOfWeek = new Date(element.publishedAt).getDay();
-
-//     if (prevVal[dayOfWeek] !== undefined) {
-//       prevVal[dayOfWeek] = {
-//         numHeadings: resHeadings + prevVal[dayOfWeek].numHeadings,
-//         numDescription: resDescription + prevVal[dayOfWeek].numDescription
-//       };
-//     }
-//     else {
-//       prevVal[dayOfWeek] = {numHeadings: resHeadings, numDescription: resDescription};
-//     }
-//     return prevVal;
-//   }, Array(7).fill());
-
-//   let headings = articlesByDay.reduce((sum, element) => {
-//     if(element === undefined)
-//       return sum;
-//     return element.numHeadings + sum;
-//   }, 0);
-//   summaryTextHeadings.textContent = headings;
-
-//   const analiticsBarContainer = document.querySelector('.analitics__container');
-//   const analiticsBar = analiticsBarContainer.querySelectorAll('.analitics__bar');
-
-//   const today = Date.now();
-
-//   for (let i=0; i<7; i++) {
-//     const currentDay = new Date((today - (i - 6) * 24 * 60 * 60 * 1000)).getDay();
-//     let dayArticles = articlesByDay[currentDay];
-
-//     if (dayArticles === undefined) {
-//       analiticsBar[i].textContent = '0';
-//     }
-//     else {
-//       let sum = dayArticles.numHeadings + dayArticles.numDescription;
-//       analiticsBar[i].textContent = sum;
-//       if (sum > 1) {
-//         analiticsBar[i].style.width = `${sum}%`;
-//       }
-//     }
-//   }
-// });
-
-const searchButton = document.querySelector('.search__button');
-
 const searchForm = document.querySelector('.search__form');
 const searchInput = document.querySelector('.search__input');
-searchForm.addEventListener('submit', findNews);
-
 const preloader = document.querySelector('.preloader_hidden');
-
 const results = document.querySelector('.result');
 const resultTitle = document.querySelector('.result__title');
 const resultPaperPage = document.querySelector('.result__paper-page');
 const resultsList = document.querySelector('.results-list');
 const resultButton = document.querySelector('.result__button');
-resultButton.addEventListener('click', showMoreCardsClickHandler);
-
 
 function showResults() {
   results.classList.remove('result_visible');
@@ -128,11 +69,13 @@ function findNews(event) {
   event.preventDefault();
   let topic = searchInput.value;
 
+  window.localStorage.clear();
   window.localStorage.setItem('topic', topic);
+  window.localStorage.setItem('timeStamp', Date.now());
 
   cardsArr = [];
   cardPosition = 0;
-  var range = document.createRange();
+  let range = document.createRange();
   range.selectNodeContents(resultsList);
   range.deleteContents();
 
@@ -140,7 +83,6 @@ function findNews(event) {
   search.showPreloader();
   results.classList.remove('result_visible');
   showResultsTitle();
-  // console.log(searchInput.value);
   preloader.classList.add('preloader_hidden');
   resultPaperPage.classList.remove('result__paper-page_hidden');
   resultsList.classList.remove('results-list_hidden');
@@ -156,12 +98,13 @@ function findNews(event) {
   resultButton.classList.remove('result__button_hidden');
 }
 
-function starter() {
-  return {
-    newsApi: new NewsApi('2c4b1b51dd004658ae3055a2eb42a668'),
-    search: new Search()
-  }
+let newsApi = {};
+let search = {};
+
+window.onload = () => {
+  newsApi = new NewsApi('2c4b1b51dd004658ae3055a2eb42a668');
+  search = new Search();
+
+  searchForm.addEventListener('submit', findNews);
+  resultButton.addEventListener('click', showMoreCardsClickHandler);
 }
-
-
-let {newsApi, search} = starter();
