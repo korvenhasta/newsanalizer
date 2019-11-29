@@ -65,6 +65,14 @@ function showMoreCardsClickHandler() {
   }
 }
 
+function resetResults() {
+  cardsArr = [];
+  cardPosition = 0;
+  let range = document.createRange();
+  range.selectNodeContents(resultsList);
+  range.deleteContents();
+}
+
 function findNews(event) {
   event.preventDefault();
   let topic = searchInput.value;
@@ -73,11 +81,7 @@ function findNews(event) {
   window.localStorage.setItem('topic', topic);
   window.localStorage.setItem('timeStamp', Date.now());
 
-  cardsArr = [];
-  cardPosition = 0;
-  let range = document.createRange();
-  range.selectNodeContents(resultsList);
-  range.deleteContents();
+  resetResults();
 
   preloader.classList.remove('preloader_hidden');
   search.showPreloader();
@@ -94,6 +98,10 @@ function findNews(event) {
     window.localStorage.setItem('news', JSON.stringify(cardsArr));
     window.localStorage.setItem('totalResults', news.totalResults);
     showMoreCardsClickHandler();
+  }, (error) => {
+    resetResults();
+    hideResults();
+    setTimeout( () => alert('Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз') , 50);
   });
   resultButton.classList.remove('result__button_hidden');
 }

@@ -133,5 +133,3 @@ function getAnaliyics(topic, news) {
 
 
 //});
-
-starter();

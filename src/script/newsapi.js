@@ -13,13 +13,8 @@ class NewsApi {
       return Promise.reject(`Ошибка: ${res.status}`);
   }
 
-  /* Метод. Выведем ошибку в консоль */
-  handleError(err) {
-    console.log(err);
-  }
-
   /* Метод. Получим коммит с сервера */
-  getNews(topic, callback) {
+  getNews(topic, callback, errorCallback) {
     const today = new Date();
     const weekAgo = new Date(today.setDate(today.getDate() - 7));
     const from = weekAgo.toISOString().slice(0,10);
@@ -29,7 +24,7 @@ class NewsApi {
     )
     .then(this.parseResult)
     .then(callback)
-    .catch(this.handleError);
+    .catch(errorCallback);
   }
 
 }
