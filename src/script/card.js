@@ -1,13 +1,14 @@
 import dateFormat from './dateFormat.js'
 
 class Card {
-  constructor(image, date, title, text, source) {
+  constructor(image, date, title, text, source, url) {
     let card = this;
     this.image = image;
     this.date = date;
     this.title = title;
     this.text = text;
     this.source = source;
+    this.url = url;
     this.element = this.createCard();
   }
 
@@ -27,6 +28,7 @@ class Card {
     }
 
   const cardContainer = createElement('article', 'result-card');
+  cardContainer.setAttribute('data-url', this.url);
 
   const imageContainer = createElement('img', 'result-card__image');
   imageContainer.setAttribute('src', this.image);

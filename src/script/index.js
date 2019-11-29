@@ -33,6 +33,19 @@ const resultTitleNotFound = document.querySelector('.preloader__title_hidden');
 const resultMessage = document.querySelector('.preloader__message_searching');
 const resultNotFoundMessage = document.querySelector('.preloader__message_hidden');
 
+resultsList.addEventListener('click', (event) => {
+  let element = event.target;
+  while (!element.classList.contains('result-card')) {
+    if (element != resultsList) {
+      element = element.parentElement;
+    }
+    else {
+      return;
+    }
+  }
+  window.open(element.getAttribute('data-url'), '_blank');
+});
+
 function showResults() {
   results.classList.remove('result_hidden');
 }
@@ -56,6 +69,7 @@ function showMoreCards() {
   if (cardsArr.length === 0) {
     resultsList.classList.add('results-list_hidden');
     resultButton.classList.add('result__button_hidden');
+    resultPaperPage.classList.add('result__paper-page_hidden');
     preloader.classList.remove('preloader_hidden');
     resultMessage.classList.add('preloader__message_searching');
     resultNotFoundImg.classList.remove('preloader__not-found_hidden');
@@ -66,7 +80,7 @@ function showMoreCards() {
     let lastPosition = Math.min(cardPosition + 3, cardsArr.length);
     for (let i=cardPosition; i<lastPosition; i++) {
       let pieceNews = cardsArr[i];
-      let card = new Card(pieceNews.urlToImage, pieceNews.publishedAt, pieceNews.title, pieceNews.description, pieceNews.source.name);
+      let card = new Card(pieceNews.urlToImage, pieceNews.publishedAt, pieceNews.title, pieceNews.description, pieceNews.source.name, pieceNews.url);
       resultsList.appendChild(card.element);
     }
     cardPosition = lastPosition;
@@ -130,4 +144,5 @@ window.onload = () => {
 
   searchForm.addEventListener('submit', findNews);
   resultButton.addEventListener('click', showMoreCardsClickHandler);
+
 }
