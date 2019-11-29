@@ -1,4 +1,4 @@
-@import url('./_visible/preloader__not-found_visible.css');
+@import url('./_hidden/preloader__not-found_hidden.css');
 
 .preloader__not-found {
   display: none;

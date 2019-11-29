@@ -55,7 +55,7 @@ function getCommitsFromServer() {
   showSlider();
   commits = ghApi.getCommit(commits =>
     {
-    for (let i=0; i<commits.length; i++) {
+    for (let i=0; i<3; i++) {
       let commit = commits[i];
       let myCommit = new Commit(commit.commit.author.name, commit.commit.author.email, commit.commit.author.date, commit.commit.message, commit.author.avatar_url);
       commitList.appendChild(myCommit.element);

@@ -1,4 +1,4 @@
-@import url('./_visible/preloader__title_visible.css');
+@import url('./_hidden/preloader__title_hidden.css');
 
 .preloader__title {
   display: none;

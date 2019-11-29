@@ -1,4 +1,4 @@
-@import url('./_visible/preloader__container_visible.css');
+@import url('./_hidden/preloader__container_visible.css');
 
 .preloader__container {
   width: 74px;

@@ -30,19 +30,19 @@ const resultsList = document.querySelector('.results-list');
 const resultButton = document.querySelector('.result__button');
 
 function showResults() {
-  results.classList.remove('result_visible');
+  results.classList.remove('result_hidden');
 }
 
 function hideResults() {
-  results.classList.add('result_visible');
+  results.classList.add('result_hidden');
 }
 
 function showResultsTitle() {
-  resultTitle.classList.remove('result__title_visible');
+  resultTitle.classList.remove('result__title_hidden');
 }
 
 function hideResultsTitle() {
-  resultTitle.classList.add('result__title_visible');
+  resultTitle.classList.add('result__title_hidden');
 }
 
 let cardsArr = [];
@@ -85,7 +85,7 @@ function findNews(event) {
 
   preloader.classList.remove('preloader_hidden');
   search.showPreloader();
-  results.classList.remove('result_visible');
+  results.classList.remove('result_hidden');
   showResultsTitle();
   preloader.classList.add('preloader_hidden');
   resultPaperPage.classList.remove('result__paper-page_hidden');

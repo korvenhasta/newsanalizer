@@ -52,9 +52,9 @@
   </div>
 
   <!--Блок Результаты поиска. Когда результат есть-->
-  <section class="result result_visible">
+  <section class="result result_hidden">
     <div class="result__page-container">
-      <h2 class="section-title result__title result__title_visible">Результаты поиска</h2>
+      <h2 class="section-title result__title result__title_hidden">Результаты поиска</h2>
       <a class="link-nav result__paper-page result__paper-page_hidden" href="./paper.html">
         Посмотреть аналитику
         <img class="link-nav__arrow" src="<%=require('./images/arrow.svg')%>" alt="Стрелка вправо">
@@ -63,17 +63,17 @@
 
       <!--Блок preloader-->
     <div class="preloader preloader_hidden">
-      <div class="preloader__container preloader__container_visible">
+      <div class="preloader__container preloader__container_hidden">
         <i class="preloader__circle"></i>
       </div>
-      <p class="content-text preloader__message preloader__message_visible">
+      <p class="content-text preloader__message preloader__message_hidden">
         Идет поиск новостей...
       </p>
-      <img class="preloader__not-found preloader__not-found_visible" src="<%=require('./images/not-found.svg')%>" alt="Картинка с грустным смайликом">
-      <h3 class="section-title section-title_size_medium preloader__title preloader__title_visible">
+      <img class="preloader__not-found preloader__not-found_hidden" src="<%=require('./images/not-found.svg')%>" alt="Картинка с грустным смайликом">
+      <h3 class="section-title section-title_size_medium preloader__title preloader__title_hidden">
         Ничего не найдено
       </h3>
-      <p class="content-text preloader__message preloader__message_not-found preloader__message_visible">
+      <p class="content-text preloader__message preloader__message_not-found preloader__message_hidden">
         К сожалению по вашему запросу ничего не найдено.
       </p>
     </div>
