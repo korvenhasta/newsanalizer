@@ -1,7 +1,6 @@
 @import url('./_hidden/preloader__title_hidden.css');
 
 .preloader__title {
-  display: none;
   text-align: center;
   margin: 0 auto 16px auto;
 }

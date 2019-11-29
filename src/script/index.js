@@ -28,6 +28,10 @@ const resultTitle = document.querySelector('.result__title');
 const resultPaperPage = document.querySelector('.result__paper-page');
 const resultsList = document.querySelector('.results-list');
 const resultButton = document.querySelector('.result__button');
+const resultNotFoundImg = document.querySelector('.preloader__not-found_hidden');
+const resultTitleNotFound = document.querySelector('.preloader__title_hidden');
+const resultMessage = document.querySelector('.preloader__message_searching');
+const resultNotFoundMessage = document.querySelector('.preloader__message_hidden');
 
 function showResults() {
   results.classList.remove('result_hidden');
@@ -49,14 +53,25 @@ let cardsArr = [];
 let cardPosition = 0;
 
 function showMoreCards() {
-  let lastPosition = Math.min(cardPosition + 3, cardsArr.length);
-  for (let i=cardPosition; i<lastPosition; i++) {
-    let pieceNews = cardsArr[i];
-    let card = new Card(pieceNews.urlToImage, pieceNews.publishedAt, pieceNews.title, pieceNews.description, pieceNews.source.name);
-    resultsList.appendChild(card.element);
+  if (cardsArr.length === 0) {
+    resultsList.classList.add('results-list_hidden');
+    resultButton.classList.add('result__button_hidden');
+    preloader.classList.remove('preloader_hidden');
+    resultMessage.classList.add('preloader__message_searching');
+    resultNotFoundImg.classList.remove('preloader__not-found_hidden');
+    resultTitleNotFound.classList.remove('preloader__title_hidden');
+    resultNotFoundMessage.classList.remove('preloader__message_hidden');
   }
-  cardPosition = lastPosition;
-  return lastPosition === cardsArr.length;
+  else {
+    let lastPosition = Math.min(cardPosition + 3, cardsArr.length);
+    for (let i=cardPosition; i<lastPosition; i++) {
+      let pieceNews = cardsArr[i];
+      let card = new Card(pieceNews.urlToImage, pieceNews.publishedAt, pieceNews.title, pieceNews.description, pieceNews.source.name);
+      resultsList.appendChild(card.element);
+    }
+    cardPosition = lastPosition;
+    return lastPosition === cardsArr.length;
+  }
 }
 
 function showMoreCardsClickHandler() {

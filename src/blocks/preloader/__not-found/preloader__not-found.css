@@ -1,6 +1,6 @@
 @import url('./_hidden/preloader__not-found_hidden.css');
 
 .preloader__not-found {
-  display: none;
+  display: block;
   margin: 0 auto 24px auto;
 }
