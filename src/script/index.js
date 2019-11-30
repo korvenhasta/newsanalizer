@@ -67,9 +67,10 @@ window.onload = () => {
     }
     else {
       let lastPosition = Math.min(cardPosition + 3, cardsArr.length);
-      for (let i=cardPosition; i<lastPosition; i++) {
+      for (let i = cardPosition; i < lastPosition; i++) {
         const pieceNews = cardsArr[i];
-        const card = new Card(pieceNews.urlToImage, pieceNews.publishedAt, pieceNews.title, pieceNews.description, pieceNews.source.name, pieceNews.url);
+        const publishedDate = new Date(pieceNews.publishedAt);
+        const card = new Card(pieceNews.urlToImage, publishedDate, pieceNews.title, pieceNews.description, pieceNews.source.name, pieceNews.url);
         resultsList.appendChild(card.element);
       }
       cardPosition = lastPosition;
@@ -105,20 +106,19 @@ window.onload = () => {
     preloader.searching();
     searching();
 
-    newsApi.getNews(topic, news =>
-      {
-        cardsArr = news.articles;
-        window.localStorage.setItem('news', JSON.stringify(cardsArr));
-        window.localStorage.setItem('totalResults', news.totalResults);
-        form.unBlock();
-        preloader.somethingFound();
-        showResults();
-        showMoreCardsClickHandler();
-      }, (error) => {
-        resetResults();
-        preloader.nothingFound('Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз');
-        notFound();
-        form.unBlock();
+    newsApi.getNews(topic, news => {
+      cardsArr = news.articles;
+      window.localStorage.setItem('news', JSON.stringify(cardsArr));
+      window.localStorage.setItem('totalResults', news.totalResults);
+      form.unBlock();
+      preloader.somethingFound();
+      showResults();
+      showMoreCardsClickHandler();
+    }, (error) => {
+      resetResults();
+      preloader.nothingFound('Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз');
+      notFound();
+      form.unBlock();
     });
   }
 }

@@ -1,16 +1,15 @@
 /* Функция для форматирования даты */
 export default function dateFormat(date) {
-  let month = [
+  const month = [
     "января", "февраля", "марта",
     "апреля", "мая", "июня", "июля",
     "августа", "сентября", "октября",
     "ноября", "декабря"
   ];
 
-  date = new Date();
-  let day = date.getDate();
-  let monthIndex = date.getMonth();
-  let year = date.getFullYear();
+  const day = date.getDate();
+  const monthIndex = date.getMonth();
+  const year = date.getFullYear();
 
   return day + ' ' + month[monthIndex] + ', ' + year;
 }

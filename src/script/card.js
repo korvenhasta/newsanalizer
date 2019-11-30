@@ -2,7 +2,6 @@ import dateFormat from './dateFormat.js'
 
 class Card {
   constructor(image, date, title, text, source, url) {
-    let card = this;
     this.image = image;
     this.date = date;
     this.title = title;

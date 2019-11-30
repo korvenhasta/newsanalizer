@@ -45,13 +45,13 @@ window.onload = () => {
         };
       }
       else {
-        prevVal[dayOfWeek] = {numHeadings: resHeadings, numDescription: resDescription};
+        prevVal[dayOfWeek] = { numHeadings: resHeadings, numDescription: resDescription };
       }
       return prevVal;
     }, Array(7).fill());
 
     const headings = articlesByDay.reduce((sum, element) => {
-      if(element === undefined)
+      if (element === undefined)
         return sum;
       return element.numHeadings + sum;
     }, 0);
@@ -67,9 +67,9 @@ window.onload = () => {
     const analiticsBarContainer = document.querySelector('.analitics__container');
     const analiticsBar = analiticsBarContainer.querySelectorAll('.analitics__bar');
 
-    for (let i=0; i<7; i++) {
+    for (let i = 0; i < 7; i++) {
       const currentDay = new Date((searchDay.getTime() - (i - 6) * 24 * 60 * 60 * 1000)).getDay();
-      let dayArticles = analitics.articlesByDay[currentDay];
+      const dayArticles = analitics.articlesByDay[currentDay];
 
       if (dayArticles === undefined) {
         analiticsBar[i].textContent = '0';
@@ -105,7 +105,7 @@ window.onload = () => {
     const timeStamp = new Date(Number(timeStampString));
     const news = JSON.parse(newsString);
 
-    return {timeStamp, topic, totalResults, news};
+    return { timeStamp, topic, totalResults, news };
   }
 
   /* Метод. Получим массив месяцев для отображения в таблице с барами */
@@ -129,7 +129,7 @@ window.onload = () => {
       const today = new Date(searchDate.getTime());
       const weekAgo = new Date(today.setDate(today.getDate() + offSet));
       element.textContent = weekFormat(weekAgo);
-      offSet +=1;
+      offSet += 1;
     });
   }
 
@@ -154,20 +154,18 @@ window.onload = () => {
   /* Метод. Получим данные для аналитики из localStorage и вызовем фунцию подсчета цифр */
   function getAnaliyics(topic, news) {
     const analiticsString = window.localStorage.getItem('analitics');
-    let analitics = null;
 
     if (analiticsString === null || analiticsString === undefined) {
-      analitics = calculateAnaliyics(topic, news);
+      const analitics = calculateAnaliyics(topic, news);
       window.localStorage.setItem('analitics', JSON.stringify(analitics));
+      return analitics;
     }
     else {
-      analitics = JSON.parse(analiticsString);
+      return JSON.parse(analiticsString);
     }
-
-    return analitics;
   }
 
-  const {timeStamp, topic, totalResults, news} = loadData(); // воспользуемся деструктуризацией
+  const { timeStamp, topic, totalResults, news } = loadData(); // воспользуемся деструктуризацией
 
   setMonth(timeStamp);
   setWeekDates(timeStamp);

@@ -2,7 +2,6 @@ import dateFormat from './dateFormat.js'
 
 class Commit {
   constructor(name, email, date, message, avatarUrl) {
-    let commit = this;
     this.name = name;
     this.email = email;
     this.date = date;
