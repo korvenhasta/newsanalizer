@@ -25,7 +25,7 @@ window.onload = () => {
   const ghApi = new GithubApi('korvenhasta', 'newsanalizer');
   const slider = new Glide('.glide', sliderConfig);
 
-  ghApi.getCommit(commits =>
+  ghApi.getCommits(commits =>
     {
       if (commits.length === 0) {
         return;

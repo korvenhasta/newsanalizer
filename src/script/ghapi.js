@@ -13,7 +13,7 @@ class GithubApi {
   }
 
   /* Метод. Получим коммит с сервера */
-  getCommit(callback, errorCallback) {
+  getCommits(callback, errorCallback) {
     fetch(
         `https://api.github.com/repos/${this.owner}/${this.repository}/commits`
     )
