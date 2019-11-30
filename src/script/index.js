@@ -1,7 +1,7 @@
 import "../pages/style.css";
 import NewsApi from './newsapi.js'
 import Card from './card.js'
-import Search from './search.js'
+import Form from './form.js'
 
 /* Метод. Посчитаем ключевое слово в заголовках и описании новости */
 function countHeadings(topic, str2) {
@@ -24,16 +24,17 @@ const searchForm = document.querySelector('.search__form');
 const searchInput = document.querySelector('.search__input');
 const searchButton = document.querySelector('.search__button');
 
-const preloader = document.querySelector('.preloader_hidden');
+const preloader = document.querySelector('.preloader');
+const preloaderSearchingContainer = document.querySelector('.preloader__searching');
+const notFoundContainer = document.querySelector('.preloader__not-found');
+const preloaderMessage = document.querySelector('.preloader__message');
 const results = document.querySelector('.result');
 const resultTitle = document.querySelector('.result__title');
 const resultPaperPage = document.querySelector('.result__paper-page');
 const resultsList = document.querySelector('.results-list');
 const resultButton = document.querySelector('.result__button');
-const resultNotFoundImg = document.querySelector('.preloader__not-found_hidden');
-const resultTitleNotFound = document.querySelector('.preloader__title_hidden');
-const resultMessage = document.querySelector('.preloader__message_searching');
-const resultNotFoundMessage = document.querySelector('.preloader__message_hidden');
+
+//TODO: const resultMessage = document.querySelector('.preloader__message_searching');
 
 
 resultsList.addEventListener('click', (event) => {
@@ -49,20 +50,45 @@ resultsList.addEventListener('click', (event) => {
   window.open(element.getAttribute('data-url'), '_blank');
 });
 
-function showResults() {
-  results.classList.remove('result_hidden');
-}
-
 function hideResults() {
   results.classList.add('result_hidden');
 }
 
-function showResultsTitle() {
+/* Метод. Покажем блок поиска резульатов */
+function searching() {
+  results.classList.remove('result_hidden');
   resultTitle.classList.remove('result__title_hidden');
+  resultPaperPage.classList.add('result__paper-page_hidden');
+  preloader.classList.remove('preloader_hidden');
+  preloaderSearchingContainer.classList.remove('preloader__searching_hidden');
+  notFoundContainer.classList.add('preloader__not-found_hidden');
+  resultsList.classList.add('results-list_hidden');
+  resultButton.classList.add('result__button_hidden');
 }
 
-function hideResultsTitle() {
-  resultTitle.classList.add('result__title_hidden');
+/* Метод. Покажем блок, когда результаты не найдены */
+function notFound(reason) {
+  results.classList.remove('result_hidden');
+  resultTitle.classList.remove('result__title_hidden');
+  resultPaperPage.classList.add('result__paper-page_hidden');
+  preloader.classList.remove('preloader_hidden');
+  preloaderSearchingContainer.classList.add('preloader__searching_hidden');
+  notFoundContainer.classList.remove('preloader__not-found_hidden');
+  resultsList.classList.add('results-list_hidden');
+  resultButton.classList.add('result__button_hidden');
+  preloaderMessage.textContent = reason;
+}
+
+/* Метод. Покажем блок с результатами поиска */
+function showResults() {
+  results.classList.remove('result_hidden');
+  resultTitle.classList.remove('result__title_hidden');
+  resultPaperPage.classList.remove('result__paper-page_hidden');
+  preloader.classList.add('preloader_hidden');
+  preloaderSearchingContainer.classList.add('preloader__searching_hidden');
+  notFoundContainer.classList.add('preloader__not-found_hidden');
+  resultsList.classList.remove('results-list_hidden');
+  resultButton.classList.remove('result__button_hidden');
 }
 
 let cardsArr = [];
@@ -70,14 +96,7 @@ let cardPosition = 0;
 
 function showMoreCards() {
   if (cardsArr.length === 0) {
-    resultsList.classList.add('results-list_hidden');
-    resultButton.classList.add('result__button_hidden');
-    resultPaperPage.classList.add('result__paper-page_hidden');
-    preloader.classList.remove('preloader_hidden');
-    resultMessage.classList.add('preloader__message_searching');
-    resultNotFoundImg.classList.remove('preloader__not-found_hidden');
-    resultTitleNotFound.classList.remove('preloader__title_hidden');
-    resultNotFoundMessage.classList.remove('preloader__message_hidden');
+    notFound('К сожалению по вашему запросу ничего не найдено.');
   }
   else {
     let lastPosition = Math.min(cardPosition + 3, cardsArr.length);
@@ -105,19 +124,7 @@ function resetResults() {
   range.deleteContents();
 }
 
-let isFormVisible = false;
-
-function findNews(event) {
-  event.preventDefault();
-  if (isFormVisible) {
-    return;
-  }
-
-  isFormVisible = true;
-  searchInput.disabled = true;
-  searchButton.disabled = true;
-
-  let topic = searchInput.value;
+function findNews(topic) {
 
   window.localStorage.clear();
   window.localStorage.setItem('topic', topic);
@@ -125,44 +132,31 @@ function findNews(event) {
 
   resetResults();
 
-  preloader.classList.remove('preloader_hidden');
-  search.showPreloader();
-  resultMessage.classList.remove('preloader__message_searching');
-  results.classList.remove('result_hidden');
-  resultButton.classList.add('result__button_hidden');
-  showResultsTitle();
-  resultPaperPage.classList.remove('result__paper-page_hidden');
-  resultsList.classList.remove('results-list_hidden');
+  searching();
 
   newsApi.getNews(topic, news =>
     {
-    preloader.classList.add('preloader_hidden');
-    resultButton.classList.remove('result__button_hidden');
-    searchForm.setAttribute('disabled', false);
+    showResults();
     console.log(news);
     cardsArr = news.articles;
     window.localStorage.setItem('news', JSON.stringify(cardsArr));
     window.localStorage.setItem('totalResults', news.totalResults);
     showMoreCardsClickHandler();
-    isFormVisible = false;
-    searchInput.disabled = false;
-    searchButton.disabled = false;
+    form.unBlock();
   }, (error) => {
     resetResults();
     hideResults();
-    setTimeout( () => alert('Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз') , 50);
-    isFormVisible = false;
-    searchInput.disabled = false;;
-    searchButton.disabled = false;
+    notFound('Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз');
+    form.unBlock();
   });
 }
 
 let newsApi = {};
-let search = {};
+let form = {};
 
 window.onload = () => {
   newsApi = new NewsApi('2c4b1b51dd004658ae3055a2eb42a668');
-  search = new Search();
+  form = new Form(searchForm, findNews);
 
   searchForm.addEventListener('submit', findNews);
   resultButton.addEventListener('click', showMoreCardsClickHandler);

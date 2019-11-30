@@ -1,8 +1,11 @@
+@import url("./__searching/preloader__searching.css");
 @import url("./__container/preloader__container.css");
 @import url("./__circle/preloader__circle.css");
+@import url("./__search-message/preloader__search-message.css");
+@import url("./__not-found/preloader__not-found.css");
+@import url("./__not-found-image/preloader__not-found-image.css");
 @import url("./__message/preloader__message.css");
 @import url("./__title/preloader__title.css");
-@import url("./__not-found/preloader__not-found.css");
 @import url("./_hidden/preloader_hidden.css");
 
 .preloader {

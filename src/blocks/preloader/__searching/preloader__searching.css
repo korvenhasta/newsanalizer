@@ -1,0 +1,8 @@
+@import url('./_hidden/preloader__searching_hidden.css');
+
+.preloader__searching {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+}

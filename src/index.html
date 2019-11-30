@@ -63,19 +63,25 @@
 
       <!--Блок preloader-->
     <div class="preloader preloader_hidden">
-      <div class="preloader__container preloader__container_hidden">
-        <i class="preloader__circle"></i>
+      <div class="preloader__searching">
+        <div class="preloader__container">
+            <i class="preloader__circle"></i>
+          </div>
+          <p class="content-text preloader__search-message">
+            Идет поиск новостей...
+          </p>
       </div>
-      <p class="content-text preloader__message preloader__message_searching">
-        Идет поиск новостей...
-      </p>
-      <img class="preloader__not-found preloader__not-found_hidden" src="<%=require('./images/not-found.svg')%>" alt="Картинка с грустным смайликом">
-      <h3 class="section-title section-title_size_medium preloader__title preloader__title_hidden">
-        Ничего не найдено
-      </h3>
-      <p class="content-text preloader__message preloader__message_hidden">
-        К сожалению по вашему запросу ничего не найдено.
-      </p>
+
+      <div class="preloader__not-found">
+        <img class="preloader__not-found-image" src="<%=require('./images/not-found.svg')%>" alt="Картинка с грустным смайликом">
+        <h3 class="section-title section-title_size_medium preloader__title">
+          Ничего не найдено
+        </h3>
+        <p class="content-text preloader__message">
+
+        </p>
+      </div>
+
     </div>
     <!--Прелоадер конец-->
 
