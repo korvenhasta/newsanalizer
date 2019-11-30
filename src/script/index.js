@@ -22,6 +22,8 @@ function countHeadings(topic, str2) {
 
 const searchForm = document.querySelector('.search__form');
 const searchInput = document.querySelector('.search__input');
+const searchButton = document.querySelector('.search__button');
+
 const preloader = document.querySelector('.preloader_hidden');
 const results = document.querySelector('.result');
 const resultTitle = document.querySelector('.result__title');
@@ -32,6 +34,7 @@ const resultNotFoundImg = document.querySelector('.preloader__not-found_hidden')
 const resultTitleNotFound = document.querySelector('.preloader__title_hidden');
 const resultMessage = document.querySelector('.preloader__message_searching');
 const resultNotFoundMessage = document.querySelector('.preloader__message_hidden');
+
 
 resultsList.addEventListener('click', (event) => {
   let element = event.target;
@@ -102,8 +105,18 @@ function resetResults() {
   range.deleteContents();
 }
 
+let isFormVisible = false;
+
 function findNews(event) {
   event.preventDefault();
+  if (isFormVisible) {
+    return;
+  }
+
+  isFormVisible = true;
+  searchInput.disabled = true;
+  searchButton.disabled = true;
+
   let topic = searchInput.value;
 
   window.localStorage.clear();
@@ -114,25 +127,34 @@ function findNews(event) {
 
   preloader.classList.remove('preloader_hidden');
   search.showPreloader();
+  resultMessage.classList.remove('preloader__message_searching');
   results.classList.remove('result_hidden');
+  resultButton.classList.add('result__button_hidden');
   showResultsTitle();
-  preloader.classList.add('preloader_hidden');
   resultPaperPage.classList.remove('result__paper-page_hidden');
   resultsList.classList.remove('results-list_hidden');
 
   newsApi.getNews(topic, news =>
     {
+    preloader.classList.add('preloader_hidden');
+    resultButton.classList.remove('result__button_hidden');
+    searchForm.setAttribute('disabled', false);
     console.log(news);
     cardsArr = news.articles;
     window.localStorage.setItem('news', JSON.stringify(cardsArr));
     window.localStorage.setItem('totalResults', news.totalResults);
     showMoreCardsClickHandler();
+    isFormVisible = false;
+    searchInput.disabled = false;
+    searchButton.disabled = false;
   }, (error) => {
     resetResults();
     hideResults();
     setTimeout( () => alert('Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз') , 50);
+    isFormVisible = false;
+    searchInput.disabled = false;;
+    searchButton.disabled = false;
   });
-  resultButton.classList.remove('result__button_hidden');
 }
 
 let newsApi = {};

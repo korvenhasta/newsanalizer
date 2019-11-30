@@ -6,7 +6,6 @@ import GithubApi from './ghapi.js';
 import Commit from './commit.js';
 
 const commitList = document.querySelector('.glide__slides');
-const bulletList = document.querySelector('.glide__bullets');
 const slider = document.querySelector('.slider_hidden');
 
 function showSlider() {
@@ -24,32 +23,6 @@ function starter() {
   }
 }
 
-/* Метод. Создаем DOM-элемент булета */
-function createBullet() {
-  function createElement(elType, classes) {
-    const elContainer = document.createElement(elType);
-    if (Array.isArray(classes) === true) {
-      classes.forEach(element => {
-        elContainer.classList.add(element);
-      });
-    }
-    else {
-      elContainer.classList.add(classes);
-    }
-    return elContainer;
-  }
-
-  const bullet = createElement('button', ['glide__bullet', 'slider__bullet']);
-
-  return bullet;
-}
-
-function addBullet() {
-  let bullet = createBullet();
-  bulletList.appendChild(bullet);
-}
-
-let commits = [];
 
 function getCommitsFromServer() {
   showSlider();
@@ -59,7 +32,6 @@ function getCommitsFromServer() {
       let commit = commits[i];
       let myCommit = new Commit(commit.commit.author.name, commit.commit.author.email, commit.commit.author.date, commit.commit.message, commit.author.avatar_url);
       commitList.appendChild(myCommit.element);
-      addBullet();
     }
 
     if (commits === [] || commits === null || commits === undefined) {

@@ -14,24 +14,24 @@ export default class Search {
   }
 
   showPreloader() {
-    this.preloader.classList.remove('preloader__container_visible');
-    this.searchingMessage.classList.remove('preloader__message_visible');
+    this.preloader.classList.remove('preloader__container_hidden');
+    this.searchingMessage.classList.remove('preloader__message_hidden');
   }
 
   hidePreloader() {
-    this.preloader.classList.add('preloader__container_visible');
-    this.searchingMessage.classList.add('preloader__message_visible');
+    this.preloader.classList.add('preloader__container_hidden');
+    this.searchingMessage.classList.add('preloader__message_hidden');
   }
 
   showNotFoundMessage() {
-    this.notFoundPicture.classList.remove('preloader__not-found_visible');
-    this.notFoundTitle.classList.remove('preloader__title_visible');
-    this.notFoundMessage.classList.remove('preloader__message_visible');
+    this.notFoundPicture.classList.remove('preloader__not-found_hidden');
+    this.notFoundTitle.classList.remove('preloader__title_hidden');
+    this.notFoundMessage.classList.remove('preloader__message_hidden');
   }
 
   hideNotFoundMessage() {
-    this.notFoundPicture.classList.add('preloader__not-found_visible');
-    this.notFoundTitle.classList.add('preloader__title_visible');
-    this.notFoundMessage.classList.add('preloader__message_visible');
+    this.notFoundPicture.classList.add('preloader__not-found_hidden');
+    this.notFoundTitle.classList.add('preloader__title_hidden');
+    this.notFoundMessage.classList.add('preloader__message_hidden');
   }
 }
