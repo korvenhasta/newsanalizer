@@ -30,7 +30,7 @@ export default class Form {
     this._searchButton.disabled = false;
   }
 
-  /* Метод. Переключим  */
+  /* Метод. Обрабатываем сабмит формы */
   formSubmitHandler(event) {
     event.preventDefault();
     if(!this._searchInput.checkValidity()) {

@@ -12,24 +12,25 @@ class Commit {
 
   /* Метод. Создаем DOM-элемент коммита */
   createCommit() {
-    function createElement(elType, classes) {
-      const elContainer = document.createElement(elType);
+    function createElement(tag, classes) {
+      const element = document.createElement(tag);
       if (Array.isArray(classes) === true) {
-        classes.forEach(element => {
-          elContainer.classList.add(element);
+        classes.forEach(item => {
+          element.classList.add(item);
         });
       }
       else {
-        elContainer.classList.add(classes);
+        element.classList.add(classes);
       }
-      return elContainer;
+      return element;
     }
 
     const liItem = createElement('li', 'glide__slide');
     const commitContainer = createElement('div', 'slider__card');
 
     const date = createElement('time', 'slider__date');
-    date.textContent = dateFormat(this.date);
+    let commitDate = new Date(this.date);
+    date.textContent = dateFormat(commitDate);
 
     const userContainer = createElement('div', 'slider__user');
     const avatar = createElement('img', 'slider__user-avatar');
@@ -39,6 +40,7 @@ class Commit {
     const infoContainer = createElement('div', 'slider__user-info');
     const userName = createElement('h3', ['section-title', 'section-title_size_medium', 'slider__user-name']);
     userName.textContent = this.name;
+
     const email = createElement('p', ['content-text', 'content-text_size_small', 'slider__user-email']);
     email.textContent = this.email;
 

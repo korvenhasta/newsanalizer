@@ -34,25 +34,20 @@ window.onload = () => {
   function calculateAnaliyics(topic, news) {
     const articlesByDay = news.reduce((prevVal, element) => {
       const resHeadings = countOccurences(topic, element.title);
-
       const resDescription = countOccurences(topic, element.description);
+
       const dayOfWeek = new Date(element.publishedAt).getDay();
 
-      if (prevVal[dayOfWeek] !== undefined) {
-        prevVal[dayOfWeek] = {
-          numHeadings: resHeadings + prevVal[dayOfWeek].numHeadings,
-          numDescription: resDescription + prevVal[dayOfWeek].numDescription
-        };
-      }
-      else {
-        prevVal[dayOfWeek] = { numHeadings: resHeadings, numDescription: resDescription };
-      }
+      prevVal[dayOfWeek] = {
+        numHeadings: resHeadings + prevVal[dayOfWeek].numHeadings,
+        numDescription: resDescription + prevVal[dayOfWeek].numDescription
+      };
+
       return prevVal;
-    }, Array(7).fill());
+    }, Array(7).fill({ numHeadings: 0, numDescription: 0 })
+    );
 
     const headings = articlesByDay.reduce((sum, element) => {
-      if (element === undefined)
-        return sum;
       return element.numHeadings + sum;
     }, 0);
 
@@ -66,20 +61,15 @@ window.onload = () => {
   function drawBars(searchDay, analitics) {
     const analiticsBarContainer = document.querySelector('.analitics__container');
     const analiticsBar = analiticsBarContainer.querySelectorAll('.analitics__bar');
-
+    const ticksPerDay = 24 * 60 * 60 * 1000;
     for (let i = 0; i < 7; i++) {
-      const currentDay = new Date((searchDay.getTime() - (i - 6) * 24 * 60 * 60 * 1000)).getDay();
+      const currentDay = new Date((searchDay.getTime() - (i - 6) * ticksPerDay)).getDay();
       const dayArticles = analitics.articlesByDay[currentDay];
 
-      if (dayArticles === undefined) {
-        analiticsBar[i].textContent = '0';
-      }
-      else {
-        let sum = dayArticles.numHeadings + dayArticles.numDescription;
-        analiticsBar[i].textContent = sum;
-        if (sum > 1) {
-          analiticsBar[i].style.width = `${sum}%`;
-        }
+      const sum = dayArticles.numHeadings + dayArticles.numDescription;
+      analiticsBar[i].textContent = sum;
+      if (sum > 1) {
+        analiticsBar[i].style.width = `${sum}%`;
       }
     }
   }
@@ -109,7 +99,7 @@ window.onload = () => {
   }
 
   /* Метод. Получим массив месяцев для отображения в таблице с барами */
-  function getMonthsName(timeStamp) {
+  function getMonthName(timeStamp) {
     const months = ['январь', 'февраль', 'март', 'апрель', 'май', 'июнь', 'июль', 'август', 'сентябрь', 'октябрь', 'ноябрь', 'декабрь'];
     return months[timeStamp.getMonth()];
   }
@@ -117,7 +107,7 @@ window.onload = () => {
   /* Метод. Запишем месяц в таблицу */
   function setMonth(timeStamp) {
     const tableTitleMonth = document.querySelector('.analitics__month');
-    tableTitleMonth.textContent = getMonthsName(timeStamp);
+    tableTitleMonth.textContent = getMonthName(timeStamp);
   }
 
   /* Метод. Посчитаем даты 7 дней от текущей и запишем их в таблицу */

@@ -1,5 +1,5 @@
 class GithubApi {
-  constructor (owner, repository) {
+  constructor(owner, repository) {
     this.owner = owner;
     this.repository = repository;
   }
@@ -7,19 +7,19 @@ class GithubApi {
   /* Метод. Вернем json объект или ошибку */
   parseResult(res) {
     if (res.ok) {
-        return res.json();
-      }
-      return Promise.reject(`Ошибка: ${res.status}`);
+      return res.json();
+    }
+    return Promise.reject(`Ошибка: ${res.status}`);
   }
 
   /* Метод. Получим коммит с сервера */
   getCommits(callback, errorCallback) {
     fetch(
-        `https://api.github.com/repos/${this.owner}/${this.repository}/commits`
+      `https://api.github.com/repos/${this.owner}/${this.repository}/commits`
     )
-    .then(this.parseResult)
-    .then(callback)
-    .catch(errorCallback);
+      .then(this.parseResult)
+      .then(callback)
+      .catch(errorCallback);
   }
 }
 
