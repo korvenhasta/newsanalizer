@@ -1,6 +1,7 @@
 class GithubApi {
-  constructor () {
-
+  constructor (owner, repository) {
+    this.owner = owner;
+    this.repository = repository;
   }
 
   /* Метод. Вернем json объект или ошибку */
@@ -14,11 +15,11 @@ class GithubApi {
   /* Метод. Получим коммит с сервера */
   getCommit(callback, errorCallback) {
     fetch(
-        `https://api.github.com/repos/korvenhasta/newsanalizer/commits`
+        `https://api.github.com/repos/${this.owner}/${this.repository}/commits`
     )
     .then(this.parseResult)
     .then(callback)
-    .catch(this.errorCallback);
+    .catch(errorCallback);
   }
 }
 
