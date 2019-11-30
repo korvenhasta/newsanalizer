@@ -1,3 +1,4 @@
+/* Настройки для слайдера */
 export const sliderConfig = {
   type: 'carousel',
   startAt: 0,

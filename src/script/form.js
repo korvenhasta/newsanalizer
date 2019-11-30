@@ -43,6 +43,7 @@ export default class Form {
     this._onSearch(this._searchInput.value);
   }
 
+  /* Метод. Валидируем инпут */
   formInputHandler() {
     if (this._searchInput.value === "") {
       this._searchInput.setCustomValidity("Нужно ввести ключевое слово");

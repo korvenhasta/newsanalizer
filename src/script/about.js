@@ -7,12 +7,13 @@ import Commit from './commit.js';
 import {sliderConfig} from './sliderConfig.js'
 
 window.onload = () => {
-  /*  */
+  /* Метод. Добавим слайдер на страницу */
   function showSlider() {
     const slider = document.querySelector('.slider_hidden');
     slider.classList.remove('slider_hidden');
   }
 
+  /* Метод. Нарисуем карточки с коммитами */
   function displayCommits(commits) {
     const commitList = document.querySelector('.glide__slides');
     for (let i=0; i<commits.length; i++) {

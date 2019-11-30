@@ -1,3 +1,4 @@
+/* Функция для форматирования даты */
 export default function dateFormat(date) {
   let month = [
     "января", "февраля", "марта",

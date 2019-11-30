@@ -30,6 +30,7 @@ window.onload = () => {
     return counter;
   }
 
+  /* Метод. Посчитаем цифры для таблички с аналитикой */
   function calculateAnaliyics(topic, news) {
     const articlesByDay = news.reduce((prevVal, element) => {
       const resHeadings = countOccurences(topic, element.title);
@@ -61,6 +62,7 @@ window.onload = () => {
     }
   }
 
+  /* Метод. Нарисуем бары (значения и полоски) */
   function drawBars(searchDay, analitics) {
     const analiticsBarContainer = document.querySelector('.analitics__container');
     const analiticsBar = analiticsBarContainer.querySelectorAll('.analitics__bar');
@@ -82,7 +84,7 @@ window.onload = () => {
     }
   }
 
-  /* Метод. Проверим данные, которые приходят из localStorage */
+  /* Метод. Проверим данные, которые приходят из localStorage. воспользуемся arguments для того, чтобы не передавать все аргументы */
   function checkData() {
     return [...arguments].reduce((exists, element) => {
       return exists && element != null && element != undefined;
@@ -106,16 +108,19 @@ window.onload = () => {
     return {timeStamp, topic, totalResults, news};
   }
 
+  /* Метод. Получим массив месяцев для отображения в таблице с барами */
   function getMonthsName(timeStamp) {
     const months = ['январь', 'февраль', 'март', 'апрель', 'май', 'июнь', 'июль', 'август', 'сентябрь', 'октябрь', 'ноябрь', 'декабрь'];
     return months[timeStamp.getMonth()];
   }
 
+  /* Метод. Запишем месяц в таблицу */
   function setMonth(timeStamp) {
     const tableTitleMonth = document.querySelector('.analitics__month');
     tableTitleMonth.textContent = getMonthsName(timeStamp);
   }
 
+  /* Метод. Посчитаем даты 7 дней от текущей и запишем их в таблицу */
   function setWeekDates(searchDate) {
     const analiticsDateContainer = document.querySelector('.analitics__container-column_left');
     const analiticsDate = analiticsDateContainer.querySelectorAll('.analitics__date');
@@ -128,21 +133,25 @@ window.onload = () => {
     });
   }
 
+  /* Метод. Запишем тему, которую искал пользователь в заголовок */
   function setTopic(searchTopic) {
     const summaryTitle = document.querySelector('.summary__title_span');
     summaryTitle.textContent = searchTopic;
   }
 
+  /* Метод. Запишем totalResults в шапку */
   function setTotalResults(searchTotalResults) {
     const summaryTextTotal = document.querySelector('.summary__text_total');
     summaryTextTotal.textContent = searchTotalResults;
   }
 
+  /* Метод. Запишем количество упоминаний в шапку */
   function setHeadingsCount(count) {
     const summaryTextHeadings = document.querySelector('.summary__text_headings');
     summaryTextHeadings.textContent = count;
   }
 
+  /* Метод. Получим данные для аналитики из localStorage и вызовем фунцию подсчета цифр */
   function getAnaliyics(topic, news) {
     const analiticsString = window.localStorage.getItem('analitics');
     let analitics = null;
@@ -158,7 +167,7 @@ window.onload = () => {
     return analitics;
   }
 
-  const {timeStamp, topic, totalResults, news} = loadData();
+  const {timeStamp, topic, totalResults, news} = loadData(); // воспользуемся деструктуризацией
 
   setMonth(timeStamp);
   setWeekDates(timeStamp);
