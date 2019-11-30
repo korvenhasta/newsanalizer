@@ -2,6 +2,7 @@ import "../pages/style.css";
 import NewsApi from './newsapi.js'
 import Card from './card.js'
 import Form from './form.js'
+import Preloader from './preloader.js'
 
 /* Метод. Посчитаем ключевое слово в заголовках и описании новости */
 function countHeadings(topic, str2) {
@@ -20,14 +21,6 @@ function countHeadings(topic, str2) {
   return counter;
 }
 
-const searchForm = document.querySelector('.search__form');
-const searchInput = document.querySelector('.search__input');
-const searchButton = document.querySelector('.search__button');
-
-const preloader = document.querySelector('.preloader');
-const preloaderSearchingContainer = document.querySelector('.preloader__searching');
-const notFoundContainer = document.querySelector('.preloader__not-found');
-const preloaderMessage = document.querySelector('.preloader__message');
 const results = document.querySelector('.result');
 const resultTitle = document.querySelector('.result__title');
 const resultPaperPage = document.querySelector('.result__paper-page');
@@ -50,33 +43,22 @@ resultsList.addEventListener('click', (event) => {
   window.open(element.getAttribute('data-url'), '_blank');
 });
 
-function hideResults() {
-  results.classList.add('result_hidden');
-}
-
 /* Метод. Покажем блок поиска резульатов */
 function searching() {
   results.classList.remove('result_hidden');
   resultTitle.classList.remove('result__title_hidden');
   resultPaperPage.classList.add('result__paper-page_hidden');
-  preloader.classList.remove('preloader_hidden');
-  preloaderSearchingContainer.classList.remove('preloader__searching_hidden');
-  notFoundContainer.classList.add('preloader__not-found_hidden');
   resultsList.classList.add('results-list_hidden');
   resultButton.classList.add('result__button_hidden');
 }
 
 /* Метод. Покажем блок, когда результаты не найдены */
-function notFound(reason) {
+function notFound() {
   results.classList.remove('result_hidden');
   resultTitle.classList.remove('result__title_hidden');
   resultPaperPage.classList.add('result__paper-page_hidden');
-  preloader.classList.remove('preloader_hidden');
-  preloaderSearchingContainer.classList.add('preloader__searching_hidden');
-  notFoundContainer.classList.remove('preloader__not-found_hidden');
   resultsList.classList.add('results-list_hidden');
   resultButton.classList.add('result__button_hidden');
-  preloaderMessage.textContent = reason;
 }
 
 /* Метод. Покажем блок с результатами поиска */
@@ -84,9 +66,6 @@ function showResults() {
   results.classList.remove('result_hidden');
   resultTitle.classList.remove('result__title_hidden');
   resultPaperPage.classList.remove('result__paper-page_hidden');
-  preloader.classList.add('preloader_hidden');
-  preloaderSearchingContainer.classList.add('preloader__searching_hidden');
-  notFoundContainer.classList.add('preloader__not-found_hidden');
   resultsList.classList.remove('results-list_hidden');
   resultButton.classList.remove('result__button_hidden');
 }
@@ -96,7 +75,8 @@ let cardPosition = 0;
 
 function showMoreCards() {
   if (cardsArr.length === 0) {
-    notFound('К сожалению по вашему запросу ничего не найдено.');
+    preloader.nothingFound('К сожалению по вашему запросу ничего не найдено.');
+    notFound();
   }
   else {
     let lastPosition = Math.min(cardPosition + 3, cardsArr.length);
@@ -132,33 +112,34 @@ function findNews(topic) {
 
   resetResults();
 
+  preloader.searching();
   searching();
 
   newsApi.getNews(topic, news =>
     {
-    showResults();
-    console.log(news);
-    cardsArr = news.articles;
-    window.localStorage.setItem('news', JSON.stringify(cardsArr));
-    window.localStorage.setItem('totalResults', news.totalResults);
-    showMoreCardsClickHandler();
-    form.unBlock();
-  }, (error) => {
-    resetResults();
-    hideResults();
-    notFound('Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз');
-    form.unBlock();
+      cardsArr = news.articles;
+      window.localStorage.setItem('news', JSON.stringify(cardsArr));
+      window.localStorage.setItem('totalResults', news.totalResults);
+      form.unBlock();
+      preloader.somethingFound();
+      showResults();
+      showMoreCardsClickHandler();
+    }, (error) => {
+      resetResults();
+      preloader.nothingFound('Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз');
+      notFound();
+      form.unBlock();
   });
 }
 
 let newsApi = {};
 let form = {};
+let preloader = {};
 
 window.onload = () => {
   newsApi = new NewsApi('2c4b1b51dd004658ae3055a2eb42a668');
-  form = new Form(searchForm, findNews);
+  form = new Form(document.querySelector('.search__form'), findNews);
+  preloader = new Preloader(document.querySelector('.preloader'));
 
-  searchForm.addEventListener('submit', findNews);
   resultButton.addEventListener('click', showMoreCardsClickHandler);
-
 }
