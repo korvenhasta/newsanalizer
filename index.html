@@ -8,7 +8,7 @@
   <meta name="description" content="Cервис для анализа происходящих в мире событий">
   <meta name="author" content="Марина Кенина">
   <title>NewsAnalizer</title>
-  <link rel="stylesheet" href="./pages/main.17e569b5394a94b0f374.css">
+  <link rel="stylesheet" href="./pages/main.781be82fb279e468fce2.css">
   <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
 </head>
 
@@ -51,111 +51,43 @@
     <!--Search конец-->
   </div>
 
-  <!--Блок preloader-->
-  <section class="preloader">
-    <div class="preloader__container">
-      <i class="preloader__circle"></i>
-    </div>
-    <p class="content-text preloader__message">
-      Идет поиск новостей...
-    </p>
-    <img class="preloader__not-found" src="./images/not-found.svg" alt="Картинка с грустным смайликом">
-    <h3 class="section-title section-title_size_medium preloader__title">
-      Ничего не найдено
-    </h3>
-    <p class="content-text preloader__message preloader__message_not-found">
-      К сожалению по вашему запросу ничего не найдено.
-    </p>
-  </section>
-  <!--Прелоадер конец-->
-
   <!--Блок Результаты поиска. Когда результат есть-->
-  <section class="result">
+  <section class="result result_hidden">
     <div class="result__page-container">
-      <h2 class="section-title result__title">Результаты поиска</h2>
-      <a class="link-nav result__paper-page" href="./paper.html">
+      <h2 class="section-title result__title result__title_hidden">Результаты поиска</h2>
+      <a class="link-nav result__paper-page result__paper-page_hidden" href="./paper.html">
         Посмотреть аналитику
         <img class="link-nav__arrow" src="./images/arrow.svg" alt="Стрелка вправо">
       </a>
     </div>
 
-    <div class="results-list">
-      <!--Пример карточки-->
-      <article class="result-card" tabindex="0">
-        <img class="result-card__image" src="./images/image_08.png" alt="Национальное достояние – парки">
-        <div class="result-card__description">
-          <time class="result-card__date" datetime="2019-08-02">2 августа, 2019</time>
-          <div class="result-card__container">
-            <h3 class="section-title section-title_size_medium result-card__name">Национальное достояние – парки</h3>
-            <p class="content-text content-text_size_medium result-card__annotation">В 2016 году Америка отмечала важный юбилей:
-              сто лет назад здесь начала складываться система национальных парков – охраняемых территорий,
-              где и сегодня каждый может приобщиться к природе.
-            </p>
+      <!--Блок preloader-->
+    <div class="preloader preloader_hidden">
+      <div class="preloader__searching">
+        <div class="preloader__container">
+            <i class="preloader__circle"></i>
           </div>
-          <p class="result-card__source">Лента.ру</p>
-        </div>
-      </article>
+          <p class="content-text preloader__search-message">
+            Идет поиск новостей...
+          </p>
+      </div>
 
-      <article class="result-card" tabindex="0">
-        <img class="result-card__image" src="./images/image_04.png" alt="Лесные огоньки: история одной фотографии">
-        <div class="result-card__description">
-          <time class="result-card__date" datetime="2019-08-02">2 августа, 2019</time>
-          <div class="result-card__container">
-            <h3 class="section-title section-title_size_medium result-card__name">Лесные огоньки: история одной фотографии</h3>
-            <p class="content-text content-text_size_medium result-card__annotation">Фотограф отвлеклась от освещения суровой политической реальности Мексики,
-              чтобы запечатлеть ускользающую красоту одного из местных чудес природы.
-            </p>
-          </div>
-          <p class="result-card__source">Медуза</p>
-        </div>
-      </article>
+      <div class="preloader__not-found">
+        <img class="preloader__not-found-image" src="./images/not-found.svg" alt="Картинка с грустным смайликом">
+        <h3 class="section-title section-title_size_medium preloader__title">
+          Ничего не найдено
+        </h3>
+        <p class="content-text preloader__message">
 
-      <article class="result-card" tabindex="0">
-        <img class="result-card__image" src="./images/image_07.png" alt="«Первозданная тайга»: новый фотопроект Игоря Шпиленка">
-        <div class="result-card__description">
-          <time class="result-card__date" datetime="2019-08-02">2 августа, 2019</time>
-          <div class="result-card__container">
-            <h3 class="section-title section-title_size_medium result-card__name">«Первозданная тайга»: новый фотопроект Игоря Шпиленка</h3>
-            <p class="content-text content-text_size_medium result-card__annotation">Знаменитый фотограф снимает первозданные леса России,
-              чтобы рассказать о необходимости их сохранения. В этот раз он отправился в Двинско-Пинежскую тайгу, где
-              необходимости их сохранения. В этот раз он отправился
-            </p>
-          </div>
-          <p class="result-card__source">Риа</p>
-        </div>
-      </article>
+        </p>
+      </div>
 
-      <article class="result-card" tabindex="0">
-          <img class="result-card__image" src="./images/image_04.png" alt="Лесные огоньки: история одной фотографии">
-          <div class="result-card__description">
-            <time class="result-card__date" datetime="2019-08-02">2 августа, 2019</time>
-            <div class="result-card__container">
-              <h3 class="section-title section-title_size_medium result-card__name">Лесные огоньки: история одной фотографии</h3>
-              <p class="content-text content-text_size_medium result-card__annotation">Фотограф отвлеклась от освещения суровой политической реальности Мексики,
-                чтобы запечатлеть ускользающую красоту одного из местных чудес природы.
-              </p>
-            </div>
-            <p class="result-card__source">Медуза</p>
-          </div>
-        </article>
-
-        <article class="result-card" tabindex="0">
-          <img class="result-card__image" src="./images/image_07.png" alt="«Первозданная тайга»: новый фотопроект Игоря Шпиленка">
-          <div class="result-card__description">
-            <time class="result-card__date" datetime="2019-08-02">2 августа, 2019</time>
-            <div class="result-card__container">
-              <h3 class="section-title section-title_size_medium result-card__name">«Первозданная тайга»: новый фотопроект Игоря Шпиленка</h3>
-              <p class="content-text content-text_size_medium result-card__annotation">Знаменитый фотограф снимает первозданные леса России,
-                чтобы рассказать о необходимости их сохранения. В этот раз он отправился в Двинско-Пинежскую тайгу, где
-                необходимости их сохранения. В этот раз он отправился
-              </p>
-            </div>
-            <p class="result-card__source">Риа</p>
-          </div>
-        </article>
-      <!--Конец примера-->
     </div>
-    <button class="button result__button">Показать еще</button>
+    <!--Прелоадер конец-->
+
+    <div class="results-list results-list_hidden">
+    </div>
+    <button class="button result__button result__button_hidden">Показать еще</button>
   </section>
   <!--Результаты поиска конец-->
 
@@ -207,7 +139,7 @@
   </footer>
   <!--Конец Футер-->
 
-  <script type="module" src="main.66f05de25e0eff5ac46d.js"></script>
+  <script type="module" src="main.a18c8aae9842bcf17f6c.js"></script>
 </body>
 
 </html>
