@@ -1,4 +1,4 @@
-const month = [
+const months = [
   "января", "февраля", "марта",
   "апреля", "мая", "июня", "июля",
   "августа", "сентября", "октября",
@@ -7,9 +7,5 @@ const month = [
 
 /* Функция для форматирования даты */
 export default function dateFormat(date) {
-  const day = date.getDate();
-  const monthIndex = date.getMonth();
-  const year = date.getFullYear();
-
-  return day + ' ' + month[monthIndex] + ', ' + year;
+  return `${date.getDate()} ${months[date.getMonth()]}, '${date.getFullYear()}`;
 }

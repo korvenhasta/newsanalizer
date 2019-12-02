@@ -21,14 +21,6 @@ window.onload = () => {
   const resultsList = document.querySelector('.results-list');
   const resultButton = document.querySelector('.result__button');
 
-  resultButton.addEventListener('click', showMoreCardsClickHandler);
-  resultsList.addEventListener('click', (event) => {
-    const cardElement = event.target.closest('.result-card');
-    if (cardElement != null) {
-      window.open(cardElement.getAttribute('data-url'), '_blank');
-    }
-  });
-
   /* Метод. Покажем блок поиска резульатов */
   function searching() {
     results.classList.remove('result_hidden');
@@ -61,22 +53,18 @@ window.onload = () => {
     if (newsItems.length === 0) {
       preloader.nothingFound('К сожалению по вашему запросу ничего не найдено.');
       notFound();
+      return;
     }
-    else {
-      const lastPosition = Math.min(newsItemsPosition + siteConfig.news.itemsPerStep, newsItems.length);
-      newsItems.slice(newsItemsPosition, lastPosition).forEach(pieceNews => {
-        const publishedDate = new Date(pieceNews.publishedAt);
-        const card = new Card(pieceNews.urlToImage, publishedDate, pieceNews.title, pieceNews.description, pieceNews.source.name, pieceNews.url);
-        resultsList.appendChild(card.element);
-      });
-      newsItemsPosition = lastPosition;
-      return lastPosition === newsItems.length;
-    }
-  }
 
-  /* Метод. Скроем кнопку, если карточки закончились */
-  function showMoreCardsClickHandler() {
-    if (showMoreCards() === true) {
+    const lastPosition = Math.min(newsItemsPosition + siteConfig.news.itemsPerStep, newsItems.length);
+    newsItems.slice(newsItemsPosition, lastPosition).forEach(pieceNews => {
+      const publishedDate = new Date(pieceNews.publishedAt);
+      const card = new Card(pieceNews.urlToImage, publishedDate, pieceNews.title, pieceNews.description, pieceNews.source.name, pieceNews.url);
+      resultsList.appendChild(card.element);
+    });
+
+    newsItemsPosition = lastPosition;
+    if (lastPosition === newsItems.length) {
       resultButton.classList.add('result__button_hidden');
     }
   }
@@ -109,7 +97,7 @@ window.onload = () => {
         form.unBlock();
         preloader.somethingFound();
         showResults();
-        showMoreCardsClickHandler();
+        showMoreCards();
       },
       error => {
         console.log(error);
@@ -119,4 +107,13 @@ window.onload = () => {
         form.unBlock();
       });
   }
+
+  resultButton.addEventListener('click', () => showMoreCards());
+
+  resultsList.addEventListener('click', (event) => {
+    const cardElement = event.target.closest('.result-card');
+    if (cardElement != null) {
+      window.open(cardElement.getAttribute('data-url'), '_blank');
+    }
+  });
 }

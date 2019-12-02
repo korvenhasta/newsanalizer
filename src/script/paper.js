@@ -4,11 +4,10 @@ import { setTextContent } from './htmlHelper.js'
 window.onload = () => {
   const weekDays = ["вс", "пн", "вт", "ср", "чт", "пт", "сб"];
   const months = ['январь', 'февраль', 'март', 'апрель', 'май', 'июнь', 'июль', 'август', 'сентябрь', 'октябрь', 'ноябрь', 'декабрь'];
+  const ticksPerDay = 24 * 60 * 60 * 1000;
 
   const analiticsBarContainer = document.querySelector('.analitics__container');
   const analiticsBars = analiticsBarContainer.querySelectorAll('.analitics__bar');
-  const ticksPerDay = 24 * 60 * 60 * 1000;
-
   const analiticsDateContainer = document.querySelector('.analitics__container-column_left');
   const analiticsDates = analiticsDateContainer.querySelectorAll('.analitics__date');
 
@@ -47,16 +46,15 @@ window.onload = () => {
       };
 
       return prevVal;
-    }, Array(7).fill({ numHeadings: 0, numDescription: 0 })
-    );
+    }, Array(7).fill({ numHeadings: 0, numDescription: 0 }));
 
-    const headings = articlesByDay.reduce((sum, element) => {
+    const headingsCount = articlesByDay.reduce((sum, element) => {
       return element.numHeadings + sum;
     }, 0);
 
     return {
       articlesByDay: articlesByDay,
-      headings: headings
+      headings: headingsCount
     }
   }
 
