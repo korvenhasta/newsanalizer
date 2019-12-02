@@ -23,16 +23,10 @@ window.onload = () => {
 
   resultButton.addEventListener('click', showMoreCardsClickHandler);
   resultsList.addEventListener('click', (event) => {
-    const element = event.target;
-    while (!element.classList.contains('result-card')) {
-      if (element != resultsList) {
-        element = element.parentElement;
-      }
-      else {
-        return;
-      }
+    const cardElement = event.target.closest('.result-card');
+    if (cardElement != null) {
+      window.open(cardElement.getAttribute('data-url'), '_blank');
     }
-    window.open(element.getAttribute('data-url'), '_blank');
   });
 
   /* Метод. Покажем блок поиска резульатов */
@@ -70,12 +64,11 @@ window.onload = () => {
     }
     else {
       const lastPosition = Math.min(newsItemsPosition + siteConfig.news.itemsPerStep, newsItems.length);
-      for (let i = newsItemsPosition; i < lastPosition; i++) {
-        const pieceNews = newsItems[i];
+      newsItems.slice(newsItemsPosition, lastPosition).forEach(pieceNews => {
         const publishedDate = new Date(pieceNews.publishedAt);
         const card = new Card(pieceNews.urlToImage, publishedDate, pieceNews.title, pieceNews.description, pieceNews.source.name, pieceNews.url);
         resultsList.appendChild(card.element);
-      }
+      });
       newsItemsPosition = lastPosition;
       return lastPosition === newsItems.length;
     }

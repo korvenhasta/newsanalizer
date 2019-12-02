@@ -1,13 +1,13 @@
 export default class Form {
   constructor(element, onSearch) {
-    let form = this;
+    const form = this;
     this._onSearch = onSearch;
     this._isBlocked = false;
     this._searchInput = element.querySelector('.search__input');
     this._searchButton = element.querySelector('.search__button');
-    element.addEventListener('submit', target => form.formSubmitHandler(target));
-    element.addEventListener('input', target => form.formInputHandler(target));
-    this.formInputHandler();
+    element.addEventListener('submit', event => form.formSubmitHandler(event));
+    element.addEventListener('input', () => form.validate());
+    this.validate();
   }
 
   /* Метод. Блокируем форму */
@@ -44,7 +44,7 @@ export default class Form {
   }
 
   /* Метод. Валидируем инпут */
-  formInputHandler() {
+  validate() {
     if (this._searchInput.value === "") {
       this._searchInput.setCustomValidity("Нужно ввести ключевое слово");
     }

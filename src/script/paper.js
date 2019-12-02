@@ -1,16 +1,19 @@
 import "../pages/paper.css";
+import { setTextContent } from './htmlHelper.js'
 
 window.onload = () => {
+  const weekDays = ["вс", "пн", "вт", "ср", "чт", "пт", "сб"];
+  const months = ['январь', 'февраль', 'март', 'апрель', 'май', 'июнь', 'июль', 'август', 'сентябрь', 'октябрь', 'ноябрь', 'декабрь'];
+
+  const analiticsBarContainer = document.querySelector('.analitics__container');
+  const analiticsBars = analiticsBarContainer.querySelectorAll('.analitics__bar');
+  const ticksPerDay = 24 * 60 * 60 * 1000;
+
+  const analiticsDateContainer = document.querySelector('.analitics__container-column_left');
+  const analiticsDates = analiticsDateContainer.querySelectorAll('.analitics__date');
+
   function weekFormat(date) {
-    const week = [
-      "вс", "пн", "вт", "ср",
-      "чт", "пт", "сб"
-    ];
-
-    const day = date.getDate();
-    const weekIndex = date.getDay();
-
-    return day + ', ' + week[weekIndex];
+    return date.getDate() + ', ' + weekDays[date.getDay()];
   }
 
   /* Метод. Посчитаем ключевое слово в заголовках и описании новости */
@@ -59,19 +62,16 @@ window.onload = () => {
 
   /* Метод. Нарисуем бары (значения и полоски) */
   function drawBars(searchDay, analitics) {
-    const analiticsBarContainer = document.querySelector('.analitics__container');
-    const analiticsBar = analiticsBarContainer.querySelectorAll('.analitics__bar');
-    const ticksPerDay = 24 * 60 * 60 * 1000;
-    for (let i = 0; i < 7; i++) {
-      const currentDay = new Date((searchDay.getTime() - (i - 6) * ticksPerDay)).getDay();
+    analiticsBars.forEach((bar, index) => {
+      const currentDay = new Date((searchDay.getTime() - (index - 6) * ticksPerDay)).getDay();
       const dayArticles = analitics.articlesByDay[currentDay];
 
       const sum = dayArticles.numHeadings + dayArticles.numDescription;
-      analiticsBar[i].textContent = sum;
+      bar.textContent = sum;
       if (sum > 1) {
-        analiticsBar[i].style.width = `${sum}%`;
+        bar.style.width = `${sum}%`;
       }
-    }
+    });
   }
 
   /* Метод. Проверим данные, которые приходят из localStorage. воспользуемся arguments для того, чтобы не передавать все аргументы */
@@ -100,45 +100,18 @@ window.onload = () => {
 
   /* Метод. Получим массив месяцев для отображения в таблице с барами */
   function getMonthName(timeStamp) {
-    const months = ['январь', 'февраль', 'март', 'апрель', 'май', 'июнь', 'июль', 'август', 'сентябрь', 'октябрь', 'ноябрь', 'декабрь'];
     return months[timeStamp.getMonth()];
-  }
-
-  /* Метод. Запишем месяц в таблицу */
-  function setMonth(timeStamp) {
-    const tableTitleMonth = document.querySelector('.analitics__month');
-    tableTitleMonth.textContent = getMonthName(timeStamp);
   }
 
   /* Метод. Посчитаем даты 7 дней от текущей и запишем их в таблицу */
   function setWeekDates(searchDate) {
-    const analiticsDateContainer = document.querySelector('.analitics__container-column_left');
-    const analiticsDate = analiticsDateContainer.querySelectorAll('.analitics__date');
     let offSet = -6;
-    analiticsDate.forEach(element => {
-      const today = new Date(searchDate.getTime());
-      const weekAgo = new Date(today.setDate(today.getDate() + offSet));
-      element.textContent = weekFormat(weekAgo);
+    analiticsDates.forEach(element => {
+      const currentDate = new Date(searchDate.getTime());
+      const offsetDate = new Date(currentDate.setDate(currentDate.getDate() + offSet));
+      element.textContent = weekFormat(offsetDate);
       offSet += 1;
     });
-  }
-
-  /* Метод. Запишем тему, которую искал пользователь в заголовок */
-  function setTopic(searchTopic) {
-    const summaryTitle = document.querySelector('.summary__title_span');
-    summaryTitle.textContent = searchTopic;
-  }
-
-  /* Метод. Запишем totalResults в шапку */
-  function setTotalResults(searchTotalResults) {
-    const summaryTextTotal = document.querySelector('.summary__text_total');
-    summaryTextTotal.textContent = searchTotalResults;
-  }
-
-  /* Метод. Запишем количество упоминаний в шапку */
-  function setHeadingsCount(count) {
-    const summaryTextHeadings = document.querySelector('.summary__text_headings');
-    summaryTextHeadings.textContent = count;
   }
 
   /* Метод. Получим данные для аналитики из localStorage и вызовем фунцию подсчета цифр */
@@ -157,13 +130,13 @@ window.onload = () => {
 
   const { timeStamp, topic, totalResults, news } = loadData(); // воспользуемся деструктуризацией
 
-  setMonth(timeStamp);
+  setTextContent('.analitics__month', getMonthName(timeStamp));
   setWeekDates(timeStamp);
-  setTopic(topic);
-  setTotalResults(totalResults);
+  setTextContent('.summary__title_span', topic);
+  setTextContent('.summary__text_total', totalResults);
 
   const analitics = getAnaliyics(topic, news);
-  setHeadingsCount(analitics.headings);
+  setTextContent('.summary__text_headings', analitics.headings);
 
   drawBars(timeStamp, analitics);
 }

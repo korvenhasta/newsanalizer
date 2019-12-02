@@ -1,4 +1,5 @@
 import dateFormat from './dateFormat.js'
+import { createElement } from './htmlHelper.js'
 
 class Card {
   constructor(image, date, title, text, source, url) {
@@ -13,19 +14,6 @@ class Card {
 
   /* Метод. Создаем DOM-элемент карточки */
   createCard() {
-    function createElement(tag, classes) {
-      const element = document.createElement(tag);
-      if (Array.isArray(classes) === true) {
-        classes.forEach(item => {
-          element.classList.add(item);
-        });
-      }
-      else {
-        element.classList.add(classes);
-      }
-      return element;
-    }
-
     const cardContainer = createElement('article', 'result-card');
     cardContainer.setAttribute('data-url', this.url);
 

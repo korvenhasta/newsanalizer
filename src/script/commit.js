@@ -1,4 +1,5 @@
 import dateFormat from './dateFormat.js'
+import { createElement } from './htmlHelper.js'
 
 class Commit {
   constructor(name, email, date, message, avatarUrl) {
@@ -12,24 +13,11 @@ class Commit {
 
   /* Метод. Создаем DOM-элемент коммита */
   createCommit() {
-    function createElement(tag, classes) {
-      const element = document.createElement(tag);
-      if (Array.isArray(classes) === true) {
-        classes.forEach(item => {
-          element.classList.add(item);
-        });
-      }
-      else {
-        element.classList.add(classes);
-      }
-      return element;
-    }
-
     const liItem = createElement('li', 'glide__slide');
     const commitContainer = createElement('div', 'slider__card');
 
     const date = createElement('time', 'slider__date');
-    let commitDate = new Date(this.date);
+    const commitDate = new Date(this.date);
     date.textContent = dateFormat(commitDate);
 
     const userContainer = createElement('div', 'slider__user');
