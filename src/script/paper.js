@@ -1,8 +1,8 @@
 import "../pages/paper.css";
 import { setTextContent } from './htmlHelper.js'
+import { siteConfig } from './siteConfig.js';
 
 window.onload = () => {
-  const weekDays = ["вс", "пн", "вт", "ср", "чт", "пт", "сб"];
   const months = ['январь', 'февраль', 'март', 'апрель', 'май', 'июнь', 'июль', 'август', 'сентябрь', 'октябрь', 'ноябрь', 'декабрь'];
   const ticksPerDay = 24 * 60 * 60 * 1000;
 
@@ -12,7 +12,7 @@ window.onload = () => {
   const analiticsDates = analiticsDateContainer.querySelectorAll('.analitics__date');
 
   function weekFormat(date) {
-    return date.getDate() + ', ' + weekDays[date.getDay()];
+    return date.getDate() + ', ' + siteConfig.localisation.ru.calendar.weekDays[date.getDay()];
   }
 
   /* Метод. Посчитаем ключевое слово в заголовках и описании новости */
