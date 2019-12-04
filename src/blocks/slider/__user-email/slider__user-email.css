@@ -1,4 +1,7 @@
 .slider__user-email {
-  width: 100%;
+  width: 200px;
   margin: 0 auto 2px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

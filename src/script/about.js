@@ -1,46 +1,46 @@
 import "../vendor/glide.core.css";
 import "../vendor/glide.theme.css";
 import "../pages/about.css";
-import Glide, { Breakpoints } from '../../node_modules/@glidejs/glide/dist/glide'
 
-new Glide('.glide', {
-  type: 'carousel',
-  startAt: 0,
-  perView: 3,
-  peek: 88,
-  focusAt: 0,
-  gap: 16,
-  breakpoints: {
-    1440: {
-      type: "carousel",
-      perView: 3,
-      startAt: 0,
-      focusAt: 0,
-      gap: 16
-    },
-    768: {
-      type: "slider",
-      perView: 2,
-      startAt: 0,
-      focusAt: 0,
-      peek: {
-        before: 0,
-        after: 70
-      },
-      gap: 8
-    },
-    576: {
-      type: "slider",
-      perView: 1,
-      startAt: 0,
-      focusAt: 0,
-      peek: {
-        before: 0,
-        after: 32
-      },
-      gap: 8
-    }
+import Glide from '../../node_modules/@glidejs/glide/dist/glide';
+import GithubApi from './ghapi.js';
+import Commit from './commit.js';
+
+import { sliderConfig } from './sliderConfig.js'
+import { siteConfig } from './siteConfig.js';
+
+window.onload = () => {
+  const commitList = document.querySelector('.glide__slides');
+  const ghApi = new GithubApi(siteConfig.github.user, siteConfig.github.repository);
+  const slider = new Glide('.glide', sliderConfig);
+
+  /* Метод. Добавим слайдер на страницу */
+  function showSlider() {
+    const slider = document.querySelector('.slider');
+    slider.classList.remove('slider_hidden');
   }
-}).mount()
 
-//const serverUrl = NODE_ENV === 'development' ? 'http://praktikum.tk/cohort3' : 'https://praktikum.tk/cohort3'
+  /* Метод. Нарисуем карточки с коммитами */
+  function renderCommits(commits) {
+    commits.forEach(response => {
+      const commitData = response.commit;
+      const myCommit = new Commit(commitData.author.name, commitData.author.email, commitData.author.date, commitData.message, response.author.avatar_url);
+      commitList.appendChild(myCommit.element);
+    });
+  }
+
+  ghApi.getCommits(commits => {
+    if (commits.length === 0) {
+      return;
+    }
+    showSlider();
+    renderCommits(commits);
+    slider.mount();
+  },
+    error => {
+      console.log(error);
+      setTimeout(() => alert('Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз'), 50);
+    }
+  );
+}
+

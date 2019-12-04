@@ -1,29 +1,26 @@
 class GithubApi {
-  constructor () {
-
+  constructor(owner, repository) {
+    this.owner = owner;
+    this.repository = repository;
   }
 
   /* Метод. Вернем json объект или ошибку */
   parseResult(res) {
     if (res.ok) {
-        return res.json();
-      }
-      return Promise.reject(`Ошибка: ${res.status}`);
-  }
-
-  /* Метод. Выведем ошибку в консоль */
-  handleError(err) {
-    console.log(err);
+      return res.json();
+    }
+    return Promise.reject(`Ошибка: ${res.status}`);
   }
 
   /* Метод. Получим коммит с сервера */
-  getCommit(callback) {
+  getCommits(callback, errorCallback) {
     fetch(
-        `${this.url}/${this.cohort}/users/me`,
-        { headers: this.headers }
+      `https://api.github.com/repos/${this.owner}/${this.repository}/commits`
     )
-    .then(this.parseResult)
-    .then(callback)
-    .catch(this.handleError);
+      .then(this.parseResult)
+      .then(callback)
+      .catch(errorCallback);
   }
 }
+
+export default GithubApi;

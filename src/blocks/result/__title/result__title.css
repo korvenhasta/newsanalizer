@@ -1,3 +1,5 @@
+@import url('./_hidden/result__title_hidden.css');
+
 .result__title {
   margin: 0;
 }

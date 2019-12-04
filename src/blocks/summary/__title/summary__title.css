@@ -1,3 +1,5 @@
+@import url('./_span/summary__title_span.css');
+
 .summary__title {
   margin: 80px 2px 24px 0;
 }

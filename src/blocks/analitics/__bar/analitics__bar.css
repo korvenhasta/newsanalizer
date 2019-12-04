@@ -1,13 +1,9 @@
-@import url("./_first/analitics__bar_first.css");
 @import url("./_margin-top/analitics__bar_margin-top.css");
-@import url("./_second/analitics__bar_second.css");
-@import url("./_third/analitics__bar_third.css");
-@import url("./_forth/analitics__bar_forth.css");
-@import url("./_fifth/analitics__bar_fifth.css");
-@import url("./_sixth/analitics__bar_sixth.css");
 @import url("./_seventh/analitics__bar_seventh.css");
 
 .analitics__bar {
+  display: block;
+  min-width: 18px;
   height: 24px;
   font-family: "Roboto", sans-serif;
   font-style: normal;
@@ -20,7 +16,7 @@
   text-align: start;
   color: #ffffff;
   background: #2f71e5;
-  margin: 28px 0 28px 0;
+  margin: 28px auto 28px 0;
 }
 
 @media screen and (max-width: 767px) {

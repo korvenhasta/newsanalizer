@@ -1,44 +1,55 @@
-class Card {
-  constructor(image, date, title, text, source) {
+import dateFormat from './dateFormat.js'
+import { createElement } from './htmlHelper.js'
 
+class Card {
+  constructor(image, date, title, text, source, url) {
+    this.image = image;
+    this.date = date;
+    this.title = title;
+    this.text = text;
+    this.source = source;
+    this.url = url;
+    this.element = this.createCard();
   }
 
   /* Метод. Создаем DOM-элемент карточки */
-  create() {
-    function createElement(elType, classes) {
-      const elContainer = document.createElement(elType);
-      elContainer.classList.add(classes);
+  createCard() {
+    const cardContainer = createElement('article', 'result-card');
+    cardContainer.setAttribute('data-url', this.url);
 
-      return elContainer;
-  }
+    const imageContainer = createElement('img', 'result-card__image');
+    imageContainer.setAttribute('src', this.image);
+    imageContainer.setAttribute('alt', this.title);
 
-  const cardContainer = createElement('article', 'result-card');
+    const descriptionContainer = createElement('div', 'result-card__description');
 
-  const imageContainer = createElement('img', 'result-card__image');
-  imageContainer.setAttribute('src', `background-image: url(${cardImage})`);
+    const date = createElement('time', 'result-card__date');
+    date.setAttribute('datetime', this.date);
+    date.textContent = dateFormat(this.date);
 
-  const descriptionContainer = createElement('div', 'result-card__description');
+    const textContainer = createElement('div', 'result-card__container');
 
-  const date = createElement('time', 'result-card__date');
+    const cardTitle = createElement('h3', ['section-title', 'section-title_size_medium', 'result-card__name']);
+    cardTitle.textContent = this.title;
 
-  const textContainer = createElement('div', 'result-card__container');
+    const cardText = createElement('p', ['content-text', 'content-text_size_medium', 'result-card__annotation']);
+    cardText.textContent = this.text;
 
-  const cardTitle = createElement('h3', 'result-card__name');
+    const cardSource = createElement('p', 'result-card__source');
+    cardSource.textContent = this.source;
 
-  const cardText = createElement('p', 'result-card__annotation');
+    cardContainer.appendChild(imageContainer);
+    cardContainer.appendChild(descriptionContainer);
 
-  const cardSource = createElement('p', 'result-card__source');
+    descriptionContainer.appendChild(date);
+    descriptionContainer.appendChild(textContainer);
+    descriptionContainer.appendChild(cardSource);
 
-  cardContainer.appendChild(imageContainer);
-  cardContainer.appendChild(descriptionContainer);
+    textContainer.appendChild(cardTitle);
+    textContainer.appendChild(cardText);
 
-  descriptionContainer.appendChild(date);
-  descriptionContainer.appendChild(textContainer);
-  descriptionContainer.appendChild(cardSource);
-
-  textContainer.appendChild(cardTitle);
-  textContainer.appendChild(cardText);
-
-  return {cardContainer}
+    return cardContainer;
   }
 }
+
+export default Card;
