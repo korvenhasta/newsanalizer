@@ -56,6 +56,7 @@ window.onload = () => {
       return;
     }
 
+
     const lastPosition = Math.min(newsItemsPosition + siteConfig.news.itemsPerStep, newsItems.length);
     newsItems.slice(newsItemsPosition, lastPosition).forEach(pieceNews => {
       const publishedDate = new Date(pieceNews.publishedAt);
