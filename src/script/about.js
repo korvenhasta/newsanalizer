@@ -29,18 +29,40 @@ window.onload = () => {
     });
   }
 
-  ghApi.getCommits(commits => {
-    if (commits.length === 0) {
-      return;
-    }
+  /* Метод. Загрузим данные, которые приходят из sessionStorage */
+  function loadData() {
+    const commitsString = window.sessionStorage.getItem('commits');
+    const commits = JSON.parse(commitsString);
+
+    return commits;
+  }
+
+  /* Метод. Загрузим данные, которые приходят из sessionStorage */
+  function drawCommits(commits) {
     showSlider();
     renderCommits(commits);
     slider.mount();
-  },
-    error => {
-      console.log(error);
-      setTimeout(() => alert('Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз'), 50);
-    }
-  );
+  }
+
+  const loadCommits = loadData();
+
+  if (loadCommits != null) {
+    drawCommits(loadCommits);
+  }
+  else {
+    ghApi.getCommits(commits => {
+      if (commits.length === 0) {
+        return;
+      }
+      window.sessionStorage.clear();
+      window.sessionStorage.setItem('commits', JSON.stringify(commits));
+      drawCommits(commits);
+    },
+      error => {
+        console.log(error);
+        setTimeout(() => alert('Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз'), 50);
+      }
+    );
+  }
 }
 
