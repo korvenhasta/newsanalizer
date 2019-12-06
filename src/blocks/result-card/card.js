@@ -1,5 +1,5 @@
-import dateFormat from './dateFormat.js'
-import { createElement } from './htmlHelper.js'
+import dateFormat from '../../script/dateFormat.js'
+import { createElement } from '../../script/htmlHelper.js'
 
 class Card {
   constructor(image, date, title, text, source, url) {

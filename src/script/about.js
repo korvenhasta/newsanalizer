@@ -2,9 +2,9 @@ import "../vendor/glide.core.css";
 import "../vendor/glide.theme.css";
 import "../pages/about.css";
 
-import Glide from '../../node_modules/@glidejs/glide/dist/glide';
+import Glide from '@glidejs/glide';
 import GithubApi from './ghapi.js';
-import Commit from './commit.js';
+import Commit from '../blocks/slider/commit.js';
 
 import { sliderConfig } from './sliderConfig.js'
 import { siteConfig } from './siteConfig.js';
@@ -37,7 +37,7 @@ window.onload = () => {
     return commits;
   }
 
-  /* Метод. Загрузим данные, которые приходят из sessionStorage */
+  /* Метод. Вызовем функции для отрисовки коммитов */
   function drawCommits(commits) {
     showSlider();
     renderCommits(commits);

@@ -1,10 +1,11 @@
 import "../pages/style.css";
 
 import NewsApi from './newsapi.js'
-import Card from './card.js'
+import Card from '../blocks/result-card/card.js'
 import Form from './form.js'
-import Preloader from './preloader.js'
+import Preloader from '../blocks/preloader/preloader.js'
 
+import checkData from './checkData.js'
 import { siteConfig } from './siteConfig.js'
 
 window.onload = () => {
@@ -12,8 +13,9 @@ window.onload = () => {
   const form = new Form(document.querySelector('.search__form'), findNews);
   const preloader = new Preloader(document.querySelector('.preloader'));
 
-  let newsItems = [];
-  let newsItemsPosition = 0;
+  let newsItems = JSON.parse(window.localStorage.getItem('news')) || [];
+  let newsItemsPosition = Number(window.localStorage.getItem('itemsPosition')) || 0;
+  const topic = window.localStorage.getItem('topic');
 
   const results = document.querySelector('.result');
   const resultTitle = document.querySelector('.result__title');
@@ -49,29 +51,23 @@ window.onload = () => {
   }
 
   /* Метод. Отрисуем карточки поштучно */
-  function showMoreCards() {
-    if (newsItems.length === 0) {
-      preloader.nothingFound('К сожалению по вашему запросу ничего не найдено.');
-      notFound();
-      return;
-    }
-
-
-    const lastPosition = Math.min(newsItemsPosition + siteConfig.news.itemsPerStep, newsItems.length);
-    newsItems.slice(newsItemsPosition, lastPosition).forEach(pieceNews => {
+  function renderCards(from, to) {
+    newsItems.slice(from, to).forEach(pieceNews => {
       const publishedDate = new Date(pieceNews.publishedAt);
       const card = new Card(pieceNews.urlToImage, publishedDate, pieceNews.title, pieceNews.description, pieceNews.source.name, pieceNews.url);
       resultsList.appendChild(card.element);
     });
 
-    newsItemsPosition = lastPosition;
-    if (lastPosition === newsItems.length) {
+    newsItemsPosition = to;
+    window.localStorage.setItem('itemsPosition', newsItemsPosition);
+    if (newsItemsPosition === newsItems.length) {
       resultButton.classList.add('result__button_hidden');
     }
   }
 
   /* Метод. Обнулим массив карточек, позицию и грид с карточками*/
   function resetResults() {
+    window.localStorage.clear();
     newsItems = [];
     newsItemsPosition = 0;
     const range = document.createRange();
@@ -81,11 +77,10 @@ window.onload = () => {
 
   /* Метод. Найдем новости и сохраним их в localStorage*/
   function findNews(topic) {
-    window.localStorage.clear();
+    resetResults();
     window.localStorage.setItem('topic', topic);
     window.localStorage.setItem('timeStamp', Date.now());
 
-    resetResults();
     preloader.searching();
     searching();
 
@@ -98,7 +93,7 @@ window.onload = () => {
         form.unBlock();
         preloader.somethingFound();
         showResults();
-        showMoreCards();
+        addCardsRow();
       },
       error => {
         console.log(error);
@@ -109,7 +104,25 @@ window.onload = () => {
       });
   }
 
-  resultButton.addEventListener('click', () => showMoreCards());
+  /* Метод. Покажем просмотренные карточки */
+  function setPageState(topic, index) {
+    form.topic = topic;
+    showResults();
+    renderCards(0, index);
+  }
+
+  /* Метод. Покажем первые три карточки */
+  function addCardsRow() {
+    if (newsItems.length === 0) {
+      preloader.nothingFound('К сожалению по вашему запросу ничего не найдено.');
+      notFound();
+      return;
+    }
+    const lastPosition = Math.min(newsItemsPosition + siteConfig.news.itemsPerStep, newsItems.length);
+    renderCards(newsItemsPosition, lastPosition);
+  }
+
+  resultButton.addEventListener('click', () => addCardsRow());
 
   resultsList.addEventListener('click', (event) => {
     const cardElement = event.target.closest('.result-card');
@@ -117,4 +130,9 @@ window.onload = () => {
       window.open(cardElement.getAttribute('data-url'), '_blank');
     }
   });
+
+  if((newsItemsPosition > 0) && checkData(topic, newsItems)) {
+    setPageState(topic, newsItemsPosition);
+  }
+
 }
