@@ -1,4 +1,4 @@
-# https://korvenhasta.github.io/newsanalizer
+# https://korvenhasta.github.io/findnews
 
 ## Анализатор новостей
 Версия v 1.0.0
@@ -7,6 +7,6 @@
 Дипломный проект в рамках курса по фронтенд разработке от Яндекс.Практикум.     
 Технологии: HTML, CSS, БЭМ, JavaScript, работа с запросами к API, GIT.     
 
-Для просмотра страницы перейдите по ссылке: https://korvenhasta.github.io/newsanalizer.     
+Для просмотра страницы перейдите по ссылке: https://korvenhasta.github.io/findnews.     
 Также можно скопировать проект локально и развернуть командами:     
 ```npm i``` и ```npm run dev```
