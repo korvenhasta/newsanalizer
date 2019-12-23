@@ -10,6 +10,15 @@ export default class Form {
     this.validate();
   }
 
+  /* Сеттер для того, чтобы посетить тему в инпут */
+  set topic(searchTopic) {
+    this._searchInput.value = searchTopic;
+  }
+
+  get topic() {
+    return this._searchInput.value;
+  }
+
   /* Метод. Блокируем форму */
   block() {
     if(this._isBlocked) {

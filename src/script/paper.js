@@ -1,6 +1,7 @@
 import "../pages/paper.css";
 import { setTextContent } from './htmlHelper.js'
 import { siteConfig } from './siteConfig.js';
+import checkData from './checkData.js'
 
 window.onload = () => {
   const months = ['январь', 'февраль', 'март', 'апрель', 'май', 'июнь', 'июль', 'август', 'сентябрь', 'октябрь', 'ноябрь', 'декабрь'];
@@ -70,13 +71,6 @@ window.onload = () => {
         bar.style.width = `${sum}%`;
       }
     });
-  }
-
-  /* Метод. Проверим данные, которые приходят из localStorage. воспользуемся arguments для того, чтобы не передавать все аргументы */
-  function checkData() {
-    return [...arguments].reduce((exists, element) => {
-      return exists && element != null && element != undefined;
-    }, true);
   }
 
   /* Метод. Загрузим данные, которые приходят из localStorage */
